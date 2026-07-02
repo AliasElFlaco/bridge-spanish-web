@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge Spanish - 6-Month Transformation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="bg-slate-50 font-['Plus_Jakarta_Sans',sans-serif] text-slate-900 antialiased min-h-screen flex flex-col justify-between"
+  >
+    <header
+      class="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-3 cursor-pointer" id="brand-logo">
+          <div
+            class="w-9 h-9 rounded-xl bg-gradient-to-tr from-teal-600 to-cyan-500 flex items-center justify-center text-white font-extrabold text-lg shadow-sm"
+          >
+            ¡B!
+          </div>
+          <div>
+            <h1 class="font-extrabold text-sm tracking-tight text-slate-900">
+              Bridge Spanish
+            </h1>
+            <p
+              class="text-[10px] text-slate-400 font-medium tracking-wider uppercase"
+            >
+              6-Month Transformation
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center space-x-2 bg-rose-50 border border-rose-100 px-3 py-1.5 rounded-full shadow-2xs"
+        >
+          <i
+            class="fa-solid fa-bullseye text-rose-500 text-xs animate-pulse"
+          ></i>
+          <span
+            class="text-[10px] font-bold text-rose-700 tracking-wide uppercase"
+            >24-Week Cohort Track</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6"
+    >
+      <nav
+        class="grid grid-cols-5 gap-1 bg-teal-955/5 p-1.5 rounded-2xl w-full max-w-2xl mx-auto text-center shadow-2xs border border-teal-100/10"
+      >
+        <button
+          id="nav-dashboard"
+          class="nav-btn py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center justify-center space-y-1 bg-white text-teal-955 shadow-sm"
+        >
+          <i class="fa-solid fa-map-location-dot text-sm mb-0.5"></i>
+          <span class="hidden sm:inline">6-Month Map</span>
+        </button>
+        <button
+          id="nav-lessons"
+          class="nav-btn py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center justify-center space-y-1 text-teal-800/75 hover:text-teal-955"
+        >
+          <i class="fa-solid fa-chalkboard-user text-sm mb-0.5"></i>
+          <span class="hidden sm:inline">Active Class</span>
+        </button>
+        <button
+          id="nav-cognates"
+          class="nav-btn py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center justify-center space-y-1 text-teal-800/75 hover:text-teal-955"
+        >
+          <i class="fa-solid fa-wand-magic-sparkles text-sm mb-0.5"></i>
+          <span class="hidden sm:inline">Cognate Tool</span>
+        </button>
+        <button
+          id="nav-flashcards"
+          class="nav-btn py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center justify-center space-y-1 text-teal-800/75 hover:text-teal-955"
+        >
+          <i class="fa-solid fa-layer-group text-sm mb-0.5"></i>
+          <span class="hidden sm:inline">Flashcards</span>
+        </button>
+        <button
+          id="nav-quiz"
+          class="nav-btn py-2.5 rounded-xl text-xs font-bold transition-all flex flex-col items-center justify-center space-y-1 text-teal-800/75 hover:text-teal-955"
+        >
+          <i class="fa-solid fa-graduation-cap text-sm mb-0.5"></i>
+          <span class="hidden sm:inline">Milestone Quiz</span>
+        </button>
+      </nav>
+
+      <section id="tab-dashboard" class="tab-content space-y-8 py-4">
+        <div class="text-center max-w-2xl mx-auto space-y-3 mt-4">
+          <span
+            class="text-[10px] font-bold bg-teal-50 text-teal-700 px-3 py-1 rounded-full uppercase border border-teal-100/50"
+            >Complete 6-Month System Blueprint</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-none"
+          >
+            Your 24-Week Path to Native Fluency.
+          </h2>
+          <p
+            class="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed"
+          >
+            Don't study random word lists. Our structured 6-Month timeline moves
+            dynamically from physical mouth conditioning to automatic high-speed
+            vocabulary conversion.
+          </p>
+          <div class="flex justify-center items-center space-x-3 pt-2">
+            <button
+              id="hero-start-lessons"
+              class="watery-btn px-6 py-2.5 rounded-xl font-bold text-xs shadow-md"
+            >
+              Enter Active Classroom
+              <i class="fa-solid fa-circle-chevron-right ml-1.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex justify-between items-center max-w-5xl mx-auto px-1">
+            <h3 class="font-extrabold text-base sm:text-lg text-slate-900">
+              The 6-Month Class Roadmap
+            </h3>
+            <div
+              class="text-[11px] font-bold text-slate-400 bg-white border border-slate-100 px-3 py-1 rounded-lg shadow-3xs"
+            >
+              <i class="fa-solid fa-clock text-teal-500 mr-1.5"></i>Total
+              Duration: 24 Weeks
+            </div>
+          </div>
+          <div
+            id="roadmap-cards-container"
+            class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto"
+          ></div>
+        </div>
+      </section>
+
+      <section
+        id="tab-lessons"
+        class="tab-content hidden grid grid-cols-1 lg:grid-cols-12 gap-6 pt-2"
+      >
+        <div
+          class="lg:col-span-4 bg-white rounded-3xl border border-slate-100 p-4 shadow-3xs h-fit space-y-3"
+        >
+          <h3 class="font-extrabold text-sm text-slate-900 px-1">
+            6-Active Month Syllabus
+          </h3>
+          <div
+            id="lesson-links-container"
+            class="space-y-1 max-h-[380px] overflow-y-auto pr-1"
+          ></div>
+        </div>
+        <div
+          class="lg:col-span-8 bg-white rounded-3xl border border-slate-100 p-5 sm:p-6 shadow-3xs flex flex-col justify-between min-h-[440px]"
+        >
+          <div class="space-y-4">
+            <div
+              class="flex justify-between items-center border-b border-slate-50 pb-3"
+            >
+              <span
+                id="lesson-badge"
+                class="text-[9px] font-bold bg-teal-50 text-teal-700 px-2.5 py-1 rounded-md border border-teal-100 uppercase tracking-wider"
+                >Month 1 • Week 1-4</span
+              >
+              <span class="text-xs font-bold text-slate-400"
+                ><i
+                  class="fa-solid fa-circle text-emerald-400 text-[10px] mr-1.5 animate-pulse"
+                ></i
+                >Active Class</span
+              >
+            </div>
+            <h2
+              id="lesson-title"
+              class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight"
+            >
+              Loading Lesson Blueprint...
+            </h2>
+            <div
+              id="lesson-content"
+              class="text-slate-600 leading-relaxed text-xs sm:text-sm space-y-4"
+            ></div>
+          </div>
+          <div
+            class="flex justify-between items-center pt-6 border-t border-slate-50 mt-6"
+          >
+            <button
+              id="btn-prev-lesson"
+              class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs transition-all flex items-center"
+            >
+              <i class="fa-solid fa-chevron-left mr-2"></i> Previous
+            </button>
+            <span class="text-xs font-bold text-slate-400"
+              >Lesson
+              <span id="current-lesson-num" class="text-teal-600">1</span> of
+              6</span
+            >
+            <button
+              id="btn-next-lesson"
+              class="watery-btn px-5 py-2.5 rounded-xl font-bold text-xs transition-all flex items-center shadow-xs"
+            >
+              <span>Next Class</span>
+              <i class="fa-solid fa-chevron-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tab-cognates"
+        class="tab-content hidden max-w-4xl mx-auto space-y-6 pt-2"
+      >
+        <div
+          class="bg-white rounded-3xl border border-slate-100 p-5 shadow-3xs text-center space-y-2"
+        >
+          <h2
+            class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight"
+          >
+            Unlock Thousands of Words Instantly
+          </h2>
+          <p class="text-xs text-slate-500 max-w-md mx-auto">
+            Select an algorithmic rule on the left. Watch how your native
+            English vocabulary maps automatically into perfect Spanish
+            structures on the right.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+          <div
+            id="cognate-rules-selector"
+            class="md:col-span-5 bg-white rounded-3xl border border-slate-100 p-3 shadow-3xs h-fit space-y-1"
+          ></div>
+          <div
+            class="md:col-span-7 bg-white rounded-3xl border border-slate-100 p-5 shadow-3xs space-y-3"
+          >
+            <h4
+              class="font-extrabold text-xs text-slate-400 uppercase tracking-wider px-1"
+            >
+              Interactive Practice Workbench
+            </h4>
+            <div
+              id="cognate-workbench-list"
+              class="space-y-2 max-h-[320px] overflow-y-auto pr-1"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tab-flashcards"
+        class="tab-content hidden max-w-md mx-auto space-y-6 pt-2"
+      >
+        <div
+          class="bg-white rounded-3xl border border-slate-100 p-4 shadow-3xs text-center space-y-1"
+        >
+          <h2 class="text-lg font-extrabold text-slate-900 tracking-tight">
+            Active Recall Cards
+          </h2>
+          <div
+            id="flashcard-deck-tabs"
+            class="flex justify-center space-x-2 border-b border-slate-50 mt-2"
+          ></div>
+        </div>
+
+        <div
+          id="flashcard-trigger"
+          class="perspective-1000 w-full h-[280px] cursor-pointer group"
+        >
+          <div
+            id="flashcard-inner"
+            class="relative w-full h-full transition-transform duration-500 transform-style-3d shadow-sm rounded-3xl border border-slate-100 bg-white"
+          >
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden flex flex-col justify-between p-6 bg-linear-to-b from-white to-slate-50/50 rounded-3xl"
+            >
+              <span
+                class="text-[9px] uppercase font-bold text-slate-400 tracking-wider"
+                >English Concept</span
+              >
+              <div class="text-center space-y-2">
+                <h3
+                  id="card-english"
+                  class="text-2xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Loading Card...
+                </h3>
+                <p
+                  id="card-english-detail"
+                  class="text-xs text-slate-400 max-w-xs mx-auto font-medium"
+                ></p>
+              </div>
+              <div
+                class="text-center text-[10px] text-teal-600 font-bold bg-teal-50/60 border border-teal-100/40 py-1.5 rounded-xl"
+              >
+                CLICK TO FLIP <i class="fa-solid fa-arrows-rotate ml-1"></i>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 flex flex-col justify-between p-6 bg-linear-to-b from-teal-955 to-slate-900 text-white rounded-3xl border border-teal-950"
+            >
+              <div class="flex justify-between items-center">
+                <span
+                  class="text-[9px] uppercase font-bold text-teal-400 tracking-wider"
+                  >Spanish Activation</span
+                >
+                <button
+                  id="card-speak-btn"
+                  class="w-7 h-7 bg-teal-800/50 hover:bg-teal-700/50 rounded-lg flex items-center justify-center transition-all border border-teal-700/30"
+                >
+                  <i class="fa-solid fa-volume-high text-xs text-teal-300"></i>
+                </button>
+              </div>
+              <div class="text-center space-y-1.5">
+                <h3
+                  id="card-spanish"
+                  class="text-2xl font-extrabold text-teal-300 tracking-tight"
+                >
+                  ...
+                </h3>
+                <p
+                  id="card-pronunciation"
+                  class="text-xs font-mono text-cyan-200 tracking-wide"
+                >
+                  ...
+                </p>
+                <p
+                  id="card-explanation"
+                  class="text-[11px] text-slate-300 max-w-xs mx-auto leading-normal font-light pt-1"
+                ></p>
+              </div>
+              <div
+                class="text-center text-[9px] text-slate-400 uppercase tracking-widest font-semibold"
+              >
+                Mastered Concept
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center px-2">
+          <button
+            id="btn-prev-card"
+            class="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-all shadow-3xs"
+          >
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+          </button>
+          <span id="card-progress" class="text-xs font-bold text-slate-400"
+            >1 / 3</span
+          >
+          <button
+            id="btn-next-card"
+            class="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-all shadow-3xs"
+          >
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="tab-quiz"
+        class="tab-content hidden max-w-xl mx-auto space-y-4 pt-2"
+      >
+        <div
+          id="quiz-setup"
+          class="bg-white rounded-3xl border border-slate-100 p-6 shadow-3xs text-center space-y-4 py-8"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center text-teal-600 text-xl mx-auto shadow-2xs"
+          >
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="space-y-2">
+            <h2
+              class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight"
+            >
+              Milestone Diagnostic Assessment
+            </h2>
+            <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
+              Test your neurological classification speed. We will benchmark
+              your pronunciation reflexes and false-friend detection accuracy
+              before unlocking certification tracking.
+            </p>
+          </div>
+          <button
+            id="quiz-start-btn"
+            class="watery-btn px-6 py-3 rounded-xl font-bold text-xs shadow-md"
+          >
+            Start Assessment Test ➔
+          </button>
+        </div>
+
+        <div
+          id="quiz-game"
+          class="hidden bg-white rounded-3xl border border-slate-100 p-5 sm:p-6 shadow-3xs space-y-5"
+        >
+          <div class="flex justify-between items-center text-xs font-bold">
+            <span id="quiz-count" class="text-slate-400">Question 1 of 3</span>
+            <span
+              class="text-slate-400 bg-slate-50 px-2.5 py-1 rounded-md border border-slate-100"
+              >Score: <span id="quiz-score" class="text-teal-600">0</span></span
+            >
+          </div>
+          <div class="space-y-2">
+            <span
+              id="quiz-q-category"
+              class="text-[9px] uppercase font-bold tracking-widest text-teal-600 bg-teal-50 px-2 py-0.5 rounded border border-teal-100/50"
+              >Pronunciation Pitfall</span
+            >
+            <h3
+              id="quiz-question"
+              class="text-base sm:text-lg font-bold text-slate-900 leading-tight"
+            >
+              ...
+            </h3>
+          </div>
+          <div id="quiz-options" class="space-y-2.5 pt-2"></div>
+          <div
+            id="quiz-feedback"
+            class="hidden p-4 rounded-xl border text-xs"
+          ></div>
+          <button
+            id="quiz-next-btn"
+            class="hidden watery-btn w-full py-3 rounded-xl font-bold text-xs shadow-xs text-center"
+          >
+            Next Question ➔
+          </button>
+        </div>
+
+        <div
+          id="quiz-results"
+          class="hidden bg-linear-to-b from-white to-slate-50/50 rounded-3xl border border-slate-100 p-6 shadow-3xs text-center space-y-5 py-8"
+        >
+          <div
+            class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 text-xl mx-auto shadow-2xs"
+          >
+            <i class="fa-solid fa-square-poll-vertical"></i>
+          </div>
+          <div class="space-y-1">
+            <h2 class="text-xl font-extrabold text-slate-900 tracking-tight">
+              Milestone Diagnostic Finished!
+            </h2>
+            <p class="text-xs text-slate-500">
+              Here is your automated neurological tracking score:
+            </p>
+          </div>
+          <div
+            class="text-4xl font-black text-slate-900 tracking-tight"
+            id="result-score"
+          >
+            0 / 0
+          </div>
+          <div
+            class="p-4 bg-teal-955/5 border border-teal-100/30 rounded-2xl max-w-sm mx-auto space-y-1.5 text-center"
+          >
+            <p
+              class="text-[10px] uppercase font-bold tracking-wider text-teal-800"
+            >
+              Ready to unlock full native tracking?
+            </p>
+            <p class="text-[11px] text-slate-500 leading-normal">
+              Subscribe to save your weekly analytical progress metrics and
+              access interactive live mentoring classes.
+            </p>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center gap-2 pt-2 max-w-sm mx-auto"
+          >
+            <button
+              id="quiz-restart-btn"
+              class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all"
+            >
+              Retake Test
+            </button>
+            <button
+              onclick="switchTab('pricing')"
+              class="w-full py-2.5 watery-btn font-bold text-xs rounded-xl shadow-xs"
+            >
+              View Pricing Plans ➔
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="tab-pricing"
+        class="tab-content hidden max-w-4xl mx-auto space-y-6 py-4"
+      >
+        <div class="text-center max-w-md mx-auto space-y-2">
+          <h2
+            class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 leading-none"
+          >
+            Choose Your Pathway
+          </h2>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            All active subscription paths include full 6-Month analytical
+            mapping dashboard access and unrestricted interactive toolkit usage.
+          </p>
+
+          <div
+            class="flex justify-center items-center space-x-3 pt-3 text-xs font-bold text-slate-600"
+          >
+            <span>Monthly Billing</span>
+            <button
+              id="billing-toggle"
+              class="w-12 h-6 bg-slate-200 rounded-full p-1 transition-all relative border border-slate-300/40"
+            >
+              <div
+                id="billing-toggle-knob"
+                class="w-4 h-4 bg-teal-600 rounded-full shadow-md transform transition-all translate-x-0"
+              ></div>
+            </button>
+            <span class="text-teal-700 flex items-center"
+              >Annual
+              <span
+                class="ml-1.5 text-[9px] bg-teal-50 border border-teal-100 px-1.5 py-0.5 rounded-md"
+                >Save 20%</span
+              ></span
+            >
+          </div>
+        </div>
+
+        <div
+          id="pricing-cards-container"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto pt-2"
+        ></div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-100 py-4 mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 text-center text-[10px] font-bold tracking-wide text-slate-400 uppercase"
+      >
+        &copy; 2026 Bridge Spanish System. Engineered for High-Speed Vocabulary
+        Conversion.
+      </div>
+    </footer>
+
+    <div
+      id="checkout-modal"
+      class="fixed inset-0 bg-slate-950/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="bg-white rounded-3xl border border-slate-100 p-6 w-full max-w-sm space-y-5 shadow-xl transform scale-95 transition-transform duration-300"
+      >
+        <div
+          class="flex justify-between items-start border-b border-slate-50 pb-3"
+        >
+          <div>
+            <h4 class="font-extrabold text-sm text-slate-900">
+              Secure Analytical Access
+            </h4>
+            <p
+              class="text-[11px] text-slate-400 font-medium"
+              id="modal-plan-title"
+            >
+              6-Month Self-Study Plan
+            </p>
+          </div>
+          <div class="text-right">
+            <span
+              class="text-lg font-black text-teal-955"
+              id="modal-price-display"
+              >$29/mo</span
+            >
+          </div>
+        </div>
+        <div class="space-y-2.5 text-xs">
+          <div
+            class="p-3 bg-slate-50 border border-slate-100 rounded-xl space-y-1"
+          >
+            <span
+              class="text-[9px] uppercase font-bold tracking-wider text-slate-400 block"
+              >Simulation Notice</span
+            >
+            <p class="text-[11px] text-slate-500 leading-normal">
+              This interface connects directly to your secure payment processor
+              pipeline routing.
+            </p>
+          </div>
+          <div class="space-y-1">
+            <label class="font-bold text-slate-700 text-[11px]"
+              >Subscriber Legal Identification</label
+            >
+            <input
+              type="text"
+              value="Sammuel Evangelista"
+              class="w-full bg-slate-50 border border-slate-100 rounded-xl px-3 py-2 text-slate-800 focus:outline-hidden focus:border-teal-500 font-medium"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 pt-2">
+          <button
+            id="modal-close-btn"
+            class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl transition-all text-xs"
+          >
+            Cancel
+          </button>
+          <button
+            id="modal-confirm-btn"
+            class="py-2.5 watery-btn font-bold rounded-xl shadow-xs text-xs text-center"
+          >
+            Confirm Order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fixed top-0 left-0 h-1 bg-gradient-to-r from-teal-500 to-cyan-400 z-[60] transition-all duration-300"
+      id="quiz-progress-bar"
+      style="width: 0%"
+    ></div>
+
+    <div
+      id="toast"
+      class="fixed bottom-6 right-6 bg-slate-900 text-white rounded-2xl px-4 py-3 text-xs font-bold flex items-center space-x-3 shadow-lg transform translate-y-28 opacity-0 transition-all duration-300 z-50 border border-slate-800"
+    >
+      <i class="fa-solid fa-circle-check text-teal-400 text-sm"></i>
+      <span id="toast-msg">Success Notification!</span>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
