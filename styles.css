@@ -39,75 +39,82 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
+/* 🟢 BOTONES DE NAVEGACIÓN: Verde Cristalino por defecto */
 .glass-nav-btn {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.1) 100%
-  );
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(180deg, #e6fcf8 0%, #cbfbf2 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
   box-shadow:
     0 4px 10px rgba(13, 148, 136, 0.03),
     inset 0 2px 6px rgba(255, 255, 255, 0.85),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    inset 0 -2px 6px rgba(13, 148, 136, 0.05) !important;
+  color: #0d9488 !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* STREAMING_CHUNK:Designing the premium active tab states... */
-.glass-nav-btn-active {
-  background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
-  border: 2px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow:
-    0 8px 20px -4px rgba(13, 148, 136, 0.25),
-    inset 0 4px 8px rgba(255, 255, 255, 0.95),
-    inset 0 -4px 8px rgba(13, 148, 136, 0.15) !important;
-  color: #042f2e !important;
-}
-
+/* ⚪ HOVER DE NAVEGACIÓN: Claro Cristalino al pasar el cursor */
 .glass-nav-btn:hover:not(.glass-nav-btn-active) {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.4) 100%
-  );
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.1);
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  ) !important;
+  color: #334155 !important;
+  transform: translateY(-2px) !important;
+  box-shadow:
+    0 10px 20px rgba(13, 148, 136, 0.1),
+    inset 0 2px 6px rgba(255, 255, 255, 0.95) !important;
+}
+
+/* STREAMING_CHUNK:Designing premium active tab states... */
+.glass-nav-btn-active {
+  background: linear-gradient(180deg, #99f6e4 0%, #2dd4bf 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow:
+    0 8px 20px -4px rgba(13, 148, 136, 0.35),
+    inset 0 4px 8px rgba(255, 255, 255, 0.95),
+    inset 0 -4px 8px rgba(13, 148, 136, 0.2) !important;
+  color: #042f2e !important;
 }
 
 /* STREAMING_CHUNK:Designing the 3D skeuomorphic capsule active button... */
+/* 🟢 CÁPSULA CENTRAL: Verde Cristalino por defecto */
 .glass-capsule-btn {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.75) 0%,
-    rgba(240, 253, 250, 0.3) 100%
-  );
-  border: 3.5px solid var(--glass-border);
-  box-shadow: var(--crystal-shadow);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-shadow: 0 1px 2px rgba(13, 148, 136, 0.05);
+  background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
+  border: 3.5px solid var(--glass-border) !important;
+  box-shadow:
+    0 20px 45px -10px rgba(13, 148, 136, 0.25),
+    0 4px 15px rgba(0, 0, 0, 0.03),
+    inset 0 8px 16px rgba(255, 255, 255, 0.95),
+    inset 0 -8px 16px rgba(13, 148, 136, 0.2),
+    inset 0 1px 0px rgba(255, 255, 255, 1) !important;
+  color: #042f2e !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  text-shadow: 0 1px 2px rgba(13, 148, 136, 0.05) !important;
 }
 
+/* ⚪ HOVER DE CÁPSULA: Claro Cristalino al pasar el cursor */
 .glass-capsule-btn:hover {
-  transform: scale(1.05) translateY(-3px);
-  box-shadow:
-    0 30px 60px -15px rgba(13, 148, 136, 0.32),
-    0 10px 25px rgba(0, 0, 0, 0.05),
-    inset 0 10px 20px rgba(255, 255, 255, 1),
-    inset 0 -10px 20px rgba(13, 148, 136, 0.25);
+  transform: scale(1.05) translateY(-3px) !important;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(204, 251, 241, 0.45) 100%
-  );
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  ) !important;
+  color: #1e293b !important;
+  box-shadow:
+    0 30px 60px -15px rgba(13, 148, 136, 0.2),
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    inset 0 10px 20px rgba(255, 255, 255, 1),
+    inset 0 -10px 20px rgba(13, 148, 136, 0.1) !important;
 }
 
 .glass-capsule-btn:active {
-  transform: scale(0.98) translateY(1px);
+  transform: scale(0.98) translateY(1px) !important;
   box-shadow:
     0 12px 25px -10px rgba(13, 148, 136, 0.2),
-    inset 0 4px 8px rgba(255, 255, 255, 0.9);
+    inset 0 4px 8px rgba(255, 255, 255, 0.9) !important;
 }
 
 /* STREAMING_CHUNK:Designing premium crystal card layouts and glass badges... */
