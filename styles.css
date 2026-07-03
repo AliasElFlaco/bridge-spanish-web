@@ -1,95 +1,168 @@
-/* --- HOJA DE ESTILOS ESTÉTICOS Y EFECTOS AVANZADOS (STYLES.CSS) --- */
-
-/* 🌊 EFECTO WATERY PREMIUM (COLOR TURQUESA/BLUE FUSION) */
-.watery-btn {
-  position: relative;
-  background: linear-gradient(135deg, #0d9488 0%, #06b6d4 100%);
-  color: #ffffff;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid rgba(6, 182, 212, 0.2);
-  z-index: 1;
+/* STREAMING_CHUNK:Defining global liquid glass color tokens and root variables... */
+:root {
+  --glass-bg: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(240, 253, 250, 0.25) 100%
+  );
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --crystal-shadow:
+    0 20px 45px -10px rgba(13, 148, 136, 0.18), 0 4px 15px rgba(0, 0, 0, 0.03),
+    inset 0 8px 16px rgba(255, 255, 255, 0.95),
+    inset 0 -8px 16px rgba(13, 148, 136, 0.08),
+    inset 0 1px 0px rgba(255, 255, 255, 1);
 }
 
-.watery-btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition:
-    width 0.6s ease,
-    height 0.6s ease;
-  z-index: -1;
+/* STREAMING_CHUNK:Applying ambient radial light background... */
+body {
+  background: radial-gradient(
+    circle at 50% 45%,
+    #f4fbf9 0%,
+    #e8f7f5 40%,
+    #d8f2ee 100%
+  );
+  background-attachment: fixed;
 }
 
-.watery-btn:hover {
+/* STREAMING_CHUNK:Styling the liquid glass navigation bar... */
+.glass-nav-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 32px 0 rgba(13, 148, 136, 0.06),
+    inset 0 4px 12px rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-nav-btn {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 4px 10px rgba(13, 148, 136, 0.03),
+    inset 0 2px 6px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* STREAMING_CHUNK:Designing the premium active tab states... */
+.glass-nav-btn-active {
+  background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow:
+    0 8px 20px -4px rgba(13, 148, 136, 0.25),
+    inset 0 4px 8px rgba(255, 255, 255, 0.95),
+    inset 0 -4px 8px rgba(13, 148, 136, 0.15) !important;
+  color: #042f2e !important;
+}
+
+.glass-nav-btn:hover:not(.glass-nav-btn-active) {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.4);
-  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 20px rgba(13, 148, 136, 0.1);
 }
 
-.watery-btn:hover::before {
-  width: 300%;
-  height: 300%;
+/* STREAMING_CHUNK:Designing the 3D skeuomorphic capsule active button... */
+.glass-capsule-btn {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(240, 253, 250, 0.3) 100%
+  );
+  border: 3.5px solid var(--glass-border);
+  box-shadow: var(--crystal-shadow);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-shadow: 0 1px 2px rgba(13, 148, 136, 0.05);
 }
 
-.watery-btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 4px 10px rgba(13, 148, 136, 0.2);
+.glass-capsule-btn:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow:
+    0 30px 60px -15px rgba(13, 148, 136, 0.32),
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    inset 0 10px 20px rgba(255, 255, 255, 1),
+    inset 0 -10px 20px rgba(13, 148, 136, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(204, 251, 241, 0.45) 100%
+  );
 }
 
-/* ⚪ BOTÓN SECUNDARIO CON BORDE LÍQUIDO */
-.watery-btn-secondary {
-  background: #ffffff;
-  color: #0f172a;
-  border: 2px solid #e2e8f0;
-  transition: all 0.3s ease;
+.glass-capsule-btn:active {
+  transform: scale(0.98) translateY(1px);
+  box-shadow:
+    0 12px 25px -10px rgba(13, 148, 136, 0.2),
+    inset 0 4px 8px rgba(255, 255, 255, 0.9);
 }
 
-.watery-btn-secondary:hover {
-  border-color: #06b6d4;
-  color: #0891b2;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+/* STREAMING_CHUNK:Designing premium crystal card layouts and glass badges... */
+.glass-crystal-card {
+  background: linear-gradient(
+    185deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 15px 35px rgba(13, 148, 136, 0.05),
+    inset 0 8px 16px rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
-/* 🎴 ARQUITECTURA GEOMÉTRICA DE PERSPECTIVA 3D (FLASHCARDS) */
+.glass-crystal-badge {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.35) 100%
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 4px 10px rgba(13, 148, 136, 0.04),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95);
+}
+
+/* STREAMING_CHUNK:Implementing 3D card physics for active recall flashcards... */
 .perspective-1000 {
   perspective: 1000px;
 }
-
 .transform-style-3d {
   transform-style: preserve-3d;
 }
-
 .backface-hidden {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
 
-/* 🧼 PERSONALIZACIÓN DE LA BARRA DE DESPLAZAMIENTO (SCROLLBAR) */
+/* STREAMING_CHUNK:Applying customized smooth scrollbar aesthetics... */
 ::-webkit-scrollbar {
   width: 6px;
 }
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(13, 148, 136, 0.25);
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: rgba(13, 148, 136, 0.45);
 }
