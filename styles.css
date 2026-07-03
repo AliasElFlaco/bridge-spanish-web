@@ -1,4 +1,7 @@
 /* STREAMING_CHUNK:Defining global liquid glass color tokens and root variables... */
+/* ==========================================
+   CONFIGURACIÓN DE VARIABLES Y TEMAS
+   ========================================== */
 :root {
   --glass-bg: linear-gradient(
     180deg,
@@ -13,7 +16,7 @@
     inset 0 1px 0px rgba(255, 255, 255, 1);
 }
 
-/* STREAMING_CHUNK:Applying ambient radial light background... */
+/* Fondo general de la web */
 body {
   background: radial-gradient(
     circle at 50% 45%,
@@ -24,7 +27,62 @@ body {
   background-attachment: fixed;
 }
 
-/* STREAMING_CHUNK:Styling the liquid glass navigation bar... */
+/* ==========================================
+   DISEÑO DE TEXTOS EN DEGRADADO VERDE TURQUESA
+   ========================================== */
+.text-crystal-gradient,
+h1.text-crystal-gradient,
+h2.text-crystal-gradient,
+#brand-logo h1 {
+  background: linear-gradient(
+    135deg,
+    #0d9488 0%,
+    #06b6d4 50%,
+    #10b981 100%
+  ) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block !important;
+}
+
+/* Efecto hover suave en el texto del logo sin romper el degradado */
+#brand-logo:hover h1 {
+  filter: brightness(1.1) !important;
+  transition: filter 0.3s ease !important;
+}
+
+/* ==========================================
+   BOTÓN LOGO ¡B! (Verde Cristalino a Claro)
+   ========================================== */
+.glass-logo-btn {
+  background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow:
+    0 4px 10px rgba(13, 148, 136, 0.08),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95),
+    inset 0 -2px 4px rgba(13, 148, 136, 0.05) !important;
+  color: #042f2e !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+#brand-logo:hover .glass-logo-btn {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.6) 100%
+  ) !important;
+  color: #1e293b !important;
+  transform: scale(1.08) rotate(-4deg) !important;
+  box-shadow:
+    0 8px 16px rgba(13, 148, 136, 0.15),
+    inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
+}
+
+/* ==========================================
+   MENÚ DE NAVEGACIÓN Y BOTONES
+   ========================================== */
 .glass-nav-panel {
   background: linear-gradient(
     180deg,
@@ -39,38 +97,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* 🟢 LOGO BOTÓN: Verde Cristalino por defecto */
-.glass-logo-btn {
-  background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
-  border: 2px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow:
-    0 4px 10px rgba(13, 148, 136, 0.08),
-    inset 0 2px 4px rgba(255, 255, 255, 0.95),
-    inset 0 -2px 4px rgba(13, 148, 136, 0.05) !important;
-  color: #042f2e !important;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-}
-
-/* ⚪ HOVER DE LOGO: Cambio a Claro Cristalino con rotación */
-#brand-logo:hover .glass-logo-btn {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.6) 100%
-  ) !important;
-  color: #1e293b !important;
-  transform: scale(1.08) rotate(-4deg) !important;
-  box-shadow:
-    0 8px 16px rgba(13, 148, 136, 0.15),
-    inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
-}
-
-#brand-logo:hover h1 {
-  color: #0d9488 !important;
-  transition: color 0.3s ease;
-}
-
-/* 🟢 BOTONES DE NAVEGACIÓN: Verde Cristalino por defecto */
+/* Botones del menú por defecto (Verde Cristalino) */
 .glass-nav-btn {
   background: linear-gradient(180deg, #e6fcf8 0%, #cbfbf2 100%) !important;
   border: 2px solid rgba(255, 255, 255, 0.9) !important;
@@ -82,7 +109,7 @@ body {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* ⚪ HOVER DE NAVEGACIÓN: Claro Cristalino al pasar el cursor */
+/* Hover de los botones (Claro Cristalino) */
 .glass-nav-btn:hover:not(.glass-nav-btn-active) {
   background: linear-gradient(
     180deg,
@@ -96,7 +123,7 @@ body {
     inset 0 2px 6px rgba(255, 255, 255, 0.95) !important;
 }
 
-/* STREAMING_CHUNK:Designing premium active tab states... */
+/* Estado de la pestaña activa en el menú */
 .glass-nav-btn-active {
   background: linear-gradient(180deg, #99f6e4 0%, #2dd4bf 100%) !important;
   border: 2px solid rgba(255, 255, 255, 0.95) !important;
@@ -107,8 +134,9 @@ body {
   color: #042f2e !important;
 }
 
-/* STREAMING_CHUNK:Designing the 3D skeuomorphic capsule active button... */
-/* 🟢 CÁPSULA CENTRAL: Verde Cristalino por defecto */
+/* ==========================================
+   CÁPSULA CENTRAL (Verde Cristalino a Claro)
+   ========================================== */
 .glass-capsule-btn {
   background: linear-gradient(180deg, #c2f3eb 0%, #99f6e4 100%) !important;
   border: 3.5px solid var(--glass-border) !important;
@@ -125,7 +153,6 @@ body {
   text-shadow: 0 1px 2px rgba(13, 148, 136, 0.05) !important;
 }
 
-/* ⚪ HOVER DE CÁPSULA: Claro Cristalino al pasar el cursor */
 .glass-capsule-btn:hover {
   transform: scale(1.05) translateY(-3px) !important;
   background: linear-gradient(
@@ -148,7 +175,9 @@ body {
     inset 0 4px 8px rgba(255, 255, 255, 0.9) !important;
 }
 
-/* STREAMING_CHUNK:Designing premium crystal card layouts and glass badges... */
+/* ==========================================
+   COMPONENTES DE CONTENIDO ADICIONALES
+   ========================================== */
 .glass-crystal-card {
   background: linear-gradient(
     185deg,
@@ -175,7 +204,6 @@ body {
     inset 0 2px 4px rgba(255, 255, 255, 0.95);
 }
 
-/* STREAMING_CHUNK:Implementing 3D card physics for active recall flashcards... */
 .perspective-1000 {
   perspective: 1000px;
 }
@@ -190,7 +218,7 @@ body {
   transform: rotateY(180deg);
 }
 
-/* STREAMING_CHUNK:Applying customized smooth scrollbar aesthetics... */
+/* Barra de desplazamiento */
 ::-webkit-scrollbar {
   width: 6px;
 }
