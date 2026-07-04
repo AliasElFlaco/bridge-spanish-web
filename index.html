@@ -85,7 +85,7 @@
         -webkit-backdrop-filter: blur(12px);
       }
 
-      /* 🟢 LOGO BUTTON: Active crystalline green by default */
+      /* 🟢 LOGO BUTTON */
       .glass-logo-btn {
         background: linear-gradient(
           180deg,
@@ -101,7 +101,6 @@
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
       }
 
-      /* ⚪ HOVER LOGO */
       #brand-logo:hover .glass-logo-btn {
         background: linear-gradient(
           180deg,
@@ -529,7 +528,7 @@
         >
           <div>
             <span
-              class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1 rounded-full border border-teal-100"
+              class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1.5 rounded-full border border-teal-100"
               >Vocabulary Shifter</span
             >
             <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800 mt-2">
@@ -559,7 +558,7 @@
         <div class="max-w-xl mx-auto space-y-6 text-center">
           <div>
             <span
-              class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1 rounded-full border border-teal-100"
+              class="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-3 py-1.5 rounded-full border border-teal-100"
               >Interactive Memorization</span
             >
             <h2 class="text-xl sm:text-2xl font-extrabold text-slate-800 mt-2">
@@ -1546,7 +1545,7 @@
         },
       ];
 
-      // --- 30 UNIQUE FLASHCARDS DATA (10 per Category) ---
+      // --- 60 UNIQUE FLASHCARDS DATA (20 per Category) ---
       const flashcardDecks = {
         pronunciation: [
           {
@@ -1618,6 +1617,76 @@
             esp: "Lección",
             pron: "[lek-syohn]",
             exp: "Stress the final syllable heavily due to the written accent mark.",
+          },
+          {
+            eng: "Natural",
+            engDetail: "Shift accent to last syllable",
+            esp: "Natural",
+            pron: "[nah-too-rahl]",
+            exp: "Stress the last syllable 'ral'. Do not add the English 'ch' sound to 'tu'.",
+          },
+          {
+            eng: "Water",
+            engDetail: "Soft G glide exercise",
+            esp: "Agua",
+            pron: "[ah-gwah]",
+            exp: "The 'G' is a soft friction in the back of the mouth, blending into a quick 'w' sound.",
+          },
+          {
+            eng: "Dog",
+            engDetail: "Vibrate the double RR",
+            esp: "Perro",
+            pron: "[peh-rroh]",
+            exp: "Roll the 'rr' with breath. Contrast this with 'pero' (but), which has a single tap.",
+          },
+          {
+            eng: "But",
+            engDetail: "Single soft R tap",
+            esp: "Pero",
+            pron: "[peh-roh]",
+            exp: "The single R is just one tap of the tongue, like the 'dd' in the English word 'ladder'.",
+          },
+          {
+            eng: "Giraffe",
+            engDetail: "Strong Spanish J guttural",
+            esp: "Jirafa",
+            pron: "[hee-rah-fah]",
+            exp: "The 'J' requires friction from the back of your throat. Keep it dry and clear.",
+          },
+          {
+            eng: "Street",
+            engDetail: "Palatal glide LL",
+            esp: "Calle",
+            pron: "[cah-yeh]",
+            exp: "The 'LL' sounds like a soft 'Y'. In some regions, it sounds like 'sh' or 'j'.",
+          },
+          {
+            eng: "City",
+            engDetail: "Soft C + ending soft D",
+            esp: "Ciudad",
+            pron: "[syoo-thath]",
+            exp: "Combine the 'iu' smoothly and end with a soft breathy 'd' behind your top teeth.",
+          },
+          {
+            eng: "Exam",
+            engDetail: "Stress on the second syllable",
+            esp: "Examen",
+            pron: "[ek-sah-men]",
+            exp: "Emphasis is naturally on the 'sa'. Never write an accent mark on this word.",
+          },
+          {
+            eng: "Guitar",
+            engDetail: "Mute the U after the G",
+            esp: "Guitarra",
+            pron: "[gee-tah-rrah]",
+            exp: "The 'gui' pattern keeps the G hard. The 'U' is completely silent.",
+          },
+          {
+            eng: "Ham",
+            engDetail: "Clear J throat sound + ending stress",
+            esp: "Jamón",
+            pron: "[hah-mohn]",
+            exp: "Accentuate the last syllable with a sharp nasal 'n' and a clear throat J.",
           },
         ],
         false_friends: [
@@ -1691,6 +1760,76 @@
             pron: "[ah-sees-teer]",
             exp: "Asistir is to attend a meeting/class. To assist someone, use the verb 'ayudar'.",
           },
+          {
+            eng: "To Insert",
+            engDetail: "Warning! Do not use for introducing people",
+            esp: "Introducir",
+            pron: "[een-troh-thoo-seer]",
+            exp: "Introducir means to insert an object. To introduce someone to a friend, use 'presentar'.",
+          },
+          {
+            eng: "To Remember",
+            engDetail: "Warning! Do not use for recording voice",
+            esp: "Recordar",
+            pron: "[reh-cohr-dahr]",
+            exp: "Recordar is to remember. To record audio or video, use the verb 'grabar'.",
+          },
+          {
+            eng: "Healthy",
+            engDetail: "Warning! Do not use for sane/mental balance",
+            esp: "Sano",
+            pron: "[sah-noh]",
+            exp: "Sano refers to physical health. Sane or mentally stable is described as 'cuerdo'.",
+          },
+          {
+            eng: "To Send",
+            engDetail: "Warning! Do not use for envying someone",
+            esp: "Enviar",
+            pron: "[en-vyahr]",
+            exp: "Enviar is to send a package or message. To envy someone is 'envidiar'.",
+          },
+          {
+            eng: "To Bother / Annoy",
+            engDetail: "Warning! Strong false friend in English",
+            esp: "Molestar",
+            pron: "[moh-lehs-tahr]",
+            exp: "Molestar simply means to annoy or bug someone. It has no sexual connotation.",
+          },
+          {
+            eng: "Long",
+            engDetail: "Warning! Do not use for big/large",
+            esp: "Largo",
+            pron: "[lahr-goh]",
+            exp: "Largo refers to physical length. If you mean massive or large, use 'grande'.",
+          },
+          {
+            eng: "Private / Individual",
+            engDetail: "Warning! Do not use for picky",
+            esp: "Particular",
+            pron: "[pahr-tee-coo-lahr]",
+            exp: "Particular describes a private matter or specific point. To say someone is picky, use 'exigente'.",
+          },
+          {
+            eng: "Clothing",
+            engDetail: "Warning! Do not use for physical rope",
+            esp: "Ropa",
+            pron: "[roh-pah]",
+            exp: "Ropa is clothing. A physical rope used to tie elements is called 'cuerda'.",
+          },
+          {
+            eng: "Sand",
+            engDetail: "Warning! Do not use for stadium/arena",
+            esp: "Arena",
+            pron: "[ah-reh-nah]",
+            exp: "Arena is the sand on a beach. A sports stadium or event center is called a 'estadio' or 'plaza'.",
+          },
+          {
+            eng: "To Argue / Debate",
+            engDetail: "Warning! Has a stronger weight than English",
+            esp: "Discutir",
+            pron: "[dees-coo-teer]",
+            exp: "Discutir implies an argument or verbal dispute, not just a calm, friendly discussion ('conversar').",
+          },
         ],
         useful_basics: [
           {
@@ -1762,6 +1901,76 @@
             esp: "Hasta luego",
             pron: "[ahs-tah lweh-goh]",
             exp: "Remember to drop the initial 'H' completely. Say it with zero pause.",
+          },
+          {
+            eng: "What is your name?",
+            engDetail: "Standard initial icebreaker",
+            esp: "¿Cómo te llamas?",
+            pron: "[coh-moh teh yah-mahs]",
+            exp: "Literally means 'How do you call yourself?'. Note the double L soft Y sound.",
+          },
+          {
+            eng: "Nice to meet you",
+            engDetail: "Warm response after names",
+            esp: "Mucho gusto",
+            pron: "[moo-choh goos-toh]",
+            exp: "Literally means 'Much pleasure'. It stays masculine regardless of who says it.",
+          },
+          {
+            eng: "You're welcome",
+            engDetail: "Polite response after thanks",
+            esp: "De nada",
+            pron: "[deh nah-thah]",
+            exp: "Literally means 'Of nothing'. Keep the 'd' sounds soft and touching your front teeth.",
+          },
+          {
+            eng: "Can you help me?",
+            engDetail: "Urgent or casual request",
+            esp: "¿Puede ayudarme?",
+            pron: "[pweh-theh ah-yoo-thahr-meh]",
+            exp: "A combination of the verb poder and the pronoun 'me'. Soft dental 'P' and 'd'.",
+          },
+          {
+            eng: "I don't speak well",
+            engDetail: "Modesty booster for learners",
+            esp: "No hablo bien",
+            pron: "[noh ah-bloh byen]",
+            exp: "Remember the silent H in 'hablo'. Keep the 'bien' short, with no English glide.",
+          },
+          {
+            eng: "What time is it?",
+            engDetail: "Asking for current time",
+            esp: "¿Qué hora es?",
+            pron: "[keh oh-rah ehs]",
+            exp: "Silent H in 'hora'. Keep the vowels separate and clear: 'oh-rah'.",
+          },
+          {
+            eng: "Good morning",
+            engDetail: "Standard morning greeting",
+            esp: "Buenos días",
+            pron: "[bweh-nohs thee-ahs]",
+            exp: "Ensure you use the masculine plural 'buenos' to match the masculine noun 'días'.",
+          },
+          {
+            eng: "Good night",
+            engDetail: "Greeting or parting in evening",
+            esp: "Buenas noches",
+            pron: "[bweh-nahs noh-chehs]",
+            exp: "Uses the feminine plural 'buenas' to match the feminine noun 'noches'.",
+          },
+          {
+            eng: "Where is the bathroom?",
+            engDetail: "Crucial survival question",
+            esp: "¿Dónde está el baño?",
+            pron: "[dohn-deh ehs-tah el bah-nyoh]",
+            exp: "The 'Ñ' sound represents the soft nasal sound in onion. Ensure you stress 'está' with accent.",
+          },
+          {
+            eng: "Cheers / Bless you",
+            engDetail: "Versatile health response",
+            esp: "¡Salud!",
+            pron: "[sah-looth]",
+            exp: "Used both to toast drinks and when someone sneezes. End with a soft, breathy 'th' sound.",
           },
         ],
       };
@@ -2175,7 +2384,7 @@
               "w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 bg-teal-600 text-white";
           } else {
             btn.className =
-              "w-full text-left p-3 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-600 hover:bg-slate-50";
+              "w-full text-left p-3 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-650 hover:bg-slate-50";
             btn.querySelector(".w-8").className =
               "w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 bg-slate-100 text-slate-600";
           }
@@ -2191,7 +2400,7 @@
         if (nextBtn) {
           if (idx === 5) {
             // Only at the very end of all 6 lessons
-            nextBtn.innerHTML = `Take Milestone Quiz <i class="fa-solid fa-flag-checkered ml-1.5 text-cyan-300 animate-pulse"></i>`;
+            nextBtn.innerHTML = `Take Phase 3 Quiz <i class="fa-solid fa-flag-checkered ml-1.5 text-cyan-350 animate-pulse"></i>`;
           } else {
             nextBtn.innerHTML = `Next Lesson <i class="fa-solid fa-chevron-right ml-1.5"></i>`;
           }
@@ -2228,7 +2437,6 @@
         document.getElementById("quiz-results").classList.add("hidden");
         document.getElementById("quiz-review").classList.add("hidden");
 
-        // FIX: Removed the accidental .remove() call that crashed the JS execution in the previous version
         const quizGameElement = document.getElementById("quiz-game");
         if (quizGameElement) {
           quizGameElement.classList.remove("hidden");
@@ -2275,7 +2483,6 @@
               isCorrect: isCorrect,
             });
 
-            // Highlight selected buttons in high contrast, subdue others
             const allButtons = optContainer.querySelectorAll("button");
             allButtons.forEach((b, bIdx) => {
               b.disabled = true;
@@ -2289,7 +2496,7 @@
                     '<i class="fa-solid fa-check"></i>';
                 } else {
                   b.className =
-                    "w-full text-left p-4 rounded-xl border-2 border-red-500 text-xs sm:text-sm flex justify-between items-center bg-red-100 text-red-950 font-bold shadow-sm transition-all";
+                    "w-full text-left p-4 rounded-xl border-2 border-red-550 text-xs sm:text-sm flex justify-between items-center bg-red-100 text-red-955 font-bold shadow-sm transition-all";
                   b.querySelector(".w-4").className =
                     "w-4 h-4 rounded-full bg-red-500 border border-red-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
                   b.querySelector(".w-4").innerHTML =
@@ -2297,12 +2504,11 @@
                 }
               } else {
                 if (q.options[bIdx].correct) {
-                  // Subtly guide the user to the correct option as active learning feedback
                   b.className =
                     "w-full text-left p-4 rounded-xl border border-emerald-300 text-xs sm:text-sm flex justify-between items-center bg-emerald-50/20 text-emerald-800 opacity-60 transition-all";
                 } else {
                   b.className =
-                    "w-full text-left p-4 rounded-xl border border-slate-100 text-xs sm:text-sm flex justify-between items-center bg-slate-50/45 text-slate-400 opacity-40 transition-all";
+                    "w-full text-left p-4 rounded-xl border border-slate-100 text-xs sm:text-sm flex justify-between items-center bg-slate-50/45 text-slate-455 opacity-40 transition-all";
                 }
               }
             });
@@ -2467,7 +2673,6 @@
     </script>
 
     <script>
-      // --- ROADMAP CARDS ENGINE ---
       function renderRoadmapCards(containerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
@@ -2527,7 +2732,6 @@
         updateProgressDashboardUI();
       }
 
-      // --- COGNATE STUDIO ENGINE ---
       function initCognateStudio(selectorId, workbenchId) {
         const selectorContainer = document.getElementById(selectorId);
         if (!selectorContainer) return;
@@ -2579,8 +2783,9 @@
           list.appendChild(row);
         });
       }
+    </script>
 
-      // --- ACTIVE RECALL FLASHCARDS ---
+    <script>
       function setupFlashcardEngine(tabsId, triggerId) {
         const tabsContainer = document.getElementById(tabsId);
         const triggerElement = document.getElementById(triggerId);
@@ -2653,8 +2858,9 @@
           };
         }
       }
+    </script>
 
-      // --- PRICING PORTAL ---
+    <script>
       function renderPricingPortal() {
         const container = document.getElementById("pricing-cards-container");
         if (!container) return;
@@ -2706,7 +2912,6 @@
         setTimeout(() => modal.classList.remove("opacity-0"), 10);
       }
 
-      // --- VOICE OUTPUT TTS CONFIG ---
       function playTTS(text) {
         if ("speechSynthesis" in window) {
           window.speechSynthesis.cancel();
@@ -2722,9 +2927,7 @@
         }
       }
 
-      // --- INTERACTIVE EVENT LISTENERS ---
       function setupEvents() {
-        // Billing toggle
         const billingToggle = document.getElementById("billing-toggle");
         if (billingToggle) {
           billingToggle.onclick = () => {
@@ -2745,14 +2948,12 @@
           };
         }
 
-        // Classroom navigators
         const nextLessonBtn = document.getElementById("btn-next-lesson");
         const prevLessonBtn = document.getElementById("btn-prev-lesson");
 
         if (nextLessonBtn) {
           nextLessonBtn.onclick = () => {
             if (activeLessonIndex === 5) {
-              // At 6th lesson
               switchTab("quiz");
               initQuizEngine();
               showToast("Entering 40-Question Milestone Quiz!", "success");
@@ -2769,7 +2970,6 @@
           };
         }
 
-        // Flashcards navigation
         const nextCardBtn = document.getElementById("btn-next-card");
         const prevCardBtn = document.getElementById("btn-prev-card");
 
@@ -2790,14 +2990,12 @@
           };
         }
 
-        // Diagnostic Quizzes setup
         const startQuizBtn = document.getElementById("quiz-start-btn");
         const nextQuizBtn = document.getElementById("quiz-next-btn");
 
         if (startQuizBtn) startQuizBtn.onclick = () => initQuizEngine();
         if (nextQuizBtn) nextQuizBtn.onclick = () => advanceQuiz();
 
-        // Checkout Modal controls
         const modalClose = document.getElementById("modal-close-btn");
         const modalConfirm = document.getElementById("modal-confirm-btn");
 
@@ -2822,7 +3020,6 @@
         }
       }
 
-      // --- TOAST CONTROLLER ---
       function showToast(message, type = "info") {
         const toast = document.getElementById("toast");
         const msgSpan = document.getElementById("toast-msg");
