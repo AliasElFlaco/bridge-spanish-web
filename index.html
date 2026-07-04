@@ -62,7 +62,7 @@
         display: inline-block !important;
       }
 
-      /* */
+      /* Navigation glass panels */
       .glass-nav-panel {
         background: linear-gradient(
           180deg,
@@ -147,7 +147,7 @@
         color: #042f2e !important;
       }
 
-      /* */
+      /* Skeuomorphic central capsule buttons */
       .glass-capsule-btn {
         background: linear-gradient(
           180deg,
@@ -216,7 +216,7 @@
           inset 0 2px 4px rgba(255, 255, 255, 0.95);
       }
 
-      /* */
+      /* 3D Physics */
       .perspective-1000 {
         perspective: 1000px;
       }
@@ -270,7 +270,7 @@
         background: rgba(13, 148, 136, 0.45);
       }
 
-      /* */
+      /* Starz Cinematic Carousel Setup */
       .carousel-container {
         position: relative;
         overflow: hidden;
@@ -318,7 +318,7 @@
   <body
     class="text-slate-700 min-h-screen flex flex-col selection:bg-teal-100 selection:text-teal-900"
   >
-    <!-- -->
+    <!-- Global Top Header -->
     <header
       id="main-header"
       class="bg-white/40 backdrop-blur-md border-b border-white/60 sticky top-0 z-50 transition-all duration-300"
@@ -372,6 +372,11 @@
             id="logged-in-header-actions"
             class="hidden flex items-center space-x-3"
           >
+            <span
+              id="user-display-name"
+              class="text-xs font-extrabold text-teal-950 uppercase tracking-wide mr-1"
+              >John Doe</span
+            >
             <div
               class="glass-crystal-badge px-3 py-1 rounded-full flex items-center space-x-1.5"
             >
@@ -411,6 +416,7 @@
       id="landing-view"
       class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-12 block"
     >
+      <!-- Starz Inspired Cinematic Header Carousel -->
       <div class="carousel-container">
         <!-- Slide 1 -->
         <div
@@ -518,7 +524,7 @@
           </div>
         </div>
 
-        <!-- Slider indicators and navigation buttons -->
+        <!-- Navigation Buttons -->
         <button
           onclick="prevSlide()"
           class="absolute top-1/2 left-4 -translate-y-1/2 w-10 h-10 rounded-full bg-teal-950/50 hover:bg-teal-950/80 flex items-center justify-center text-white border border-teal-500/20 transition-colors"
@@ -581,7 +587,7 @@
         </div>
       </div>
 
-      <!-- Course Previews Lock Box -->
+      <!-- Previews Locker -->
       <div class="space-y-4 pt-6">
         <h3 class="text-xl font-bold uppercase tracking-wider text-slate-500">
           Course Syllabus & Curriculum Preview
@@ -590,7 +596,7 @@
           class="glass-crystal-card p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div class="space-y-1">
-            <h4 class="font-bold text-teal-950">
+            <h4 class="font-bold text-teal-955">
               Full 24-Week Interactive Roadmap
             </h4>
             <p class="text-xs text-slate-500">
@@ -607,7 +613,6 @@
         </div>
       </div>
 
-      <!-- -->
       <!-- Pricing Section -->
       <div
         id="pricing-section"
@@ -615,7 +620,7 @@
       >
         <div class="text-center space-y-2">
           <h2
-            class="text-2xl sm:text-3xl font-extrabold text-teal-950 uppercase tracking-tight"
+            class="text-2xl sm:text-3xl font-extrabold text-teal-955 uppercase tracking-tight"
           >
             Flexible Crystalline Pricing
           </h2>
@@ -649,7 +654,7 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
           id="pricing-cards-container"
         >
-          <!-- Pricing options loaded dynamically -->
+          <!-- Loaded dynamically -->
         </div>
       </div>
     </div>
@@ -700,7 +705,6 @@
         </button>
       </nav>
 
-      <!-- -->
       <!-- TAB 1: CURRICULUM BLUEPRINT -->
       <div id="tab-dashboard" class="tab-content block space-y-8">
         <div class="text-center space-y-4 py-8 max-w-3xl mx-auto">
@@ -756,7 +760,7 @@
             class="lg:col-span-4 bg-white/70 backdrop-blur-md p-5 rounded-2xl border border-white/50 h-[600px] overflow-y-auto space-y-4"
             id="lesson-links-container"
           >
-            <!-- Populated by JavaScript with Month & Week blocks -->
+            <!-- Populated by JS -->
           </div>
 
           <!-- Dynamic Classroom Viewport -->
@@ -788,7 +792,7 @@
               class="p-6 sm:p-8 flex-grow overflow-y-auto space-y-6"
               id="lesson-viewport"
             >
-              <!-- Rendered by Javascript -->
+              <!-- Rendered by JS -->
             </div>
 
             <!-- Layout footer buttons -->
@@ -1168,7 +1172,6 @@
       </div>
     </main>
 
-    <!-- -->
     <!-- Floating Tutor Feedback Panel (Only unlocked on Tutor Level) -->
     <div
       id="tutor-feedback-portal"
@@ -1267,7 +1270,7 @@
         </div>
         <div class="space-y-3">
           <label class="block text-xs font-bold text-slate-500 uppercase"
-            >Email Address</label
+            >Confirm Billing Email</label
           >
           <input
             id="checkout-email"
@@ -1311,11 +1314,68 @@
             <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
+
+        <!-- Quick Demo Accounts -->
+        <div class="space-y-2 pb-4 border-b border-slate-100">
+          <span
+            class="text-[9px] font-bold text-slate-400 uppercase tracking-widest block text-center"
+            >Bypass / Quick Demo Login</span
+          >
+          <div class="grid grid-cols-3 gap-1.5">
+            <button
+              onclick="quickLogin('student')"
+              class="glass-capsule-btn py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider text-center"
+            >
+              Student
+            </button>
+            <button
+              onclick="quickLogin('tutor')"
+              class="glass-capsule-btn py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider text-center"
+            >
+              Tutor
+            </button>
+            <button
+              onclick="quickLogin('admin')"
+              class="glass-capsule-btn py-1.5 rounded-lg text-[9px] font-bold uppercase tracking-wider text-center"
+            >
+              Admin
+            </button>
+          </div>
+        </div>
+
         <form
           id="auth-form"
-          class="space-y-4"
+          class="space-y-3"
           onsubmit="handleAuthSubmit(event)"
         >
+          <!-- First and Last Name (Register Only) -->
+          <div id="auth-name-fields" class="hidden grid grid-cols-2 gap-2">
+            <div class="space-y-1">
+              <label
+                class="block text-[10px] font-bold text-slate-400 uppercase"
+                >First Name</label
+              >
+              <input
+                id="auth-first-name"
+                type="text"
+                placeholder="John"
+                class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs focus:outline-none focus:border-teal-500"
+              />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="block text-[10px] font-bold text-slate-400 uppercase"
+                >Last Name</label
+              >
+              <input
+                id="auth-last-name"
+                type="text"
+                placeholder="Doe"
+                class="w-full px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-xs focus:outline-none focus:border-teal-500"
+              />
+            </div>
+          </div>
+
           <div class="space-y-1">
             <label class="block text-[10px] font-bold text-slate-400 uppercase"
               >Email Address</label
@@ -1340,6 +1400,22 @@
               class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs focus:outline-none focus:border-teal-500"
             />
           </div>
+
+          <!-- Role Selector (Register Only) -->
+          <div id="auth-role-field" class="hidden space-y-1">
+            <label class="block text-[10px] font-bold text-slate-400 uppercase"
+              >Select Platform Role</label
+            >
+            <select
+              id="auth-role"
+              class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-xs focus:outline-none focus:border-teal-500 text-slate-700"
+            >
+              <option value="self-study">Self-Study Student</option>
+              <option value="tutor">Premium Tutor</option>
+              <option value="admin">System Administrator</option>
+            </select>
+          </div>
+
           <button
             type="submit"
             class="glass-capsule-btn w-full py-3 rounded-xl font-bold text-xs mt-2"
@@ -1374,773 +1450,1467 @@
       </div>
     </footer>
 
-    <!-- -->
+    <!-- JS Logic Core -->
     <script>
       // GLOBAL ACADEMIC DATABASE
       const lessonsData = [
-          // MONTH 1 (Weeks 1-4)
-          {
-              month: 1, week: 1, title: "Vowel Purity: Stop the English Glide", duration: "15 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 1 • Phonetics</span>
-                  <h4 class="font-bold text-slate-800 text-base">Perfecting the Pure Vowel Base</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English native speakers naturally add a diphthong glide when pronouncing vowels. In Week 1, we focus on freezing your jaw to keep Spanish vowels completely short, flat, and pure.</p>
-                  <div class="grid grid-cols-5 gap-2 text-center text-[10px] font-bold bg-teal-50/50 p-2 rounded-xl border border-teal-100 text-teal-955">
-                      <div>A [Ah]</div><div>E [Eh]</div><div>I [Ee]</div><div>O [Oh]</div><div>U [Oo]</div>
-                  </div>
-              </div>`,
-              vocab: [
-                  { spa: "Amigo", eng: "Friend", pron: "[ah-mee-goh]" },
-                  { spa: "Agua", eng: "Water", pron: "[ah-gwah]" },
-                  { spa: "Elefante", eng: "Elephant", pron: "[eh-leh-fahn-teh]" },
-                  { spa: "Escuela", eng: "School", pron: "[ehs-cweh-lah]" },
-                  { spa: "Isla", eng: "Island", pron: "[ees-lah]" },
-                  { spa: "Iglesia", eng: "Church", pron: "[ee-gleh-syah]" },
-                  { spa: "Ojo", eng: "Eye", pron: "[oh-hoh]" },
-                  { spa: "Oveja", eng: "Sheep", pron: "[oh-veh-hah]" },
-                  { spa: "Uva", eng: "Grape", pron: "[oo-vah]" },
-                  { spa: "Universo", eng: "Universe", pron: "[oo-nee-vehr-soh]" }
-              ]
-          },
-          {
-              month: 1, week: 2, title: "The Dental Shift: Softening D & T", duration: "15 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 2 • Mechanical Focus</span>
-                  <h4 class="font-bold text-slate-800 text-base">Overwriting Rooftop Pronunciation</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Do not strike the roof of your mouth for 'D' or 'T'. Move your tongue tip directly to the back of your top front teeth. This yields the authentic soft 'th' friction used by native Spanish speakers.</p>
-              </div>`,
-              vocab: [
-                  { spa: "Cada", eng: "Each", pron: "[cah-thah]" },
-                  { spa: "Todo", eng: "All / Every", pron: "[toh-thoh]" },
-                  { spa: "Dedo", eng: "Finger", pron: "[deh-thoh]" },
-                  { spa: "Día", eng: "Day", pron: "[dee-ah]" },
-                  { spa: "Tomate", eng: "Tomato", pron: "[toh-mah-teh]" },
-                  { spa: "Taza", eng: "Cup / Mug", pron: "[tah-sah]" },
-                  { spa: "Plato", eng: "Plate", pron: "[plah-toh]" },
-                  { spa: "Carta", eng: "Letter", pron: "[cahr-tah]" },
-                  { spa: "Teatro", eng: "Theater", pron: "[teh-ah-troh]" },
-                  { spa: "Gato", eng: "Cat", pron: "[gah-toh]" }
-              ]
-          },
-          {
-              month: 1, week: 3, title: "Muting the H & Mastering G/J Gutturals", duration: "15 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 3 • Phonation</span>
-                  <h4 class="font-bold text-slate-800 text-base">The Invisible H and Warm Exhalations</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">The letter 'H' is 100% silent in Spanish. For 'G' and 'J' before E/I, perform a warm breathy friction from deep within the throat, similar to the German 'ch'.</p>
-              </div>`,
-              vocab: [
-                  { spa: "Hola", eng: "Hello", pron: "[oh-lah]" },
-                  { spa: "Huevo", eng: "Egg", pron: "[weh-voh]" },
-                  { spa: "Hora", eng: "Hour / Time", pron: "[oh-rah]" },
-                  { spa: "Hijo", eng: "Son", pron: "[ee-hoh]" },
-                  { spa: "Gente", eng: "People", pron: "[hen-teh]" },
-                  { spa: "Gigante", eng: "Giant", pron: "[hee-gahn-teh]" },
-                  { spa: "Jardín", eng: "Garden", pron: "[hahr-theen]" },
-                  { spa: "Joven", eng: "Young person", pron: "[hoh-ven]" },
-                  { spa: "Jugo", eng: "Juice", pron: "[hoo-goh]" },
-                  { spa: "Reloj", eng: "Clock / Watch", pron: "[rreh-loh]" }
-              ]
-          },
-          {
-              month: 1, week: 4, title: "Alveolar Trills: Rolling the Double RR", duration: "20 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 4 • Vocal Gym</span>
-                  <h4 class="font-bold text-slate-800 text-base">Alveolar Ridge Vibrations</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Relax the tongue tip. Let exhaled air flap the tongue tip against the ridge behind your teeth. This is the double 'RR' alveolar trill.</p>
-              </div>`,
-              vocab: [
-                  { spa: "Perro", eng: "Dog", pron: "[peh-rroh]" },
-                  { spa: "Carro", eng: "Car", pron: "[cah-rroh]" },
-                  { spa: "Guitarra", eng: "Guitar", pron: "[gee-tah-rrah]" },
-                  { spa: "Ferrocarril", eng: "Railway", pron: "[feh-rroh-cah-rreel]" },
-                  { spa: "Barrio", eng: "Neighborhood", pron: "[bah-rryoh]" },
-                  { spa: "Tierra", eng: "Earth / Land", pron: "[tyeh-rrah]" },
-                  { spa: "Zorro", eng: "Fox", pron: "[soh-rroh]" },
-                  { spa: "Arroz", eng: "Rice", pron: "[ah-rrohs]" },
-                  { spa: "Guerra", eng: "War", pron: "[geh-rrah]" },
-                  { spa: "Correr", eng: "To run", pron: "[coh-rrehr]" }
-              ]
-          },
-          // MONTH 2 (Weeks 5-8)
-          {
-              month: 2, week: 5, title: "Ser: Inherent Qualities & Origin", duration: "15 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 5 • Identity</span>
-                  <h4 class="font-bold text-slate-800 text-base">SER - Mnemonic Origin & Occupation</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Use the verb 'Ser' to describe where you are from, your profession, and your permanent identity values.</p>
-              </div>`,
-              vocab: [
-                  { spa: "Nacionalidad", eng: "Nationality", pron: "[nah-syoh-nah-lee-thahth]" },
-                  { spa: "Extranjero", eng: "Foreigner", pron: "[ehks-trahn-heh-roh]" },
-                  { spa: "País", eng: "Country", pron: "[pah-ees]" },
-                  { spa: "Médico", eng: "Doctor", pron: "[meh-thee-coh]" },
-                  { spa: "Profesor", eng: "Teacher", pron: "[proh-feh-sohr]" },
-                  { spa: "Ingeniero", eng: "Engineer", pron: "[een-heh-nyeh-roh]" },
-                  { spa: "Estudiante", eng: "Student", pron: "[ehs-too-thyahn-teh]" },
-                  { spa: "Abogado", eng: "Lawyer", pron: "[ah-voh-gah-thoh]" },
-                  { spa: "Arquitecto", eng: "Architect", pron: "[ahr-kee-tehk-toh]" },
-                  { spa: "Policía", eng: "Police officer", pron: "[poh-lee-see-ah]" }
-              ]
-          },
-          {
-              month: 2, week: 6, title: "Ser: Physical Characteristics & Time", duration: "15 mins",
-              content: `<div class="space-y-4">
-                  <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 6 • Identity II</span>
-                  <h4 class="font-bold text-slate-800 text-base">Intrinsic Traits & Calendar Dates</h4>
-                  <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Physical heights, weights, hair colors, and timestamps are objective values that require 'Ser' (DOCTOR).</p>
-              </div>`,
-              vocab: [
-                  { spa: "Alto", eng: "Tall", pron: "[ahl-toh]" },
-                  { spa: "Inteligente", eng: "Smart / Intelligent", pron: "[een-teh-lee-hen-teh]" },
-                  { spa: "Simpático", eng: "Friendly", pron: "[seem-pah-tee-coh]" },
-                  { spa: "Trabajador", eng: "Hardworking", pron: "[trah-vah-hah-thohr]" },
-                  { spa: "Bajo", eng: "Short (stature)", pron: "[bah-hoh]" },
-                  { spa: "Tarde", eng: "Late / Afternoon", pron: "[tahr-theh]" },
-                  { spa: "Temprano", eng: "Early", pron: "[tehm-prah-noh]" },
-                  { spa: "Hoy", eng: "Today", pron: "[oy]" },
-                  { spa: "Mañana", eng: "Tomorrow", pron: "[mah-nyah-nah]" },
-                  { spa: "Calendario", eng: "Calendar", pron: "[cah-len-dah-ryoh]" }
-              ]
-          }
+        // MONTH 1 (Weeks 1-4)
+        {
+          month: 1,
+          week: 1,
+          title: "Vowel Purity: Stop the English Glide",
+          duration: "15 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 1 • Phonetics</span>
+                    <h4 class="font-bold text-slate-800 text-base">Perfecting the Pure Vowel Base</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English native speakers naturally add a diphthong glide when pronouncing vowels. In Week 1, we focus on freezing your jaw to keep Spanish vowels completely short, flat, and pure.</p>
+                    <div class="grid grid-cols-5 gap-2 text-center text-[10px] font-bold bg-teal-50/50 p-2 rounded-xl border border-teal-100 text-teal-955">
+                        <div>A [Ah]</div><div>E [Eh]</div><div>I [Ee]</div><div>O [Oh]</div><div>U [Oo]</div>
+                    </div>
+                </div>`,
+          vocab: [
+            { spa: "Amigo", eng: "Friend", pron: "[ah-mee-goh]" },
+            { spa: "Agua", eng: "Water", pron: "[ah-gwah]" },
+            { spa: "Elefante", eng: "Elephant", pron: "[eh-leh-fahn-teh]" },
+            { spa: "Escuela", eng: "School", pron: "[ehs-cweh-lah]" },
+            { spa: "Isla", eng: "Island", pron: "[ees-lah]" },
+            { spa: "Iglesia", eng: "Church", pron: "[ee-gleh-syah]" },
+            { spa: "Ojo", eng: "Eye", pron: "[oh-hoh]" },
+            { spa: "Oveja", eng: "Sheep", pron: "[oh-veh-hah]" },
+            { spa: "Uva", eng: "Grape", pron: "[oo-vah]" },
+            { spa: "Universo", eng: "Universe", pron: "[oo-nee-vehr-soh]" },
+          ],
+        },
+        {
+          month: 1,
+          week: 2,
+          title: "The Dental Shift: Softening D & T",
+          duration: "15 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 2 • Mechanical Focus</span>
+                    <h4 class="font-bold text-slate-800 text-base">Overwriting Rooftop Pronunciation</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Do not strike the roof of your mouth for 'D' or 'T'. Move your tongue tip directly to the back of your top front teeth. This yields the authentic soft 'th' friction used by native Spanish speakers.</p>
+                </div>`,
+          vocab: [
+            { spa: "Cada", eng: "Each", pron: "[cah-thah]" },
+            { spa: "Todo", eng: "All / Every", pron: "[toh-thoh]" },
+            { spa: "Dedo", eng: "Finger", pron: "[deh-thoh]" },
+            { spa: "Día", eng: "Day", pron: "[dee-ah]" },
+            { spa: "Tomate", eng: "Tomato", pron: "[toh-mah-teh]" },
+            { spa: "Taza", eng: "Cup / Mug", pron: "[tah-sah]" },
+            { spa: "Plato", eng: "Plate", pron: "[plah-toh]" },
+            { spa: "Carta", eng: "Letter", pron: "[cahr-tah]" },
+            { spa: "Teatro", eng: "Theater", pron: "[teh-ah-troh]" },
+            { spa: "Gato", eng: "Cat", pron: "[gah-toh]" },
+          ],
+        },
+        {
+          month: 1,
+          week: 3,
+          title: "Muting the H & Mastering G/J Gutturals",
+          duration: "15 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 3 • Phonation</span>
+                    <h4 class="font-bold text-slate-800 text-base">The Invisible H and Warm Exhalations</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">The letter 'H' is 100% silent in Spanish. For 'G' and 'J' before E/I, perform a warm breathy friction from deep within the throat, similar to the German 'ch'.</p>
+                </div>`,
+          vocab: [
+            { spa: "Hola", eng: "Hello", pron: "[oh-lah]" },
+            { spa: "Huevo", eng: "Egg", pron: "[weh-voh]" },
+            { spa: "Hora", eng: "Hour / Time", pron: "[oh-rah]" },
+            { spa: "Hijo", eng: "Son", pron: "[ee-hoh]" },
+            { spa: "Gente", eng: "People", pron: "[hen-teh]" },
+            { spa: "Gigante", eng: "Giant", pron: "[hee-gahn-teh]" },
+            { spa: "Jardín", eng: "Garden", pron: "[hahr-theen]" },
+            { spa: "Joven", eng: "Young person", pron: "[hoh-ven]" },
+            { spa: "Jugo", eng: "Juice", pron: "[hoo-goh]" },
+            { spa: "Reloj", eng: "Clock / Watch", pron: "[rreh-loh]" },
+          ],
+        },
+        {
+          month: 1,
+          week: 4,
+          title: "Alveolar Trills: Rolling the Double RR",
+          duration: "20 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 4 • Vocal Gym</span>
+                    <h4 class="font-bold text-slate-800 text-base">Alveolar Ridge Vibrations</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Relax the tongue tip. Let exhaled air flap the tongue tip against the ridge behind your teeth. This is the double 'RR' alveolar trill.</p>
+                </div>`,
+          vocab: [
+            { spa: "Perro", eng: "Dog", pron: "[peh-rroh]" },
+            { spa: "Carro", eng: "Car", pron: "[cah-rroh]" },
+            { spa: "Guitarra", eng: "Guitar", pron: "[gee-tah-rrah]" },
+            {
+              spa: "Ferrocarril",
+              eng: "Railway",
+              pron: "[feh-rroh-cah-rreel]",
+            },
+            { spa: "Barrio", eng: "Neighborhood", pron: "[bah-rryoh]" },
+            { spa: "Tierra", eng: "Earth / Land", pron: "[tyeh-rrah]" },
+            { spa: "Zorro", eng: "Fox", pron: "[soh-rroh]" },
+            { spa: "Arroz", eng: "Rice", pron: "[ah-rrohs]" },
+            { spa: "Guerra", eng: "War", pron: "[geh-rrah]" },
+            { spa: "Correr", eng: "To run", pron: "[coh-rrehr]" },
+          ],
+        },
+        // MONTH 2 (Weeks 5-8)
+        {
+          month: 2,
+          week: 5,
+          title: "Ser: Inherent Qualities & Origin",
+          duration: "15 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 5 • Identity</span>
+                    <h4 class="font-bold text-slate-800 text-base">SER - Mnemonic Origin & Occupation</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Use the verb 'Ser' to describe where you are from, your profession, and your permanent identity values.</p>
+                </div>`,
+          vocab: [
+            {
+              spa: "Nacionalidad",
+              eng: "Nationality",
+              pron: "[nah-syoh-nah-lee-thahth]",
+            },
+            {
+              spa: "Extranjero",
+              eng: "Foreigner",
+              pron: "[ehks-trahn-heh-roh]",
+            },
+            { spa: "País", eng: "Country", pron: "[pah-ees]" },
+            { spa: "Médico", eng: "Doctor", pron: "[meh-thee-coh]" },
+            { spa: "Profesor", eng: "Teacher", pron: "[proh-feh-sohr]" },
+            { spa: "Ingeniero", eng: "Engineer", pron: "[een-heh-nyeh-roh]" },
+            { spa: "Estudiante", eng: "Student", pron: "[ehs-too-thyahn-teh]" },
+            { spa: "Abogado", eng: "Lawyer", pron: "[ah-voh-gah-thoh]" },
+            { spa: "Arquitecto", eng: "Architect", pron: "[ahr-kee-tehk-toh]" },
+            { spa: "Policía", eng: "Police officer", pron: "[poh-lee-see-ah]" },
+          ],
+        },
+        {
+          month: 2,
+          week: 6,
+          title: "Ser: Physical Characteristics & Time",
+          duration: "15 mins",
+          content: `<div class="space-y-4">
+                    <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 6 • Identity II</span>
+                    <h4 class="font-bold text-slate-800 text-base">Intrinsic Traits & Calendar Dates</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Physical heights, weights, hair colors, and timestamps are objective values that require 'Ser' (DOCTOR).</p>
+                </div>`,
+          vocab: [
+            { spa: "Alto", eng: "Tall", pron: "[ahl-toh]" },
+            {
+              spa: "Inteligente",
+              eng: "Smart / Intelligent",
+              pron: "[een-teh-lee-hen-teh]",
+            },
+            { spa: "Simpático", eng: "Friendly", pron: "[seem-pah-tee-coh]" },
+            {
+              spa: "Trabajador",
+              eng: "Hardworking",
+              pron: "[trah-vah-hah-thohr]",
+            },
+            { spa: "Bajo", eng: "Short (stature)", pron: "[bah-hoh]" },
+            { spa: "Tarde", eng: "Late / Afternoon", pron: "[tahr-theh]" },
+            { spa: "Temprano", eng: "Early", pron: "[tehm-prah-noh]" },
+            { spa: "Hoy", eng: "Today", pron: "[oy]" },
+            { spa: "Mañana", eng: "Tomorrow", pron: "[mah-nyah-nah]" },
+            { spa: "Calendario", eng: "Calendar", pron: "[cah-len-dah-ryoh]" },
+          ],
+        },
       ];
 
-      //        const flashcardDecks = {
-          pronunciation: [
-              { eng: "Each (soft 'd')", engDetail: "Focus on soft tooth placement", esp: "Cada", pron: "[cah-thah]", exp: "The 'D' is soft, like 'th' in 'then', because it sits between two vowels." },
-              { eng: "Hello (silent 'h')", engDetail: "Mute the starting letter completely", esp: "Hola", pron: "[oh-lah]", exp: "Simply ignore the 'h'. Never breathe out or add an 'h' sound." },
-              { eng: "Hotel", engDetail: "Silent 'H' + Stress the last syllable", esp: "Hotel", pron: "[oh-tell]", exp: "Drop the 'h' completely and emphasize the 'tel' ending." },
-              { eng: "Idea", engDetail: "Keep vowels pure without glides", esp: "Idea", pron: "[ee-theh-ah]", exp: "Pronounce clean vowels and a soft 'd' touching your teeth." },
-              { eng: "Beer", engDetail: "Dry, non-rhotic r sound", esp: "Cerveza", pron: "[sehr-veh-sah]", exp: "Ensure the Spanish 'r' is short and tapped, never pulled back like an English 'r'." },
-              { eng: "People", engDetail: "Fricative throat 'G' sound", esp: "Gente", pron: "[hen-teh]", exp: "The 'G' sounds like a breathy, warm 'H' exhaled from deep within the throat." },
-              { eng: "Worse", engDetail: "No diphthong glides allowed", esp: "Peor", pron: "[peh-ohr]", exp: "Keep the transition between 'E' and 'O' completely sharp and separate." },
-              { eng: "Burrito", engDetail: "Standard rolled double-R", esp: "Burrito", pron: "[boo-rree-toh]", exp: "Vibrate the tip of your tongue against your alveolar ridge." },
-              { eng: "Tomorrow", engDetail: "Soft nasal tilde-N sound", esp: "Mañana", pron: "[mah-nyah-nah]", exp: "The 'Ñ' sound is pronounced like the 'ny' in the English word onion." },
-              { eng: "Lesson", engDetail: "Double dynamic accent rules", esp: "Lección", pron: "[lek-syohn]", exp: "Heavily stress the final syllable 'ón' due to the accent mark." },
-              { eng: "Dog", engDetail: "Double 'R' roll practice", esp: "Perro", pron: "[peh-rroh]", exp: "Roll the double RR aggressively by vibrating the tip of the tongue." },
-              { eng: "Water", engDetail: "Clean, non-glide vowels", esp: "Agua", pron: "[ah-gwah]", exp: "Make sure 'A' sounds like father, and keep vowels completely separated." },
-              { eng: "Zero", engDetail: "Lisp or soft 'S' sound", esp: "Cero", pron: "[seh-roh]", exp: "Pronounced with a lisp in Spain [theh-roh] or a soft 'S' in Latin America." },
-              { eng: "Red", engDetail: "Rolled initial 'R'", esp: "Rojo", pron: "[rroh-hoh]", exp: "Words starting with 'R' are naturally rolled like a double RR." },
-              { eng: "Rice", engDetail: "Rolled initial 'R' + breathy 'J'", esp: "Arroz", pron: "[ah-rrohs]", exp: "End with a sharp 'S' and vibrate the RR firmly in the center." },
-              { eng: "Cat", engDetail: "Dry dental 'T'", esp: "Gato", pron: "[gah-toh]", exp: "Do not let any air puff out on the 'T' sound. It is dry and dental." },
-              { eng: "Cup", engDetail: "Dry dental 'T' + soft 'S'", esp: "Taza", pron: "[tah-sah]", exp: "Touch the back of your front teeth for 'T'. Do not exhale after the consonant." },
-              { eng: "Guitar", engDetail: "Silent 'U' in 'gui'", esp: "Guitarra", pron: "[gee-tah-rrah]", exp: "The 'U' is silent. The 'G' is hard like 'get', never breathy." },
-              { eng: "War", engDetail: "Silent 'U' in 'gue'", esp: "Guerra", pron: "[geh-rrah]", exp: "Keep the 'G' hard and completely mute the 'U' helper vowel." },
-              { eng: "Music", engDetail: "Heavy vocal accent stress", esp: "Música", pron: "[moo-see-cah]", exp: "Heavily stress the first syllable 'mú' due to the written accent mark." }
-          ],
-          false_friends: [
-              { eng: "Pregnant", engDetail: "Warning! Do not use for embarrassed", esp: "Embarazada", pron: "[ehm-bah-rah-sah-thah]", exp: "Embarazada means pregnant. If you are embarrassed, use 'tengo vergüenza'." },
-              { eng: "Currently", engDetail: "Warning! Do not use for actually", esp: "Actualmente", pron: "[ahk-twahl-men-teh]", exp: "Actualmente refers to time. If you mean 'actually/in reality', use 'en realidad'." },
-              { eng: "To Tolerate / Put up with", engDetail: "Warning! Do not use for 'to support' a cause", esp: "Soportar", pron: "[soh-pohr-tahr]", exp: "Soportar means to tolerate. To support a friend or cause, use the verb 'apoyar'." },
-              { eng: "Congested / Having a cold", engDetail: "Warning! Do not use for bowel issues", esp: "Constipado", pron: "[cohn-stee-pah-tho]", exp: "Constipado means having a head cold. If you suffer from bowel constipation, use 'estreñido'." },
-              { eng: "To Perform / Achieve / Execute", engDetail: "Warning! Do not use for realizing an idea", esp: "Realizar", pron: "[reh-ah-lee-sahr]", exp: "Realizar means to make or do. To realize an idea, use 'darse cuenta'." },
-              { eng: "Folder", engDetail: "Warning! Do not use for carpet", esp: "Carpeta", pron: "[cahr-peh-tah]", exp: "Carpeta is a folder. For floor carpet, use 'alfombra'." },
-              { eng: "Success", engDetail: "Warning! Do not use for building exit", esp: "Éxito", pron: "[ek-see-toh]", exp: "Éxito means success. For a physical exit door, use the word 'salida'." },
-              { eng: "To Prevent / Warn", engDetail: "Warning! Do not use for avoiding", esp: "Prevenir", pron: "[preh-veh-neer]", exp: "Prevenir is to warn/prevent beforehand. To avoid a path completely, use 'evitar'." },
-              { eng: "To Intend / Aspire", engDetail: "Warning! Do not use for acting/faking", esp: "Pretender", pron: "[preh-ten-dehr]", exp: "Pretender means to claim or intend. To pretend/act, use the verb 'fingir'." },
-              { eng: "To Attend", engDetail: "Warning! Do not use for helping someone", esp: "Asistir", pron: "[ah-sees-teer]", exp: "Asistir is to attend a meeting/class. To assist someone, use the verb 'ayudar'." },
-              { eng: "Sensible", engDetail: "Warning! Means sensitive, not reasonable", esp: "Sensible", pron: "[sen-see-bleh]", exp: "Sensible means sensitive. To say someone is sensible/reasonable, use 'sensato'." },
-              { eng: "Lecture", engDetail: "Warning! Means reading, not a presentation", esp: "Lectura", pron: "[lek-too-rah]", exp: "Lectura means reading. A university lecture is called a 'conferencia' or 'clase'." },
-              { eng: "Sympathetic", engDetail: "Warning! Means friendly/nice, not compassionate", esp: "Simpático", pron: "[seem-pah-tee-coh]", exp: "Simpático means friendly. Compassionate/understanding is 'compasivo'." },
-              { eng: "Preservative", engDetail: "Warning! Means condom, not food additive", esp: "Preservativo", pron: "[preh-sehr-vah-tee-voh]", exp: "Preservativo means condom. A food preservative is called 'conservante'." },
-              { eng: "To Introduce", engDetail: "Warning! Means to insert, not present a person", esp: "Introducir", pron: "[een-troh-doo-seer]", exp: "Introducir means to insert. To introduce a person is 'presentar'." },
-              { eng: "Suave", engDetail: "Warning! Means soft, not smooth/gentlemanly", esp: "Suave", pron: "[swah-veh]", exp: "Suave means soft/gentle to touch. Smooth/charming is 'elegante' or 'gentil'." },
-              { eng: "Record", engDetail: "Warning! Means memory/souvenir, not sports achievement", esp: "Recuerdo", pron: "[rreh-cwher-doh]", exp: "Recuerdo means a memory or souvenir. A sports record is a 'récord'." },
-              { eng: "Rope", engDetail: "Warning! Means clothes/clothing, not thick string", esp: "Ropa", pron: "[rroh-pah]", exp: "Ropa means clothing. Physical rope is called 'cuerda'." },
-              { eng: "Large", engDetail: "Warning! Means long in size, not broad/huge", esp: "Largo", pron: "[lahr-goh]", exp: "Largo means long. Large or big is translated as 'grande'." },
-              { eng: "To Subvert", engDetail: "Warning! Means to rise up/rebel", esp: "Sublevar", pron: "[soob-leh-vahr]", exp: "Sublevar means to instigate rebellion. To subvert/undermine is 'subvertir'." }
-          ],
-          useful_basics: [
-              { eng: "Please", engDetail: "Essential politeness key", esp: "Por favor", pron: "[pohr fah-vohr]", exp: "Keep both 'r' sounds short, and pronounce the 'v' like a soft, breathy 'b'." },
-              { eng: "Thank you", engDetail: "Basic appreciation", esp: "Gracias", pron: "[grah-syahs]", exp: "Make sure you pronounce the ending as a clean 'syahs' instead of 'shus'." },
-              { eng: "Excuse me / Sorry", engDetail: "Polite attention getter", esp: "Disculpe", pron: "[dees-cool-peh]", exp: "Perfect for calling a waiter or passing through a crowd." },
-              { eng: "How much is it?", engDetail: "Crucial transaction phrase", esp: "¿Cuánto cuesta?", pron: "[cwahn-toh cwehs-tah]", exp: "Keep your 't' sounds dry and crisp without letting any air escape." },
-              { eng: "I'm sorry", engDetail: "Expressing genuine empathy", esp: "Lo siento", pron: "[loh syen-toh]", exp: "Literally means 'I feel it'. Highly useful in all social dynamics." },
-              { eng: "Where is...?", engDetail: "Locational Estar helper", esp: "¿Dónde está...?", pron: "[dohn-deh ehs-tah]", exp: "Always uses Estar because location is tracked through geography." },
-              { eng: "Enjoy your meal", engDetail: "Crucial cultural courtesy", esp: "Buen provecho", pron: "[bwen proh-veh-choh]", exp: "Customary greeting said before eating. Keep the 'v' breathy." },
-              { eng: "I don't understand", engDetail: "Essential learning safety net", esp: "No entiendo", pron: "[noh en-tyen-doh]", exp: "Crucial fallback for language learners to slow down native speakers." },
-              { eng: "Slower, please", engDetail: "Slowing down conversation", esp: "Más despacio", pron: "[mahs dehs-pah-syoh]", exp: "Direct request to reduce speech tempo. Pair with 'por favor'." },
-              { eng: "See you later", engDetail: "Fluid transition parting", esp: "Hasta luego", pron: "[ahs-tah lweh-goh]", exp: "Remember to drop the initial 'H' completely. Say it with zero pause." },
-              { eng: "Good morning", engDetail: "Polite greeting", esp: "Buenos días", pron: "[bweh-nohs dee-ahs]", exp: "Greet people with a smile. Remember to touch the top teeth for the 'D'." },
-              { eng: "Good afternoon", engDetail: "Afternoon greeting", esp: "Buenas tardes", pron: "[bweh-nahs tahr-dehs]", exp: "Used from noon until sunset. Keep the 'R' short and tapped." },
-              { eng: "Good night", engDetail: "Nighttime greeting / parting", esp: "Buenas noches", pron: "[bweh-nahs oh-chehs]", exp: "Used as both a hello and goodbye after dark. Clean 'O' vowel." },
-              { eng: "Nice to meet you", engDetail: "First-time greeting", esp: "Mucho gusto", pron: "[moo-choh goos-toh]", exp: "Short, flat vowels. Touch back of top front teeth for 'T'." },
-              { eng: "How are you?", engDetail: "Inquiring about wellbeing", esp: "¿Cómo estás?", pron: "[coh-moh ehs-tahs]", exp: "Uses Estar because feelings and emotional states are temporary." },
-              { eng: "Very well", engDetail: "Replying to wellbeing questions", esp: "Muy bien", pron: "[mwee byehn]", exp: "Keep the vowels tight. Sound the 'v' as a soft, breathy 'B' blend." },
-              { eng: "What is your name?", engDetail: "Asking someone's name", esp: "¿Cómo te llamas?", pron: "[coh-moh teh yah-mahs]", exp: "Pronounce 'LL' as an English 'Y'. Keep the vowels clean." },
-              { eng: "My name is...", engDetail: "Stating your name", esp: "Me llamo...", pron: "[meh yah-moh]", exp: "Literally 'I call myself'. Drop any glides at the end of 'llamo'." },
-              { eng: "Goodbye", engDetail: "Classic parting", esp: "Adiós", pron: "[ah-dyohs]", exp: "Ensure you put the stress on the final 'ós' syllable due to the accent." },
-              { eng: "Cheers! / Health!", engDetail: "Toasting / Sneeze blessing", esp: "¡Salud!", pron: "[sah-looth]", exp: "End with a soft dental 'D' sound similar to the English 'th' in 'the'." }
-          ]
+      const flashcardDecks = {
+        pronunciation: [
+          {
+            eng: "Each (soft 'd')",
+            engDetail: "Focus on soft tooth placement",
+            esp: "Cada",
+            pron: "[cah-thah]",
+            exp: "The 'D' is soft, like 'th' in 'then', because it sits between two vowels.",
+          },
+          {
+            eng: "Hello (silent 'h')",
+            engDetail: "Mute the starting letter completely",
+            esp: "Hola",
+            pron: "[oh-lah]",
+            exp: "Simply ignore the 'h'. Never breathe out or add an 'h' sound.",
+          },
+          {
+            eng: "Hotel",
+            engDetail: "Silent 'H' + Stress the last syllable",
+            esp: "Hotel",
+            pron: "[oh-tell]",
+            exp: "Drop the 'h' completely and emphasize the 'tel' ending.",
+          },
+          {
+            eng: "Idea",
+            engDetail: "Keep vowels pure without glides",
+            esp: "Idea",
+            pron: "[ee-theh-ah]",
+            exp: "Pronounce clean vowels and a soft 'd' touching your teeth.",
+          },
+          {
+            eng: "Beer",
+            engDetail: "Dry, non-rhotic r sound",
+            esp: "Cerveza",
+            pron: "[sehr-veh-sah]",
+            exp: "Ensure the Spanish 'r' is short and tapped, never pulled back like an English 'r'.",
+          },
+          {
+            eng: "People",
+            engDetail: "Fricative throat 'G' sound",
+            esp: "Gente",
+            pron: "[hen-teh]",
+            exp: "The 'G' sounds like a breathy, warm 'H' exhaled from deep within the throat.",
+          },
+          {
+            eng: "Worse",
+            engDetail: "No diphthong glides allowed",
+            esp: "Peor",
+            pron: "[peh-ohr]",
+            exp: "Keep the transition between 'E' and 'O' completely sharp and separate.",
+          },
+          {
+            eng: "Burrito",
+            engDetail: "Standard rolled double-R",
+            esp: "Burrito",
+            pron: "[boo-rree-toh]",
+            exp: "Vibrate the tip of your tongue against your alveolar ridge.",
+          },
+          {
+            eng: "Tomorrow",
+            engDetail: "Soft nasal tilde-N sound",
+            esp: "Mañana",
+            pron: "[mah-nyah-nah]",
+            exp: "The 'Ñ' sound is pronounced like the 'ny' in the English word onion.",
+          },
+          {
+            eng: "Lesson",
+            engDetail: "Double dynamic accent rules",
+            esp: "Lección",
+            pron: "[lek-syohn]",
+            exp: "Heavily stress the final syllable 'ón' due to the accent mark.",
+          },
+          {
+            eng: "Dog",
+            engDetail: "Double 'R' roll practice",
+            esp: "Perro",
+            pron: "[peh-rroh]",
+            exp: "Roll the double RR aggressively by vibrating the tip of the tongue.",
+          },
+          {
+            eng: "Water",
+            engDetail: "Clean, non-glide vowels",
+            esp: "Agua",
+            pron: "[ah-gwah]",
+            exp: "Make sure 'A' sounds like father, and keep vowels completely separated.",
+          },
+          {
+            eng: "Zero",
+            engDetail: "Lisp or soft 'S' sound",
+            esp: "Cero",
+            pron: "[seh-roh]",
+            exp: "Pronounced with a lisp in Spain [theh-roh] or a soft 'S' in Latin America.",
+          },
+          {
+            eng: "Red",
+            engDetail: "Rolled initial 'R'",
+            esp: "Rojo",
+            pron: "[rroh-hoh]",
+            exp: "Words starting with 'R' are naturally rolled like a double RR.",
+          },
+          {
+            eng: "Rice",
+            engDetail: "Rolled initial 'R' + breathy 'J'",
+            esp: "Arroz",
+            pron: "[ah-rrohs]",
+            exp: "End with a sharp 'S' and vibrate the RR firmly in the center.",
+          },
+          {
+            eng: "Cat",
+            engDetail: "Dry dental 'T'",
+            esp: "Gato",
+            pron: "[gah-toh]",
+            exp: "Do not let any air puff out on the 'T' sound. It is dry and dental.",
+          },
+          {
+            eng: "Cup",
+            engDetail: "Dry dental 'T' + soft 'S'",
+            esp: "Taza",
+            pron: "[tah-sah]",
+            exp: "Touch the back of your front teeth for 'T'. Do not exhale after the consonant.",
+          },
+          {
+            eng: "Guitar",
+            engDetail: "Silent 'U' in 'gui'",
+            esp: "Guitarra",
+            pron: "[gee-tah-rrah]",
+            exp: "The 'U' is silent. The 'G' is hard like 'get', never breathy.",
+          },
+          {
+            eng: "War",
+            engDetail: "Silent 'U' in 'gue'",
+            esp: "Guerra",
+            pron: "[geh-rrah]",
+            exp: "Keep the 'G' hard and completely mute the 'U' helper vowel.",
+          },
+          {
+            eng: "Music",
+            engDetail: "Heavy vocal accent stress",
+            esp: "Música",
+            pron: "[moo-see-cah]",
+            exp: "Heavily stress the first syllable 'mú' due to the written accent mark.",
+          },
+        ],
+        false_friends: [
+          {
+            eng: "Pregnant",
+            engDetail: "Warning! Do not use for embarrassed",
+            esp: "Embarazada",
+            pron: "[ehm-bah-rah-sah-thah]",
+            exp: "Embarazada means pregnant. If you are embarrassed, use 'tengo vergüenza'.",
+          },
+          {
+            eng: "Currently",
+            engDetail: "Warning! Do not use for actually",
+            esp: "Actualmente",
+            pron: "[ahk-twahl-men-teh]",
+            exp: "Actualmente refers to time. If you mean 'actually/in reality', use 'en realidad'.",
+          },
+          {
+            eng: "To Tolerate / Put up with",
+            engDetail: "Warning! Do not use for 'to support' a cause",
+            esp: "Soportar",
+            pron: "[soh-pohr-tahr]",
+            exp: "Soportar means to tolerate. To support a friend or cause, use the verb 'apoyar'.",
+          },
+          {
+            eng: "Congested / Having a cold",
+            engDetail: "Warning! Do not use for bowel issues",
+            esp: "Constipado",
+            pron: "[cohn-stee-pah-tho]",
+            exp: "Constipado means having a head cold. If you suffer from bowel constipation, use 'estreñido'.",
+          },
+          {
+            eng: "To Perform / Achieve / Execute",
+            engDetail: "Warning! Do not use for realizing an idea",
+            esp: "Realizar",
+            pron: "[reh-ah-lee-sahr]",
+            exp: "Realizar means to make or do. To realize an idea, use 'darse cuenta'.",
+          },
+          {
+            eng: "Folder",
+            engDetail: "Warning! Do not use for carpet",
+            esp: "Carpeta",
+            pron: "[cahr-peh-tah]",
+            exp: "Carpeta is a folder. For floor carpet, use 'alfombra'.",
+          },
+          {
+            eng: "Success",
+            engDetail: "Warning! Do not use for building exit",
+            esp: "Éxito",
+            pron: "[ek-see-toh]",
+            exp: "Éxito means success. For a physical exit door, use the word 'salida'.",
+          },
+          {
+            eng: "To Prevent / Warn",
+            engDetail: "Warning! Do not use for avoiding",
+            esp: "Prevenir",
+            pron: "[preh-veh-neer]",
+            exp: "Prevenir is to warn/prevent beforehand. To avoid a path completely, use 'evitar'.",
+          },
+          {
+            eng: "To Intend / Aspire",
+            engDetail: "Warning! Do not use for acting/faking",
+            esp: "Pretender",
+            pron: "[preh-ten-dehr]",
+            exp: "Pretender means to claim or intend. To pretend/act, use the verb 'fingir'.",
+          },
+          {
+            eng: "To Attend",
+            engDetail: "Warning! Do not use for helping someone",
+            esp: "Asistir",
+            pron: "[ah-sees-teer]",
+            exp: "Asistir is to attend a meeting/class. To assist someone, use the verb 'ayudar'.",
+          },
+          {
+            eng: "Sensible",
+            engDetail: "Warning! Means sensitive, not reasonable",
+            esp: "Sensible",
+            pron: "[sen-see-bleh]",
+            exp: "Sensible means sensitive. To say someone is sensible/reasonable, use 'sensato'.",
+          },
+          {
+            eng: "Lecture",
+            engDetail: "Warning! Means reading, not a presentation",
+            esp: "Lectura",
+            pron: "[lek-too-rah]",
+            exp: "Lectura means reading. A university lecture is called a 'conferencia' or 'clase'.",
+          },
+          {
+            eng: "Sympathetic",
+            engDetail: "Warning! Means friendly/nice, not compassionate",
+            esp: "Simpático",
+            pron: "[seem-pah-tee-coh]",
+            exp: "Simpático means friendly. Compassionate/understanding is 'compasivo'.",
+          },
+          {
+            eng: "Preservative",
+            engDetail: "Warning! Means condom, not food additive",
+            esp: "Preservativo",
+            pron: "[preh-sehr-vah-tee-voh]",
+            exp: "Preservativo means condom. A food preservative is called 'conservante'.",
+          },
+          {
+            eng: "To Introduce",
+            engDetail: "Warning! Means to insert, not present a person",
+            esp: "Introducir",
+            pron: "[een-troh-doo-seer]",
+            exp: "Introducir means to insert. To introduce a person is 'presentar'.",
+          },
+          {
+            eng: "Suave",
+            engDetail: "Warning! Means soft, not smooth/gentlemanly",
+            esp: "Suave",
+            pron: "[swah-veh]",
+            exp: "Suave means soft/gentle to touch. Smooth/charming is 'elegante' or 'gentil'.",
+          },
+          {
+            eng: "Record",
+            engDetail: "Warning! Means memory/souvenir, not sports achievement",
+            esp: "Recuerdo",
+            pron: "[rreh-cwher-doh]",
+            exp: "Recuerdo means a memory or souvenir. A sports record is a 'récord'.",
+          },
+          {
+            eng: "Rope",
+            engDetail: "Warning! Means clothes/clothing, not thick string",
+            esp: "Ropa",
+            pron: "[rroh-pah]",
+            exp: "Ropa means clothing. Physical rope is called 'cuerda'.",
+          },
+          {
+            eng: "Large",
+            engDetail: "Warning! Means long in size, not broad/huge",
+            esp: "Largo",
+            pron: "[lahr-goh]",
+            exp: "Largo means long. Large or big is translated as 'grande'.",
+          },
+          {
+            eng: "To Subvert",
+            engDetail: "Warning! Means to rise up/rebel",
+            esp: "Sublevar",
+            pron: "[soob-leh-vahr]",
+            exp: "Sublevar means to instigate rebellion. To subvert/undermine is 'subvertir'.",
+          },
+        ],
+        useful_basics: [
+          {
+            eng: "Please",
+            engDetail: "Essential politeness key",
+            esp: "Por favor",
+            pron: "[pohr fah-vohr]",
+            exp: "Keep both 'r' sounds short, and pronounce the 'v' like a soft, breathy 'b'.",
+          },
+          {
+            eng: "Thank you",
+            engDetail: "Basic appreciation",
+            esp: "Gracias",
+            pron: "[grah-syahs]",
+            exp: "Make sure you pronounce the ending as a clean 'syahs' instead of 'shus'.",
+          },
+          {
+            eng: "Excuse me / Sorry",
+            engDetail: "Polite attention getter",
+            esp: "Disculpe",
+            pron: "[dees-cool-peh]",
+            exp: "Perfect for calling a waiter or passing through a crowd.",
+          },
+          {
+            eng: "How much is it?",
+            engDetail: "Crucial transaction phrase",
+            esp: "¿Cuánto cuesta?",
+            pron: "[cwahn-toh cwehs-tah]",
+            exp: "Keep your 't' sounds dry and crisp without letting any air escape.",
+          },
+          {
+            eng: "I'm sorry",
+            engDetail: "Expressing genuine empathy",
+            esp: "Lo siento",
+            pron: "[loh syen-toh]",
+            exp: "Literally means 'I feel it'. Highly useful in all social dynamics.",
+          },
+          {
+            eng: "Where is...?",
+            engDetail: "Locational Estar helper",
+            esp: "¿Dónde está...?",
+            pron: "[dohn-deh ehs-tah]",
+            exp: "Always uses Estar because location is tracked through geography.",
+          },
+          {
+            eng: "Enjoy your meal",
+            engDetail: "Crucial cultural courtesy",
+            esp: "Buen provecho",
+            pron: "[bwen proh-veh-choh]",
+            exp: "Customary greeting said before eating. Keep the 'v' breathy.",
+          },
+          {
+            eng: "I don't understand",
+            engDetail: "Essential learning safety net",
+            esp: "No entiendo",
+            pron: "[noh en-tyen-doh]",
+            exp: "Crucial fallback for language learners to slow down native speakers.",
+          },
+          {
+            eng: "Slower, please",
+            engDetail: "Slowing down conversation",
+            esp: "Más despacio",
+            pron: "[mahs dehs-pah-syoh]",
+            exp: "Direct request to reduce speech tempo. Pair with 'por favor'.",
+          },
+          {
+            eng: "See you later",
+            engDetail: "Fluid transition parting",
+            esp: "Hasta luego",
+            pron: "[ahs-tah lweh-goh]",
+            exp: "Remember to drop the initial 'H' completely. Say it with zero pause.",
+          },
+          {
+            eng: "Good morning",
+            engDetail: "Polite greeting",
+            esp: "Buenos días",
+            pron: "[bweh-nohs dee-ahs]",
+            exp: "Greet people with a smile. Remember to touch the top teeth for the 'D'.",
+          },
+          {
+            eng: "Good afternoon",
+            engDetail: "Afternoon greeting",
+            esp: "Buenas tardes",
+            pron: "[bweh-nahs tahr-dehs]",
+            exp: "Used from noon until sunset. Keep the 'R' short and tapped.",
+          },
+          {
+            eng: "Good night",
+            engDetail: "Nighttime greeting / parting",
+            esp: "Buenas noches",
+            pron: "[bweh-nahs oh-chehs]",
+            exp: "Used as both a hello and goodbye after dark. Clean 'O' vowel.",
+          },
+          {
+            eng: "Nice to meet you",
+            engDetail: "First-time greeting",
+            esp: "Mucho gusto",
+            pron: "[moo-choh goos-toh]",
+            exp: "Short, flat vowels. Touch back of top front teeth for 'T'.",
+          },
+          {
+            eng: "How are you?",
+            engDetail: "Inquiring about wellbeing",
+            esp: "¿Cómo estás?",
+            pron: "[coh-moh ehs-tahs]",
+            exp: "Uses Estar because feelings and emotional states are temporary.",
+          },
+          {
+            eng: "Very well",
+            engDetail: "Replying to wellbeing questions",
+            esp: "Muy bien",
+            pron: "[mwee byehn]",
+            exp: "Keep the vowels tight. Sound the 'v' as a soft, breathy 'B' blend.",
+          },
+          {
+            eng: "What is your name?",
+            engDetail: "Asking someone's name",
+            esp: "¿Cómo te llamas?",
+            pron: "[coh-moh teh yah-mahs]",
+            exp: "Pronounce 'LL' as an English 'Y'. Keep the vowels clean.",
+          },
+          {
+            eng: "My name is...",
+            engDetail: "Stating your name",
+            esp: "Me llamo...",
+            pron: "[meh yah-moh]",
+            exp: "Literally 'I call myself'. Drop any glides at the end of 'llamo'.",
+          },
+          {
+            eng: "Goodbye",
+            engDetail: "Classic parting",
+            esp: "Adiós",
+            pron: "[ah-dyohs]",
+            exp: "Ensure you put the stress on the final 'ós' syllable due to the accent.",
+          },
+          {
+            eng: "Cheers! / Health!",
+            engDetail: "Toasting / Sneeze blessing",
+            esp: "¡Salud!",
+            pron: "[sah-looth]",
+            exp: "End with a soft dental 'D' sound similar to the English 'th' in 'the'.",
+          },
+        ],
       };
 
-      //        const cognateRules = [
-          {
-              ruleName: "The '-tion' to '-ción' Shift",
-              words: [
-                  { eng: "Action", esp: "La acción", audioText: "La acción" },
-                  { eng: "Attention", esp: "La atención", audioText: "La atención" },
-                  { eng: "Celebration", esp: "La celebración", audioText: "La celebración" },
-                  { eng: "Preparation", esp: "La preparación", audioText: "La preparación" },
-                  { eng: "Position", esp: "La posición", audioText: "La posición" },
-                  { eng: "Nation", esp: "La nación", audioText: "La nación" },
-                  { eng: "Option", esp: "La opción", audioText: "La opción" },
-                  { eng: "Condition", esp: "La condición", audioText: "La condición" },
-                  { eng: "Creation", esp: "La creación", audioText: "La creación" },
-                  { eng: "Education", esp: "La educación", audioText: "La educación" },
-                  { eng: "Generation", esp: "La generación", audioText: "La generación" },
-                  { eng: "Information", esp: "La información", audioText: "La información" },
-                  { eng: "Organization", esp: "La organización", audioText: "La organización" },
-                  { eng: "Section", esp: "La sección", audioText: "La sección" },
-                  { eng: "Situation", esp: "La situación", audioText: "La situación" },
-                  { eng: "Evolution", esp: "La evolución", audioText: "La evolución" },
-                  { eng: "Foundation", esp: "La fundación", audioText: "La fundación" },
-                  { eng: "Integration", esp: "La integración", audioText: "La integración" },
-                  { eng: "Definition", esp: "La definición", audioText: "La definición" },
-                  { eng: "Activation", esp: "La activación", audioText: "La activación" },
-                  { eng: "Mutation", esp: "La mutación", audioText: "La mutación" },
-                  { eng: "Selection", esp: "La selección", audioText: "La selección" },
-                  { eng: "Evaluation", esp: "La evaluación", audioText: "La evaluación" },
-                  { eng: "Infiltration", esp: "La infiltración", audioText: "La infiltración" },
-                  { eng: "Decoration", esp: "La decoración", audioText: "La decoración" }
-              ]
-          },
-          {
-              ruleName: "The '-ty' to '-dad' Shift",
-              words: [
-                  { eng: "City", esp: "La ciudad", audioText: "La ciudad" },
-                  { eng: "Priority", esp: "La prioridad", audioText: "La prioridad" },
-                  { eng: "Velocity", esp: "La velocidad", audioText: "La velocidad" },
-                  { eng: "Activity", esp: "La actividad", audioText: "La actividad" },
-                  { eng: "Community", esp: "La comunidad", audioText: "La comunidad" },
-                  { eng: "Authority", esp: "La autoridad", audioText: "La autoridad" },
-                  { eng: "Reality", esp: "La realidad", audioText: "La realidad" },
-                  { eng: "Capacity", esp: "La capacidad", audioText: "La capacidad" },
-                  { eng: "Difficulty", esp: "La dificultad", audioText: "La dificultad" },
-                  { eng: "Simplicity", esp: "La simplicidad", audioText: "La simplicidad" },
-                  { eng: "Security", esp: "La seguridad", audioText: "La seguridad" },
-                  { eng: "Identity", esp: "La identidad", audioText: "La identidad" },
-                  { eng: "Opportunity", esp: "La oportunidad", audioText: "La oportunidad" },
-                  { eng: "Responsibility", esp: "La responsabilidad", audioText: "La responsabilidad" },
-                  { eng: "Society", esp: "La sociedad", audioText: "La sociedad" },
-                  { eng: "Nationality", esp: "La nacionalidad", audioText: "La nacionalidad" },
-                  { eng: "Quality", esp: "La calidad", audioText: "La calidad" },
-                  { eng: "Integrity", esp: "La integridad", audioText: "La integridad" },
-                  { eng: "University", esp: "La universidad", audioText: "La universidad" },
-                  { eng: "Variety", esp: "La variedad", audioText: "La variedad" },
-                  { eng: "Electricity", esp: "La electricidad", audioText: "La electricidad" },
-                  { eng: "Gravity", esp: "La gravedad", audioText: "La gravedad" },
-                  { eng: "Humanity", esp: "La humanidad", audioText: "La humanidad" },
-                  { eng: "Productivity", esp: "La productividad", audioText: "La productividad" },
-                  { eng: "Elasticity", esp: "La elasticidad", audioText: "La elasticidad" }
-              ]
-          },
-          {
-              ruleName: "The '-ous' to '-oso' Shift",
-              words: [
-                  { eng: "Famous", esp: "Famoso", audioText: "Famoso" },
-                  { eng: "Curious", esp: "Curioso", audioText: "Curioso" },
-                  { eng: "Generous", esp: "Generoso", audioText: "Generoso" },
-                  { eng: "Nervous", esp: "Nervioso", audioText: "Nervioso" },
-                  { eng: "Delicious", esp: "Delicioso", audioText: "Delicioso" },
-                  { eng: "Ambitious", esp: "Ambicioso", audioText: "Ambicioso" },
-                  { eng: "Furious", esp: "Furioso", audioText: "Furioso" },
-                  { eng: "Glorious", esp: "Glorioso", audioText: "Glorioso" },
-                  { eng: "Religious", esp: "Religioso", audioText: "Religioso" },
-                  { eng: "Precious", esp: "Precioso", audioText: "Precioso" },
-                  { eng: "Mysterious", esp: "Misterioso", audioText: "Misterioso" },
-                  { eng: "Infectious", esp: "Infeccioso", audioText: "Infeccioso" },
-                  { eng: "Vigorous", esp: "Vigoroso", audioText: "Vigoroso" },
-                  { eng: "Studious", esp: "Estudioso", audioText: "Estudioso" },
-                  { eng: "Spacious", esp: "Espacioso", audioText: "Espacioso" },
-                  { eng: "Numerous", esp: "Numeroso", audioText: "Numeroso" },
-                  { eng: "Victorious", esp: "Victorioso", audioText: "Victorioso" },
-                  { eng: "Malicious", esp: "Malicioso", audioText: "Malicioso" },
-                  { eng: "Monstrous", esp: "Monstruoso", audioText: "Monstruoso" },
-                  { eng: "Pompous", esp: "Pomposo", audioText: "Pomposo" },
-                  { eng: "Virtuous", esp: "Virtuoso", audioText: "Virtuoso" },
-                  { eng: "Joyous", esp: "Gozoso", audioText: "Gozoso" },
-                  { eng: "Harmonious", esp: "Armonioso", audioText: "Armonioso" },
-                  { eng: "Ingenious", esp: "Ingenioso", audioText: "Ingenioso" },
-                  { eng: "Ruinous", esp: "Ruinoso", audioText: "Ruinoso" }
-              ]
-          },
-          {
-              ruleName: "The '-al' is Identical Rule",
-              words: [
-                  { eng: "Natural", esp: "Natural", audioText: "Natural" },
-                  { eng: "Local", esp: "Local", audioText: "Local" },
-                  { eng: "General", esp: "General", audioText: "General" },
-                  { eng: "Social", esp: "Social", audioText: "Social" },
-                  { eng: "Mental", esp: "Mental", audioText: "Mental" },
-                  { eng: "Total", esp: "Total", audioText: "Total" },
-                  { eng: "Normal", esp: "Normal", audioText: "Normal" },
-                  { eng: "Personal", esp: "Personal", audioText: "Personal" },
-                  { eng: "Final", esp: "Final", audioText: "Final" },
-                  { eng: "Central", esp: "Central", audioText: "Central" },
-                  { eng: "Official", esp: "Oficial", audioText: "Oficial" },
-                  { eng: "Special", esp: "Especial", audioText: "Especial" },
-                  { eng: "Principal", esp: "Principal", audioText: "Principal" },
-                  { eng: "Original", esp: "Original", audioText: "Original" },
-                  { eng: "Legal", esp: "Legal", audioText: "Legal" },
-                  { eng: "Verbal", esp: "Verbal", audioText: "Verbal" },
-                  { eng: "Vocal", esp: "Vocal", audioText: "Vocal" },
-                  { eng: "Moral", esp: "Moral", audioText: "Moral" },
-                  { eng: "Ideal", esp: "Ideal", audioText: "Ideal" },
-                  { eng: "Capital", esp: "Capital", audioText: "Capital" },
-                  { eng: "Brutal", esp: "Brutal", audioText: "Brutal" },
-                  { eng: "Animal", esp: "Animal", audioText: "Animal" },
-                  { eng: "Formal", esp: "Formal", audioText: "Formal" },
-                  { eng: "Casual", esp: "Casual", audioText: "Casual" },
-                  { eng: "Cultural", esp: "Cultural", audioText: "Cultural" }
-              ]
-          }
+      const cognateRules = [
+        {
+          ruleName: "The '-tion' to '-ción' Shift",
+          words: [
+            { eng: "Action", esp: "La acción", audioText: "La acción" },
+            { eng: "Attention", esp: "La atención", audioText: "La atención" },
+            {
+              eng: "Celebration",
+              esp: "La celebración",
+              audioText: "La celebración",
+            },
+            {
+              eng: "Preparation",
+              esp: "La preparación",
+              audioText: "La preparación",
+            },
+            { eng: "Position", esp: "La posición", audioText: "La posición" },
+            { eng: "Nation", esp: "La nación", audioText: "La nación" },
+            { eng: "Option", esp: "La opción", audioText: "La opción" },
+            {
+              eng: "Condition",
+              esp: "La condición",
+              audioText: "La condición",
+            },
+            { eng: "Creation", esp: "La creación", audioText: "La creación" },
+            {
+              eng: "Education",
+              esp: "La educación",
+              audioText: "La educación",
+            },
+            {
+              eng: "Generation",
+              esp: "La generación",
+              audioText: "La generación",
+            },
+            {
+              eng: "Information",
+              esp: "La información",
+              audioText: "La información",
+            },
+            {
+              eng: "Organization",
+              esp: "La organización",
+              audioText: "La organización",
+            },
+            { eng: "Section", esp: "La sección", audioText: "La sección" },
+            {
+              eng: "Situation",
+              esp: "La situación",
+              audioText: "La situación",
+            },
+            {
+              eng: "Evolution",
+              esp: "La evolución",
+              audioText: "La evolución",
+            },
+            {
+              eng: "Foundation",
+              esp: "La fundación",
+              audioText: "La fundación",
+            },
+            {
+              eng: "Integration",
+              esp: "La integración",
+              audioText: "La integración",
+            },
+            {
+              eng: "Definition",
+              esp: "La definición",
+              audioText: "La definición",
+            },
+            {
+              eng: "Activation",
+              esp: "La activación",
+              audioText: "La activación",
+            },
+            { eng: "Mutation", esp: "La mutación", audioText: "La mutación" },
+            {
+              eng: "Selection",
+              esp: "La selección",
+              audioText: "La selección",
+            },
+            {
+              eng: "Evaluation",
+              esp: "La evaluación",
+              audioText: "La evaluación",
+            },
+            {
+              eng: "Infiltration",
+              esp: "La infiltración",
+              audioText: "La infiltración",
+            },
+            {
+              eng: "Decoration",
+              esp: "La decoración",
+              audioText: "La decoración",
+            },
+          ],
+        },
+        {
+          ruleName: "The '-ty' to '-dad' Shift",
+          words: [
+            { eng: "City", esp: "La ciudad", audioText: "La ciudad" },
+            { eng: "Priority", esp: "La prioridad", audioText: "La prioridad" },
+            { eng: "Velocity", esp: "La velocidad", audioText: "La velocidad" },
+            { eng: "Activity", esp: "La actividad", audioText: "La actividad" },
+            {
+              eng: "Community",
+              esp: "La comunidad",
+              audioText: "La comunidad",
+            },
+            {
+              eng: "Authority",
+              esp: "La autoridad",
+              audioText: "La autoridad",
+            },
+            { eng: "Reality", esp: "La realidad", audioText: "La realidad" },
+            { eng: "Capacity", esp: "La capacidad", audioText: "La capacidad" },
+            {
+              eng: "Difficulty",
+              esp: "La dificultad",
+              audioText: "La dificultad",
+            },
+            {
+              eng: "Simplicity",
+              esp: "La simplicidad",
+              audioText: "La simplicidad",
+            },
+            { eng: "Security", esp: "La seguridad", audioText: "La seguridad" },
+            { eng: "Identity", esp: "La identidad", audioText: "La identidad" },
+            {
+              eng: "Opportunity",
+              esp: "La oportunidad",
+              audioText: "La oportunidad",
+            },
+            {
+              eng: "Responsibility",
+              esp: "La responsabilidad",
+              audioText: "La responsabilidad",
+            },
+            { eng: "Society", esp: "La sociedad", audioText: "La sociedad" },
+            {
+              eng: "Nationality",
+              esp: "La nacionalidad",
+              audioText: "La nacionalidad",
+            },
+            { eng: "Quality", esp: "La calidad", audioText: "La calidad" },
+            {
+              eng: "Integrity",
+              esp: "La integridad",
+              audioText: "La integridad",
+            },
+            {
+              eng: "University",
+              esp: "La universidad",
+              audioText: "La universidad",
+            },
+            { eng: "Variety", esp: "La variedad", audioText: "La variedad" },
+            {
+              eng: "Electricity",
+              esp: "La electricidad",
+              audioText: "La electricidad",
+            },
+            { eng: "Gravity", esp: "La gravedad", audioText: "La gravedad" },
+            { eng: "Humanity", esp: "La humanidad", audioText: "La humanidad" },
+            {
+              eng: "Productivity",
+              esp: "La productividad",
+              audioText: "La productividad",
+            },
+            {
+              eng: "Elasticity",
+              esp: "La elasticidad",
+              audioText: "La elasticidad",
+            },
+          ],
+        },
+        {
+          ruleName: "The '-ous' to '-oso' Shift",
+          words: [
+            { eng: "Famous", esp: "Famoso", audioText: "Famoso" },
+            { eng: "Curious", esp: "Curioso", audioText: "Curioso" },
+            { eng: "Generous", esp: "Generoso", audioText: "Generoso" },
+            { eng: "Nervous", esp: "Nervioso", audioText: "Nervioso" },
+            { eng: "Delicious", esp: "Delicioso", audioText: "Delicioso" },
+            { eng: "Ambitious", esp: "Ambicioso", audioText: "Ambicioso" },
+            { eng: "Furious", esp: "Furioso", audioText: "Furioso" },
+            { eng: "Glorious", esp: "Glorioso", audioText: "Glorioso" },
+            { eng: "Religious", esp: "Religioso", audioText: "Religioso" },
+            { eng: "Precious", esp: "Precioso", audioText: "Precioso" },
+            { eng: "Mysterious", esp: "Misterioso", audioText: "Misterioso" },
+            { eng: "Infectious", esp: "Infeccioso", audioText: "Infeccioso" },
+            { eng: "Vigorous", esp: "Vigoroso", audioText: "Vigoroso" },
+            { eng: "Studious", esp: "Estudioso", audioText: "Estudioso" },
+            { eng: "Spacious", esp: "Espacioso", audioText: "Espacioso" },
+            { eng: "Numerous", esp: "Numeroso", audioText: "Numeroso" },
+            { eng: "Victorious", esp: "Victorioso", audioText: "Victorioso" },
+            { eng: "Malicious", esp: "Malicioso", audioText: "Malicioso" },
+            { eng: "Monstrous", esp: "Monstruoso", audioText: "Monstruoso" },
+            { eng: "Pompous", esp: "Pomposo", audioText: "Pomposo" },
+            { eng: "Virtuous", esp: "Virtuoso", audioText: "Virtuoso" },
+            { eng: "Joyous", esp: "Gozoso", audioText: "Gozoso" },
+            { eng: "Harmonious", esp: "Armonioso", audioText: "Armonioso" },
+            { eng: "Ingenious", esp: "Ingenioso", audioText: "Ingenioso" },
+            { eng: "Ruinous", esp: "Ruinoso", audioText: "Ruinoso" },
+          ],
+        },
+        {
+          ruleName: "The '-al' is Identical Rule",
+          words: [
+            { eng: "Natural", esp: "Natural", audioText: "Natural" },
+            { eng: "Local", esp: "Local", audioText: "Local" },
+            { eng: "General", esp: "General", audioText: "General" },
+            { eng: "Social", esp: "Social", audioText: "Social" },
+            { eng: "Mental", esp: "Mental", audioText: "Mental" },
+            { eng: "Total", esp: "Total", audioText: "Total" },
+            { eng: "Normal", esp: "Normal", audioText: "Normal" },
+            { eng: "Personal", esp: "Personal", audioText: "Personal" },
+            { eng: "Final", esp: "Final", audioText: "Final" },
+            { eng: "Central", esp: "Central", audioText: "Central" },
+            { eng: "Official", esp: "Oficial", audioText: "Oficial" },
+            { eng: "Special", esp: "Especial", audioText: "Especial" },
+            { eng: "Principal", esp: "Principal", audioText: "Principal" },
+            { eng: "Original", esp: "Original", audioText: "Original" },
+            { eng: "Legal", esp: "Legal", audioText: "Legal" },
+            { eng: "Verbal", esp: "Verbal", audioText: "Verbal" },
+            { eng: "Vocal", esp: "Vocal", audioText: "Vocal" },
+            { eng: "Moral", esp: "Moral", audioText: "Moral" },
+            { eng: "Ideal", esp: "Ideal", audioText: "Ideal" },
+            { eng: "Capital", esp: "Capital", audioText: "Capital" },
+            { eng: "Brutal", esp: "Brutal", audioText: "Brutal" },
+            { eng: "Animal", esp: "Animal", audioText: "Animal" },
+            { eng: "Formal", esp: "Formal", audioText: "Formal" },
+            { eng: "Casual", esp: "Casual", audioText: "Casual" },
+            { eng: "Cultural", esp: "Cultural", audioText: "Cultural" },
+          ],
+        },
       ];
 
       const quizQuestions = [
-          {
-              category: "Pronunciation Pitfall",
-              question: "Which of these describes the correct way to pronounce the Spanish letter 'D' when it sits between two vowels (like in 'Cada')?",
-              options: [
-                  { text: "Exactly like the hard English 'D' in 'Dog'", correct: false },
-                  { text: "Softly, with the tongue touching the back of top front teeth, like 'th' in 'then'", correct: true },
-                  { text: "It becomes completely silent", correct: false },
-                  { text: "It is pronounced like an English 'Z'", correct: false }
-              ],
-              explanation: "When 'd' is between vowels, Spanish speakers soften it by placing the tongue behind the front teeth. It sounds like the English 'th' in 'then'."
-          },
-          {
-              category: "Silent H Rule",
-              question: "How should the letter 'H' be pronounced in words like 'Hola' or 'Hotel'?",
-              options: [
-                  { text: "With a soft breathy exhale, similar to English", correct: false },
-                  { text: "Completely silent, with no pronunciation at all", correct: true },
-                  { text: "It depends on whether it is followed by a consonant", correct: false },
-                  { text: "Like a soft English 'J'", correct: false }
-              ],
-              explanation: "The letter 'H' is always completely silent in Spanish. Pronouncing it is one of the easiest ways to give away a native English accent."
-          },
-          {
-              category: "Vowel Purity",
-              question: "What is the common English pronunciation habit ('drawl') when pronouncing the vowel 'O' in 'no'?",
-              options: [
-                  { text: "Rounding the lips forward into an 'oo' glide sound", correct: true },
-                  { text: "Keeping the jaw completely fixed and frozen", correct: false },
-                  { text: "Changing the 'O' sound into an 'ah' sound", correct: false },
-                  { text: "Pronouncing it like a short 'uh' sound", correct: false }
-              ],
-              explanation: "English speakers naturally add a diphthong glide (saying 'no-oo'). In Spanish, you must stop your lips from sliding and keep the 'O' short, dry, and flat."
-          },
-          {
-              category: "Verb Blueprint: Ser vs Estar",
-              question: "If you want to say 'I am bored' (current temporary feeling), which verb do you use?",
-              options: [
-                  { text: "Estoy (Estar)", correct: true },
-                  { text: "Soy (Ser)", correct: false },
-                  { text: "Tengo (Tener)", correct: false },
-                  { text: "Hago (Hacer)", correct: false }
-              ],
-              explanation: "Temporary emotional states or conditions use 'Estar'. If you say 'Soy aburrido', you are claiming that you are a boring person!"
-          },
-          {
-              category: "Identity Code: Ser vs Estar",
-              question: "Which verb do you use to describe your occupation or profession ('I am a doctor')?",
-              options: [
-                  { text: "Ser (e.g. 'Soy médico')", correct: true },
-                  { text: "Estar (e.g. 'Estoy médico')", correct: false },
-                  { text: "Tener (e.g. 'Tengo médico')", correct: false },
-                  { text: "Hago (Hacer)", correct: false }
-              ],
-              explanation: "Professions, origins, and permanent traits are identity attributes, meaning they fall under the SER (DOCTOR) mnemonic."
-          },
-          {
-              category: "Cognate Magic",
-              question: "Which of these words is the correct Spanish translation for the English word 'University'?",
-              options: [
-                  { text: "El universición", correct: false },
-                  { text: "La universidad", correct: true },
-                  { text: "El universidad", correct: false },
-                  { text: "La universoso", correct: false }
-              ],
-              explanation: "The English ending '-ty' transforms to '-dad' in Spanish. Furthermore, these words are always feminine, so we use 'la'."
-          },
-          {
-              category: "Timeline Battleground",
-              question: "Which tense do you use to describe a routine or habit in the past ('When I was a child, I used to play soccer')?",
-              options: [
-                  { text: "Preterite Tense", correct: false },
-                  { text: "Imperfect Tense", correct: true },
-                  { text: "Subjunctive Mood", correct: false },
-                  { text: "Conditional Mood", correct: false }
-              ],
-              explanation: "Routines, habits, and background descriptions in the past always utilize the Imperfect Tense."
-          },
-          {
-              category: "False Friend Trap",
-              question: "If you want to tell a Spanish speaker that you are currently embarrassed, what is the safest phrase to use?",
-              options: [
-                  { text: "Estoy muy embarazada", correct: false },
-                  { text: "Tengo vergüenza / Estoy apenado", correct: true },
-                  { text: "Estoy actualmente soportado", correct: false },
-                  { text: "Estoy listo", correct: false }
-              ],
-              explanation: "Embarazada is a false friend that means pregnant. To express embarrassment, use 'tengo vergüenza' or 'estoy apenado'."
-          },
-          {
-              category: "False Friend Trap",
-              question: "What does the Spanish word 'Actualmente' translate to in English?",
-              options: [
-                  { text: "Actually", correct: false },
-                  { text: "Currently / At the present time", correct: true },
-                  { text: "Accidentally", correct: false },
-                  { text: "In reality", correct: false }
-              ],
-              explanation: "Actualmente is a false friend that means currently. To say 'actually/in reality', you should use 'en realidad' or 'realmente'."
-          },
-          {
-              category: "Subjunctive Code",
-              question: "Identify the correct assembly for the subjunctive trigger sentence: 'I want you to come.'",
-              options: [
-                  { text: "Yo quiero que tú vienes", correct: false },
-                  { text: "Yo quiero que tú vengas", correct: true },
-                  { text: "Yo quiero tú venir", correct: false },
-                  { text: "Yo quiero que tú vendrás", correct: false }
-              ],
-              explanation: "The verb 'querer' acts as a WEIRD trigger of desire, requiring 'que' and forcing the second verb into the Subjunctive mood ('vengas')."
-          },
-          {
-              category: "Conversational Fillers",
-              question: "Which conversational filler is best suited to gain thinking time (similar to English 'Well...')?",
-              options: [
-                  { text: "O sea...", correct: false },
-                  { text: "Pues...", correct: true },
-                  { text: "Mira...", correct: false },
-                  { text: "Soportar...", correct: false }
-              ],
-              explanation: "'Pues...' is highly common and gives you natural cognitive processing time without making your pauses sound awkward."
-          },
-          {
-              category: "Subjunctive Trigger",
-              question: "Does the expression of certain doubt ('No creo que...') require the indicative or subjunctive mood?",
-              options: [
-                  { text: "Indicative Mood", correct: false },
-                  { text: "Subjunctive Mood", correct: true },
-                  { text: "Infinitive Mood", correct: false },
-                  { text: "Conditional Mood", correct: false }
-              ],
-              explanation: "Expressing doubt ('No creo que...') triggers the Subjunctive mood because it represents a non-certain subjective reality."
-          },
-          {
-              category: "Conversational Fillers",
-              question: "Which filler is used to mean 'In other words' or 'I mean'?",
-              options: [
-                  { text: "Soportar...", correct: false },
-                  { text: "O sea...", correct: true },
-                  { text: "Fíjate...", correct: false },
-                  { text: "Buen provecho...", correct: false }
-              ],
-              explanation: "'O sea...' is the absolute go-to filler to clarify statements or say 'in other words' like a native speaker."
-          },
-          {
-              category: "Pronunciation: Double R",
-              question: "How do you correctly execute the Spanish double 'R' sound (as in 'perro')?",
-              options: [
-                  { text: "Pull your tongue back into the throat like an English 'R'", correct: false },
-                  { text: "Let your tongue tip vibrate against your alveolar ridge with exhaled air", correct: true },
-                  { text: "Click the back of your throat as in French", correct: false },
-                  { text: "Bite your bottom lip as with the letter 'F'", correct: false }
-              ],
-              explanation: "The rolled 'RR' is an alveolar trill. Relax your tongue tip and let exhaled breath flap it against the ridge behind your top teeth."
-          },
-          {
-              category: "Pronunciation: Letter G/J",
-              question: "What does the Spanish 'G' sound like when followed by 'E' or 'I' (as in 'gente')?",
-              options: [
-                  { text: "Like a hard English 'G' in 'Go'", correct: false },
-                  { text: "Like a soft English 'J' in 'Jump'", correct: false },
-                  { text: "Like a breathy, warm 'H' sound produced from deep inside the throat", correct: true },
-                  { text: "It is completely silent", correct: false }
-              ],
-              explanation: "Before 'E' and 'I', both 'G' and 'J' make a guttural, breathy sound similar to a dry English 'H' or German 'ch'."
-          },
-          {
-              category: "Pronunciation: Silent U",
-              question: "Is the letter 'U' pronounced in words starting with 'gue' or 'gui' (such as 'guerra' or 'guitarra')?",
-              options: [
-                  { text: "Yes, it is pronounced as an 'oo' sound", correct: false },
-                  { text: "No, it is completely silent and serves to keep the 'G' hard", correct: true },
-                  { text: "Yes, it is pronounced like a 'w' sound", correct: false },
-                  { text: "It depends on word position", correct: false }
-              ],
-              explanation: "In 'gue' and 'gui' combinations, the 'U' is completely silent. It only exists to prevent the 'G' from shifting to the breathy throat sound."
-          },
-          {
-              category: "Pronunciation: Letter Y/LL",
-              question: "How are the letters 'LL' and 'Y' typically pronounced in standard Spanish?",
-              options: [
-                  { text: "Like a soft English 'L' sound", correct: false },
-                  { text: "Like an English 'Y' sound (or a soft 'J' depending on region)", correct: true },
-                  { text: "Like a breathy French throat vibration", correct: false },
-                  { text: "They are completely silent", correct: false }
-              ],
-              explanation: "Both 'Y' and 'LL' represent a palatal glide, making a sound similar to the English 'Y' in 'yes' or a light 'J' in 'jet'."
-          },
-          {
-              category: "Word Stress Rule",
-              question: "Where should the vocal emphasis go for words ending in '-mente' (like 'fácilmente')?",
-              options: [
-                  { text: "Always on the very last syllable", correct: false },
-                  { text: "It preserves double stress: on both the adjective's original root and the 'men' syllable", correct: true },
-                  { text: "Always on the very first syllable", correct: false },
-                  { text: "Emphasis is completely random", correct: false }
-              ],
-              explanation: "Adverbs in '-mente' actually hold two vocal beats: one on the original adjective's primary stress, and another on the '-men-' syllable."
-          },
-          {
-              category: "Cognate Gender Rule",
-              question: "Which of the following represents the correct gender pattern for nouns ending in '-ción'?",
-              options: [
-                  { text: "They are always masculine nouns (el)", correct: false },
-                  { text: "They are always feminine nouns (la)", correct: true },
-                  { text: "They have neutral gender and use 'lo'", correct: false },
-                  { text: "Their gender changes based on regional dialects", correct: false }
-              ],
-              explanation: "All Spanish nouns ending in '-ción' or '-sión' are feminine and must always be paired with 'la' or 'una'."
-          },
-          {
-              category: "Cognate Gender Rule",
-              question: "What is the grammatical gender of nouns converted from English using the '-ty' to '-dad' pattern?",
-              options: [
-                  { text: "Masculine (el)", correct: false },
-                  { text: "Feminine (la)", correct: true },
-                  { text: "Neuter (lo)", correct: false },
-                  { text: "They can be either depending on physical size", correct: false }
-              ],
-              explanation: "Nouns ending in the suffix '-dad' are feminine. For example: la ciudad, la prioridad, la velocidad."
-          },
-          {
-              category: "Cognate Spelling: -ous",
-              question: "How do you convert English adjectives ending in '-ous' (like 'curious') into Spanish?",
-              options: [
-                  { text: "Replace '-ous' with '-mente'", correct: false },
-                  { text: "Replace '-ous' with '-oso' (e.g. curioso)", correct: true },
-                  { text: "Keep the exact spelling and add an accent", correct: false },
-                  { text: "Replace '-ous' with '-ción'", correct: false }
-              ],
-              explanation: "Adjectives ending in '-ous' map directly to '-oso' in Spanish, forming masculine descriptive adjectives."
-          },
-          {
-              category: "Cognate Rule: -al",
-              question: "What occurs when pronouncing an identical '-al' cognate like 'natural' in Spanish?",
-              options: [
-                  { text: "The spelling changes by removing the 'L'", correct: false },
-                  { text: "The spelling stays the same, but the stress shifts to the final syllable ('-ral')", correct: true },
-                  { text: "The spelling gets a double 'L' added", correct: false },
-                  { text: "The stress is kept on the first syllable as in English", correct: false }
-              ],
-              explanation: "Words ending in a consonant (except N or S) naturally put the vocal stress on the final syllable. Say: 'nah-too-RAHL', not 'NAH-chur-ul'."
-          },
-          {
-              category: "Cognate Rule: -al",
-              question: "What is the key pronunciation adjustment for 'General' in Spanish?",
-              options: [
-                  { text: "Pronounce it exactly like English", correct: false },
-                  { text: "Keep spelling identical but shift vocal stress to '-ral'", correct: true }
-              ],
-              explanation: "Identical '-al' cognates require shifting the stress to the final syllable (heh-neh-RAHL)."
-          },
-          {
-              category: "Cognate Rule: -nce",
-              question: "What Spanish suffix corresponds directly to the English suffix '-nce' (as in 'difference')?",
-              options: [
-                  { text: "'-dad'", correct: false },
-                  { text: "'-ncia' (e.g. diferencia)", correct: true },
-                  { text: "'-ción'", correct: false },
-                  { text: "'-OSO'", correct: false }
-              ],
-              explanation: "The English suffix '-nce' maps neatly to '-ncia' in Spanish. These are also feminine nouns (la diferencia, la distancia)."
-          },
-          {
-              category: "Cognate Rule: -ment",
-              question: "How do you translate English abstract nouns ending in '-ment' (such as 'argument')?",
-              options: [
-                  { text: "Change the suffix to '-dad'", correct: false },
-                  { text: "Change the suffix to '-mento' (e.g. argumento)", correct: true },
-                  { text: "They stay completely identical", correct: false },
-                  { text: "They change to '-mente'", correct: false }
-              ],
-              explanation: "Many abstract English nouns ending in '-ment' convert smoothly to '-mento' and are masculine (el argumento, el instrumento)."
-          },
-          {
-              category: "False Friend: Soportar",
-              question: "If you want to say 'I support my favorite football team' or 'I support my friend', should you use the verb 'soportar'?",
-              options: [
-                  { text: "Yes, 'soportar' means to actively support a cause", correct: false },
-                  { text: "No, 'soportar' means to tolerate/put up with; you should use 'apoyar'", correct: true },
-                  { text: "No, you must use 'realizar'", correct: false },
-                  { text: "Yes, but only for physical structures", correct: false }
-              ],
-              explanation: "'Soportar' is a false friend meaning 'to bear/tolerate'. To support or advocate for a friend or team, the correct verb is 'apoyar'."
-          },
-          {
-              category: "False Friend: Constipado",
-              question: "If an English speaker says 'Estoy muy constipado', what does a Spanish native understand?",
-              options: [
-                  { text: "They are having digestive blockages", correct: false },
-                  { text: "They have a head cold/nasal congestion", correct: true },
-                  { text: "They are extremely angry", correct: false },
-                  { text: "They are tired", correct: false }
-              ],
-              explanation: "'Constipado' is a classic false friend. It means congested or having a cold. If you mean constipated, you must use 'estreñido'."
-          },
-          {
-              category: "False Friend: Carpeta",
-              question: "What does the Spanish word 'Carpeta' represent?",
-              options: [
-                  { text: "A floor rug or carpet", correct: false },
-                  { text: "A folder or binder to hold papers", correct: true },
-                  { text: "A small kitchen table", correct: false },
-                  { text: "A book cover", correct: false }
-              ],
-              explanation: "'Carpeta' is a false friend that means folder. If you want to say carpet/rug, you must use the word 'alfombra'."
-          },
-          {
-              category: "False Friend: Éxito",
-              question: "If you walk through a building and see a door marked 'Éxito', what does it mean?",
-              options: [
-                  { text: "It is the main emergency exit door", correct: false },
-                  { text: "It is the actual exit door", correct: false },
-                  { text: "Success (this is a false friend; exit door is 'Salida')", correct: true },
-                  { text: "It is a quiet study space", correct: false }
-              ],
-              explanation: "Éxito means success. If you are looking for the physical exit, you must locate a sign marked 'Salida'."
-          },
-          {
-              category: "False Friend: Realizar",
-              question: "What does the verb 'realizar' mean in Spanish?",
-              options: [
-                  { text: "To understand or realize an idea", correct: false },
-                  { text: "To perform, carry out, or construct an action", correct: true },
-                  { text: "To fail completely", correct: false },
-                  { text: "To purchase an item", correct: false }
-              ],
-              explanation: "Realizar is a false friend meaning to carry out or construct. To realize/grasp an idea is 'darse cuenta'."
-          },
-          {
-              category: "Ser vs Estar Meaning Shift",
-              question: "If you say 'La sopa está fría', what are you describing?",
-              options: [
-                  { text: "The soup is intrinsically cold by nature", correct: false },
-                  { text: "The current state of the soup at this moment (it has cooled down)", correct: true },
-                  { text: "The soup is located in a cold country", correct: false },
-                  { text: "The soup is boring", correct: false }
-              ],
-              explanation: "Using 'estar' with temperature adjectives describes the current condition of the food, not its permanent natural trait."
-          },
-          {
-              category: "Ser vs Estar: Location",
-              question: "Which verb do you use to describe the geographic location of a permanent concrete building ('The library is next to the park')?",
-              options: [
-                  { text: "Ser (because it is a permanent building)", correct: false },
-                  { text: "Estar (because all geographic location uses Estar, regardless of permanency)", correct: true },
-                  { text: "Both are interchangeable", correct: false },
-                  { text: "Haber", correct: false }
-              ],
-              explanation: "No matter how permanent a location is (even cities or mountains), geography and physical location always require 'Estar'."
-          },
-          {
-              category: "Ser vs Estar: Adjectives",
-              question: "What does 'Soy listo' mean compared to 'Estoy listo'?",
-              options: [
-                  { text: "There is absolutely no difference", correct: false },
-                  { text: "'Soy listo' means I am smart; 'Estoy listo' means I am ready", correct: true },
-                  { text: "'Soy listo' means I am ready; 'Estoy listo' means I am smart", correct: false }
-              ],
-              explanation: "Pairing 'listo' with 'Ser' describes intelligence (smart). Pairing it with 'Estar' indicates preparation (ready)."
-          },
-          {
-              category: "Past Timelines",
-              question: "Which tense do you use to state a specific, completed transaction in the past ('Yesterday I bought a car')?",
-              options: [
-                  { text: "Imperfect Tense", correct: false },
-                  { text: "Preterite Tense", correct: true },
-                  { text: "Subjunctive Mood", correct: false },
-                  { text: "Present Perfect Tense", correct: false }
-              ],
-              explanation: "Single completed events with a definitive timeframe utilize the Preterite tense."
-          },
-          {
-              category: "Past Timelines: Interrupted Actions",
-              question: "In the sentence: 'I was sleeping (1) when the phone rang (2)', which tenses are used?",
-              options: [
-                  { text: "(1) Preterite, (2) Imperfect", correct: false },
-                  { text: "(1) Imperfect, (2) Preterite", correct: true },
-                  { text: "Both are Preterite", correct: false },
-                  { text: "Both are Imperfect", correct: false }
-              ],
-              explanation: "The ongoing background condition (sleeping) is in the Imperfect. The sudden interrupting action (rang) is in the Preterite."
-          },
-          {
-              category: "Subjunctive: Impersonal Triggers",
-              question: "Does the expression 'Es necesario que...' require the subjunctive or indicative mood?",
-              options: [
-                  { text: "Indicative Mood", correct: false },
-                  { text: "Subjunctive Mood", correct: true },
-                  { text: "Infinitive Mood", correct: false },
-                  { text: "Conditional Mood", correct: false }
-              ],
-              explanation: "Impersonal expressions indicating necessity, urgency, or evaluation trigger the Subjunctive mood on the secondary verb."
-          },
-          {
-              category: "Subjunctive triggers: Beliefs",
-              question: "Compare these two: 'Creo que él...' (1) vs 'No creo que él...' (2). Which moods are required?",
-              options: [
-                  { text: "(1) Subjunctive, (2) Indicative", correct: false },
-                  { text: "(1) Indicative, (2) Subjunctive", correct: true },
-                  { text: "Both are Subjunctive", correct: false },
-                  { text: "Both are Indicative", correct: false }
-              ],
-              explanation: "Belief/certainty ('creo que') uses the Indicative. Doubt/denial ('no creo que') triggers the Subjunctive."
-          },
-          {
-              category: "Conversational Fillers: Softeners",
-              question: "Which filler is used to mean 'Let's see...' or 'Let's check' in standard conversation?",
-              options: [
-                  { text: "O sea...", correct: false },
-                  { text: "Pues...", correct: false },
-                  { text: "A ver...", correct: true },
-                  { text: "Soportar...", correct: false }
-              ],
-              explanation: "'A ver...' (literally 'to see') is highly common to introduce ideas, coordinate tasks, or say 'let's see'."
-          },
-          {
-              category: "Subjunctive triggers: Desires",
-              question: "Does saying 'Yo quiero que tú...' force the next verb into indicative or subjunctive?",
-              options: [
-                  { text: "Indicative", correct: false },
-                  { text: "Subjunctive", correct: true },
-                  { text: "Conditional", correct: false },
-                  { text: "Future", correct: false }
-              ],
-              explanation: "Expressions of personal wishes, desires, or requests targeted at other subjects trigger the Subjunctive mood."
-          },
-          {
-              category: "Conversational Basics",
-              question: "How do you politely ask 'How much does it cost' in a typical transaction?",
-              options: [
-                  { text: "¿Qué hora es?", correct: false },
-                  { text: "Buen provecho", correct: false },
-                  { text: "¿Cuánto cuesta?", correct: true },
-                  { text: "Lo siento mucho", correct: false }
-              ],
-              explanation: "¿Cuánto cuesta? is the standard, polite way to ask for prices of items, products, or services."
-          }
+        {
+          category: "Pronunciation Pitfall",
+          question:
+            "Which of these describes the correct way to pronounce the Spanish letter 'D' when it sits between two vowels (like in 'Cada')?",
+          options: [
+            {
+              text: "Exactly like the hard English 'D' in 'Dog'",
+              correct: false,
+            },
+            {
+              text: "Softly, with the tongue touching the back of top front teeth, like 'th' in 'then'",
+              correct: true,
+            },
+            { text: "It becomes completely silent", correct: false },
+            { text: "It is pronounced like an English 'Z'", correct: false },
+          ],
+          explanation:
+            "When 'd' is between vowels, Spanish speakers soften it by placing the tongue behind the front teeth. It sounds like the English 'th' in 'then'.",
+        },
+        {
+          category: "Silent H Rule",
+          question:
+            "How should the letter 'H' be pronounced in words like 'Hola' or 'Hotel'?",
+          options: [
+            {
+              text: "With a soft breathy exhale, similar to English",
+              correct: false,
+            },
+            {
+              text: "Completely silent, with no pronunciation at all",
+              correct: true,
+            },
+            {
+              text: "It depends on whether it is followed by a consonant",
+              correct: false,
+            },
+            { text: "Like a soft English 'J'", correct: false },
+          ],
+          explanation:
+            "The letter 'H' is always completely silent in Spanish. Pronouncing it is one of the easiest ways to give away a native English accent.",
+        },
+        {
+          category: "Vowel Purity",
+          question:
+            "What is the common English pronunciation habit ('drawl') when pronouncing the vowel 'O' in 'no'?",
+          options: [
+            {
+              text: "Rounding the lips forward into an 'oo' glide sound",
+              correct: true,
+            },
+            {
+              text: "Keeping the jaw completely fixed and frozen",
+              correct: false,
+            },
+            {
+              text: "Changing the 'O' sound into an 'ah' sound",
+              correct: false,
+            },
+            { text: "Pronouncing it like a short 'uh' sound", correct: false },
+          ],
+          explanation:
+            "English speakers naturally add a diphthong glide (saying 'no-oo'). In Spanish, you must stop your lips from sliding and keep the 'O' short, dry, and flat.",
+        },
+        {
+          category: "Verb Blueprint: Ser vs Estar",
+          question:
+            "If you want to say 'I am bored' (current temporary feeling), which verb do you use?",
+          options: [
+            { text: "Estoy (Estar)", correct: true },
+            { text: "Soy (Ser)", correct: false },
+            { text: "Tengo (Tener)", correct: false },
+            { text: "Hago (Hacer)", correct: false },
+          ],
+          explanation:
+            "Temporary emotional states or conditions use 'Estar'. If you say 'Soy aburrido', you are claiming that you are a boring person!",
+        },
+        {
+          category: "Identity Code: Ser vs Estar",
+          question:
+            "Which verb do you use to describe your occupation or profession ('I am a doctor')?",
+          options: [
+            { text: "Ser (e.g. 'Soy médico')", correct: true },
+            { text: "Estar (e.g. 'Estoy médico')", correct: false },
+            { text: "Tener (e.g. 'Tengo médico')", correct: false },
+            { text: "Hago (Hacer)", correct: false },
+          ],
+          explanation:
+            "Professions, origins, and permanent traits are identity attributes, meaning they fall under the SER (DOCTOR) mnemonic.",
+        },
+        {
+          category: "Cognate Magic",
+          question:
+            "Which of these words is the correct Spanish translation for the English word 'University'?",
+          options: [
+            { text: "El universición", correct: false },
+            { text: "La universidad", correct: true },
+            { text: "El universidad", correct: false },
+            { text: "La universoso", correct: false },
+          ],
+          explanation:
+            "The English ending '-ty' transforms to '-dad' in Spanish. Furthermore, these words are always feminine, so we use 'la'.",
+        },
+        {
+          category: "Timeline Battleground",
+          question:
+            "Which tense do you use to describe a routine or habit in the past ('When I was a child, I used to play soccer')?",
+          options: [
+            { text: "Preterite Tense", correct: false },
+            { text: "Imperfect Tense", correct: true },
+            { text: "Subjunctive Mood", correct: false },
+            { text: "Conditional Mood", correct: false },
+          ],
+          explanation:
+            "Routines, habits, and background descriptions in the past always utilize the Imperfect Tense.",
+        },
+        {
+          category: "False Friend Trap",
+          question:
+            "If you want to tell a Spanish speaker that you are currently embarrassed, what is the safest phrase to use?",
+          options: [
+            { text: "Estoy muy embarazada", correct: false },
+            { text: "Tengo vergüenza / Estoy apenado", correct: true },
+            { text: "Estoy actualmente soportado", correct: false },
+            { text: "Estoy listo", correct: false },
+          ],
+          explanation:
+            "Embarazada is a false friend that means pregnant. To express embarrassment, use 'tengo vergüenza' or 'estoy apenado'.",
+        },
+        {
+          category: "False Friend Trap",
+          question:
+            "What does the Spanish word 'Actualmente' translate to in English?",
+          options: [
+            { text: "Actually", correct: false },
+            { text: "Currently / At the present time", correct: true },
+            { text: "Accidentally", correct: false },
+            { text: "In reality", correct: false },
+          ],
+          explanation:
+            "Actualmente is a false friend that means currently. To say 'actually/in reality', you should use 'en realidad' or 'realmente'.",
+        },
+        {
+          category: "Subjunctive Code",
+          question:
+            "Identify the correct assembly for the subjunctive trigger sentence: 'I want you to come.'",
+          options: [
+            { text: "Yo quiero que tú vienes", correct: false },
+            { text: "Yo quiero que tú vengas", correct: true },
+            { text: "Yo quiero tú venir", correct: false },
+            { text: "Yo quiero que tú vendrás", correct: false },
+          ],
+          explanation:
+            "The verb 'querer' acts as a WEIRD trigger of desire, requiring 'que' and forcing the second verb into the Subjunctive mood ('vengas').",
+        },
+        {
+          category: "Conversational Fillers",
+          question:
+            "Which conversational filler is best suited to gain thinking time (similar to English 'Well...')?",
+          options: [
+            { text: "O sea...", correct: false },
+            { text: "Pues...", correct: true },
+            { text: "Mira...", correct: false },
+            { text: "Soportar...", correct: false },
+          ],
+          explanation:
+            "'Pues...' is highly common and gives you natural cognitive processing time without making your pauses sound awkward.",
+        },
+        {
+          category: "Subjunctive Trigger",
+          question:
+            "Does the expression of certain doubt ('No creo que...') require the indicative or subjunctive mood?",
+          options: [
+            { text: "Indicative Mood", correct: false },
+            { text: "Subjunctive Mood", correct: true },
+            { text: "Infinitive Mood", correct: false },
+            { text: "Conditional Mood", correct: false },
+          ],
+          explanation:
+            "Expressing doubt ('No creo que...') triggers the Subjunctive mood because it represents a non-certain subjective reality.",
+        },
+        {
+          category: "Conversational Fillers",
+          question:
+            "Which filler is used to mean 'In other words' or 'I mean'?",
+          options: [
+            { text: "Soportar...", correct: false },
+            { text: "O sea...", correct: true },
+            { text: "Fíjate...", correct: false },
+            { text: "Buen provecho...", correct: false },
+          ],
+          explanation:
+            "'O sea...' is the absolute go-to filler to clarify statements or say 'in other words' like a native speaker.",
+        },
+        {
+          category: "Pronunciation: Double R",
+          question:
+            "How do you correctly execute the Spanish double 'R' sound (as in 'perro')?",
+          options: [
+            {
+              text: "Pull your tongue back into the throat like an English 'R'",
+              correct: false,
+            },
+            {
+              text: "Let your tongue tip vibrate against your alveolar ridge with exhaled air",
+              correct: true,
+            },
+            {
+              text: "Click the back of your throat as in French",
+              correct: false,
+            },
+            {
+              text: "Bite your bottom lip as with the letter 'F'",
+              correct: false,
+            },
+          ],
+          explanation:
+            "The rolled 'RR' is an alveolar trill. Relax your tongue tip and let exhaled breath flap it against the ridge behind your top teeth.",
+        },
+        {
+          category: "Pronunciation: Letter G/J",
+          question:
+            "What does the Spanish 'G' sound like when followed by 'E' or 'I' (as in 'gente')?",
+          options: [
+            { text: "Like a hard English 'G' in 'Go'", correct: false },
+            { text: "Like a soft English 'J' in 'Jump'", correct: false },
+            {
+              text: "Like a breathy, warm 'H' sound produced from deep inside the throat",
+              correct: true,
+            },
+            { text: "It is completely silent", correct: false },
+          ],
+          explanation:
+            "Before 'E' and 'I', both 'G' and 'J' make a guttural, breathy sound similar to a dry English 'H' or German 'ch'.",
+        },
+        {
+          category: "Pronunciation: Silent U",
+          question:
+            "Is the letter 'U' pronounced in words starting with 'gue' or 'gui' (such as 'guerra' or 'guitarra')?",
+          options: [
+            { text: "Yes, it is pronounced as an 'oo' sound", correct: false },
+            {
+              text: "No, it is completely silent and serves to keep the 'G' hard",
+              correct: true,
+            },
+            { text: "Yes, it is pronounced like a 'w' sound", correct: false },
+            { text: "It depends on word position", correct: false },
+          ],
+          explanation:
+            "In 'gue' and 'gui' combinations, the 'U' is completely silent. It only exists to prevent the 'G' from shifting to the breathy throat sound.",
+        },
+        {
+          category: "Pronunciation: Letter Y/LL",
+          question:
+            "How are the letters 'LL' and 'Y' typically pronounced in standard Spanish?",
+          options: [
+            { text: "Like a soft English 'L' sound", correct: false },
+            {
+              text: "Like an English 'Y' sound (or a soft 'J' depending on region)",
+              correct: true,
+            },
+            { text: "Like a breathy French throat vibration", correct: false },
+            { text: "They are completely silent", correct: false },
+          ],
+          explanation:
+            "Both 'Y' and 'LL' represent a palatal glide, making a sound similar to the English 'Y' in 'yes' or a light 'J' in 'jet'.",
+        },
+        {
+          category: "Word Stress Rule",
+          question:
+            "Where should the vocal emphasis go for words ending in '-mente' (like 'fácilmente')?",
+          options: [
+            { text: "Always on the very last syllable", correct: false },
+            {
+              text: "It preserves double stress: on both the adjective's original root and the 'men' syllable",
+              correct: true,
+            },
+            { text: "Always on the very first syllable", correct: false },
+            { text: "Emphasis is completely random", correct: false },
+          ],
+          explanation:
+            "Adverbs in '-mente' actually hold two vocal beats: one on the original adjective's primary stress, and another on the '-men-' syllable.",
+        },
+        {
+          category: "Cognate Gender Rule",
+          question:
+            "Which of the following represents the correct gender pattern for nouns ending in '-ción'?",
+          options: [
+            { text: "They are always masculine nouns (el)", correct: false },
+            { text: "They are always feminine nouns (la)", correct: true },
+            { text: "They have neutral gender and use 'lo'", correct: false },
+            {
+              text: "Their gender changes based on regional dialects",
+              correct: false,
+            },
+          ],
+          explanation:
+            "All Spanish nouns ending in '-ción' or '-sión' are feminine and must always be paired with 'la' or 'una'.",
+        },
+        {
+          category: "Cognate Gender Rule",
+          question:
+            "What is the grammatical gender of nouns converted from English using the '-ty' to '-dad' pattern?",
+          options: [
+            { text: "Masculine (el)", correct: false },
+            { text: "Feminine (la)", correct: true },
+            { text: "Neuter (lo)", correct: false },
+            {
+              text: "They can be either depending on physical size",
+              correct: false,
+            },
+          ],
+          explanation:
+            "Nouns ending in the suffix '-dad' are feminine. For example: la ciudad, la prioridad, la velocidad.",
+        },
+        {
+          category: "Cognate Spelling: -ous",
+          question:
+            "How do you convert English adjectives ending in '-ous' (like 'curious') into Spanish?",
+          options: [
+            { text: "Replace '-ous' with '-mente'", correct: false },
+            {
+              text: "Replace '-ous' with '-oso' (e.g. curioso)",
+              correct: true,
+            },
+            {
+              text: "Keep the exact spelling and add an accent",
+              correct: false,
+            },
+            { text: "Replace '-ous' with '-ción'", correct: false },
+          ],
+          explanation:
+            "Adjectives ending in '-ous' map directly to '-oso' in Spanish, forming masculine descriptive adjectives.",
+        },
+        {
+          category: "Cognate Rule: -al",
+          question:
+            "What occurs when pronouncing an identical '-al' cognate like 'natural' in Spanish?",
+          options: [
+            {
+              text: "The spelling changes by removing the 'L'",
+              correct: false,
+            },
+            {
+              text: "The spelling stays the same, but the stress shifts to the final syllable ('-ral')",
+              correct: true,
+            },
+            { text: "The spelling gets a double 'L' added", correct: false },
+            {
+              text: "The stress is kept on the first syllable as in English",
+              correct: false,
+            },
+          ],
+          explanation:
+            "Words ending in a consonant (except N or S) naturally put the vocal stress on the final syllable. Say: 'nah-too-RAHL', not 'NAH-chur-ul'.",
+        },
+        {
+          category: "Cognate Rule: -al",
+          question:
+            "What is the key pronunciation adjustment for 'General' in Spanish?",
+          options: [
+            { text: "Pronounce it exactly like English", correct: false },
+            {
+              text: "Keep spelling identical but shift vocal stress to '-ral'",
+              correct: true,
+            },
+          ],
+          explanation:
+            "Identical '-al' cognates require shifting the stress to the final syllable (heh-neh-RAHL).",
+        },
+        {
+          category: "Cognate Rule: -nce",
+          question:
+            "What Spanish suffix corresponds directly to the English suffix '-nce' (as in 'difference')?",
+          options: [
+            { text: "'-dad'", correct: false },
+            { text: "'-ncia' (e.g. diferencia)", correct: true },
+            { text: "'-ción'", correct: false },
+            { text: "'-OSO'", correct: false },
+          ],
+          explanation:
+            "The English suffix '-nce' maps neatly to '-ncia' in Spanish. These are also feminine nouns (la diferencia, la distancia).",
+        },
+        {
+          category: "Cognate Rule: -ment",
+          question:
+            "How do you translate English abstract nouns ending in '-ment' (such as 'argument')?",
+          options: [
+            { text: "Change the suffix to '-dad'", correct: false },
+            {
+              text: "Change the suffix to '-mento' (e.g. argumento)",
+              correct: true,
+            },
+            { text: "They stay completely identical", correct: false },
+            { text: "They change to '-mente'", correct: false },
+          ],
+          explanation:
+            "Many abstract English nouns ending in '-ment' convert smoothly to '-mento' and are masculine (el argumento, el instrumento).",
+        },
+        {
+          category: "False Friend: Soportar",
+          question:
+            "If you want to say 'I support my favorite football team' or 'I support my friend', should you use the verb 'soportar'?",
+          options: [
+            {
+              text: "Yes, 'soportar' means to actively support a cause",
+              correct: false,
+            },
+            {
+              text: "No, 'soportar' means to tolerate/put up with; you should use 'apoyar'",
+              correct: true,
+            },
+            { text: "No, you must use 'realizar'", correct: false },
+            { text: "Yes, but only for physical structures", correct: false },
+          ],
+          explanation:
+            "'Soportar' is a false friend meaning 'to bear/tolerate'. To support or advocate for a friend or team, the correct verb is 'apoyar'.",
+        },
+        {
+          category: "False Friend: Constipado",
+          question:
+            "If an English speaker says 'Estoy muy constipado', what does a Spanish native understand?",
+          options: [
+            { text: "They are having digestive blockages", correct: false },
+            { text: "They have a head cold/nasal congestion", correct: true },
+            { text: "They are extremely angry", correct: false },
+            { text: "They are tired", correct: false },
+          ],
+          explanation:
+            "'Constipado' is a classic false friend. It means congested or having a cold. If you mean constipated, you must use 'estreñido'.",
+        },
+        {
+          category: "False Friend: Carpeta",
+          question: "What does the Spanish word 'Carpeta' represent?",
+          options: [
+            { text: "A floor rug or carpet", correct: false },
+            { text: "A folder or binder to hold papers", correct: true },
+            { text: "A small kitchen table", correct: false },
+            { text: "A book cover", correct: false },
+          ],
+          explanation:
+            "'Carpeta' is a false friend that means folder. If you want to say carpet/rug, you must use the word 'alfombra'.",
+        },
+        {
+          category: "False Friend: Éxito",
+          question:
+            "If you walk through a building and see a door marked 'Éxito', what does it mean?",
+          options: [
+            { text: "It is the main emergency exit door", correct: false },
+            { text: "It is the actual exit door", correct: false },
+            {
+              text: "Success (this is a false friend; exit door is 'Salida')",
+              correct: true,
+            },
+            { text: "It is a quiet study space", correct: false },
+          ],
+          explanation:
+            "Éxito means success. If you are looking for the physical exit, you must locate a sign marked 'Salida'.",
+        },
+        {
+          category: "False Friend: Realizar",
+          question: "What does the verb 'realizar' mean in Spanish?",
+          options: [
+            { text: "To understand or realize an idea", correct: false },
+            {
+              text: "To perform, carry out, or construct an action",
+              correct: true,
+            },
+            { text: "To fail completely", correct: false },
+            { text: "To purchase an item", correct: false },
+          ],
+          explanation:
+            "Realizar is a false friend meaning to carry out or construct. To realize/grasp an idea is 'darse cuenta'.",
+        },
+        {
+          category: "Ser vs Estar Meaning Shift",
+          question: "If you say 'La sopa está fría', what are you describing?",
+          options: [
+            {
+              text: "The soup is intrinsically cold by nature",
+              correct: false,
+            },
+            {
+              text: "The current state of the soup at this moment (it has cooled down)",
+              correct: true,
+            },
+            { text: "The soup is located in a cold country", correct: false },
+            { text: "The soup is boring", correct: false },
+          ],
+          explanation:
+            "Using 'estar' with temperature adjectives describes the current condition of the food, not its permanent natural trait.",
+        },
+        {
+          category: "Ser vs Estar: Location",
+          question:
+            "Which verb do you use to describe the geographic location of a permanent concrete building ('The library is next to the park')?",
+          options: [
+            {
+              text: "Ser (because it is a permanent building)",
+              correct: false,
+            },
+            {
+              text: "Estar (because all geographic location uses Estar, regardless of permanency)",
+              correct: true,
+            },
+            { text: "Both are interchangeable", correct: false },
+            { text: "Haber", correct: false },
+          ],
+          explanation:
+            "No matter how permanent a location is (even cities or mountains), geography and physical location always require 'Estar'.",
+        },
+        {
+          category: "Ser vs Estar: Adjectives",
+          question: "What does 'Soy listo' mean compared to 'Estoy listo'?",
+          options: [
+            { text: "There is absolutely no difference", correct: false },
+            {
+              text: "'Soy listo' means I am smart; 'Estoy listo' means I am ready",
+              correct: true,
+            },
+            {
+              text: "'Soy listo' means I am ready; 'Estoy listo' means I am smart",
+              correct: false,
+            },
+          ],
+          explanation:
+            "Pairing 'listo' with 'Ser' describes intelligence (smart). Pairing it with 'Estar' indicates preparation (ready).",
+        },
+        {
+          category: "Past Timelines",
+          question:
+            "Which tense do you use to state a specific, completed transaction in the past ('Yesterday I bought a car')?",
+          options: [
+            { text: "Imperfect Tense", correct: false },
+            { text: "Preterite Tense", correct: true },
+            { text: "Subjunctive Mood", correct: false },
+            { text: "Present Perfect Tense", correct: false },
+          ],
+          explanation:
+            "Single completed events with a definitive timeframe utilize the Preterite tense.",
+        },
+        {
+          category: "Past Timelines: Interrupted Actions",
+          question:
+            "In the sentence: 'I was sleeping (1) when the phone rang (2)', which tenses are used?",
+          options: [
+            { text: "(1) Preterite, (2) Imperfect", correct: false },
+            { text: "(1) Imperfect, (2) Preterite", correct: true },
+            { text: "Both are Preterite", correct: false },
+            { text: "Both are Imperfect", correct: false },
+          ],
+          explanation:
+            "The ongoing background condition (sleeping) is in the Imperfect. The sudden interrupting action (rang) is in the Preterite.",
+        },
+        {
+          category: "Subjunctive: Impersonal Triggers",
+          question:
+            "Does the expression 'Es necesario que...' require the subjunctive or indicative mood?",
+          options: [
+            { text: "Indicative Mood", correct: false },
+            { text: "Subjunctive Mood", correct: true },
+            { text: "Infinitive Mood", correct: false },
+            { text: "Conditional Mood", correct: false },
+          ],
+          explanation:
+            "Impersonal expressions indicating necessity, urgency, or evaluation trigger the Subjunctive mood on the secondary verb.",
+        },
+        {
+          category: "Subjunctive triggers: Beliefs",
+          question:
+            "Compare these two: 'Creo que él...' (1) vs 'No creo que él...' (2). Which moods are required?",
+          options: [
+            { text: "(1) Subjunctive, (2) Indicative", correct: false },
+            { text: "(1) Indicative, (2) Subjunctive", correct: true },
+            { text: "Both are Subjunctive", correct: false },
+            { text: "Both are Indicative", correct: false },
+          ],
+          explanation:
+            "Belief/certainty ('creo que') uses the Indicative. Doubt/denial ('no creo que') triggers the Subjunctive.",
+        },
+        {
+          category: "Conversational Fillers: Softeners",
+          question:
+            "Which filler is used to mean 'Let's see...' or 'Let's check' in standard conversation?",
+          options: [
+            { text: "O sea...", correct: false },
+            { text: "Pues...", correct: false },
+            { text: "A ver...", correct: true },
+            { text: "Soportar...", correct: false },
+          ],
+          explanation:
+            "'A ver...' (literally 'to see') is highly common to introduce ideas, coordinate tasks, or say 'let's see'.",
+        },
+        {
+          category: "Subjunctive triggers: Desires",
+          question:
+            "Does saying 'Yo quiero que tú...' force the next verb into indicative or subjunctive?",
+          options: [
+            { text: "Indicative", correct: false },
+            { text: "Subjunctive", correct: true },
+            { text: "Conditional", correct: false },
+            { text: "Future", correct: false },
+          ],
+          explanation:
+            "Expressions of personal wishes, desires, or requests targeted at other subjects trigger the Subjunctive mood.",
+        },
+        {
+          category: "Conversational Basics",
+          question:
+            "How do you politely ask 'How much does it cost' in a typical transaction?",
+          options: [
+            { text: "¿Qué hora es?", correct: false },
+            { text: "Buen provecho", correct: false },
+            { text: "¿Cuánto cuesta?", correct: true },
+            { text: "Lo siento mucho", correct: false },
+          ],
+          explanation:
+            "¿Cuánto cuesta? is the standard, polite way to ask for prices of items, products, or services.",
+        },
       ];
     </script>
 
-    <!-- -->
+    <!-- SPA logic unifications -->
     <script>
-      // SPA state management variables
       let currentUser = null;
       let isAnnual = false;
       let activeLessonIndex = 0;
@@ -2150,7 +2920,7 @@
       let currentFlashcardIndex = 0;
       let isFlashcardFlipped = false;
 
-      // Diagnostic (Global 40 questions) Quiz State
+      // Diagnostic Quiz State
       let quizCurrentIndex = 0;
       let quizScore = 0;
       let quizSelectedAnswer = null;
@@ -2158,18 +2928,33 @@
       let failedQuestionsList = [];
       let reviewCurrentIndex = 0;
 
-      // Banner slide state variables
+      // Banner slides
       let currentSlideIdx = 0;
       let slideInterval = null;
 
-      // Simulated Database for Users
+      // Database simulation
       let mockUsersDb = [
         {
           email: "student@example.com",
           password: "password",
           role: "self-study",
+          firstName: "Carlos",
+          lastName: "Pérez",
         },
-        { email: "tutor@example.com", password: "password", role: "tutor" },
+        {
+          email: "tutor@example.com",
+          password: "password",
+          role: "tutor",
+          firstName: "Sofía",
+          lastName: "López",
+        },
+        {
+          email: "admin@example.com",
+          password: "password",
+          role: "admin",
+          firstName: "System",
+          lastName: "Admin",
+        },
       ];
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -2179,7 +2964,6 @@
         setupLocalEvents();
       });
 
-      // Carousel Slider Engine
       function initSlideCarousel() {
         const slides = document.querySelectorAll(".carousel-slide");
         if (slides.length === 0) return;
@@ -2213,7 +2997,6 @@
         }
       }
 
-      // Authentication and Payment Flow Simulations
       function loadSessionFromStorage() {
         const session = localStorage.getItem("bridge_spanish_current_user");
         if (session) {
@@ -2230,15 +3013,36 @@
         const modal = document.getElementById("auth-modal");
         const title = document.getElementById("auth-modal-title");
         const toggleBtn = document.getElementById("auth-toggle-btn");
+        const nameFields = document.getElementById("auth-name-fields");
+        const roleField = document.getElementById("auth-role-field");
+
+        document.getElementById("auth-first-name").value = "";
+        document.getElementById("auth-last-name").value = "";
+        document.getElementById("auth-email").value = "";
+        document.getElementById("auth-password").value = "";
 
         if (mode === "login") {
           title.innerText = "Log In";
           toggleBtn.innerText = "Don't have an account? Sign Up";
           toggleBtn.onclick = () => openAuthModal("register");
+          nameFields.classList.add("hidden");
+          roleField.classList.add("hidden");
+          document
+            .getElementById("auth-first-name")
+            .removeAttribute("required");
+          document.getElementById("auth-last-name").removeAttribute("required");
         } else {
           title.innerText = "Sign Up";
           toggleBtn.innerText = "Already have an account? Log In";
           toggleBtn.onclick = () => openAuthModal("login");
+          nameFields.classList.remove("hidden");
+          roleField.classList.remove("hidden");
+          document
+            .getElementById("auth-first-name")
+            .setAttribute("required", "true");
+          document
+            .getElementById("auth-last-name")
+            .setAttribute("required", "true");
         }
 
         modal.classList.remove("hidden");
@@ -2260,16 +3064,14 @@
         }
       }
 
-      function handleAuthSubmit(event) {
-        event.preventDefault();
-        const email = document.getElementById("auth-email").value;
-        const password = document.getElementById("auth-password").value;
-
-        // Simple local logic search
-        let foundUser = mockUsersDb.find(
-          (u) => u.email === email && u.password === password,
-        );
-
+      function quickLogin(role) {
+        let email =
+          role === "student"
+            ? "student@example.com"
+            : role === "tutor"
+              ? "tutor@example.com"
+              : "admin@example.com";
+        let foundUser = mockUsersDb.find((u) => u.email === email);
         if (foundUser) {
           currentUser = foundUser;
           localStorage.setItem(
@@ -2278,10 +3080,47 @@
           );
           loginSuccessFlow(currentUser);
           closeAuthModal();
-          showToast(`Welcome back, ${email}!`, "success");
+          showToast(`¡Hola de nuevo, ${currentUser.firstName}!`, "success");
+        }
+      }
+
+      function handleAuthSubmit(event) {
+        event.preventDefault();
+        const title = document.getElementById("auth-modal-title").innerText;
+        const email = document.getElementById("auth-email").value;
+        const password = document.getElementById("auth-password").value;
+
+        if (title === "Log In") {
+          let foundUser = mockUsersDb.find(
+            (u) => u.email === email && u.password === password,
+          );
+          if (foundUser) {
+            currentUser = foundUser;
+            localStorage.setItem(
+              "bridge_spanish_current_user",
+              JSON.stringify(currentUser),
+            );
+            loginSuccessFlow(currentUser);
+            closeAuthModal();
+            showToast(
+              `¡Bienvenido de nuevo, ${currentUser.firstName}!`,
+              "success",
+            );
+          } else {
+            showToast("Email o contraseña incorrectos.", "error");
+          }
         } else {
-          // If register or not found, register them as guest self-study
-          const newUser = { email, password, role: "self-study" };
+          const firstName = document.getElementById("auth-first-name").value;
+          const lastName = document.getElementById("auth-last-name").value;
+          const role = document.getElementById("auth-role").value;
+
+          let userExists = mockUsersDb.some((u) => u.email === email);
+          if (userExists) {
+            showToast("Este correo electrónico ya está registrado.", "error");
+            return;
+          }
+
+          const newUser = { email, password, role, firstName, lastName };
           mockUsersDb.push(newUser);
           currentUser = newUser;
           localStorage.setItem(
@@ -2291,14 +3130,13 @@
           loginSuccessFlow(currentUser);
           closeAuthModal();
           showToast(
-            `Account registered successfully as Self-Study!`,
+            `¡Cuenta registrada como ${role === "admin" ? "Administrador" : role === "tutor" ? "Tutor" : "Estudiante"}!`,
             "success",
           );
         }
       }
 
       function loginSuccessFlow(user) {
-        // Adjust header elements
         document
           .getElementById("logged-out-header-actions")
           .classList.add("hidden");
@@ -2307,33 +3145,55 @@
         );
         loggedInActions.classList.remove("hidden");
 
-        const roleBadge = document.getElementById("user-role-badge");
-        roleBadge.innerText =
-          user.role === "tutor" ? "Tutor Track" : "Self-Study Track";
+        const userDisplayName = document.getElementById("user-display-name");
+        if (userDisplayName) {
+          userDisplayName.innerText = `${user.firstName} ${user.lastName}`;
+        }
 
-        // Adjust title styling
+        const roleBadge = document.getElementById("user-role-badge");
+        if (roleBadge) {
+          if (user.role === "admin") {
+            roleBadge.innerText = "System Admin";
+            roleBadge.parentNode.className =
+              "glass-crystal-badge px-3 py-1 rounded-full flex items-center space-x-1.5 border border-amber-300 bg-amber-50/50";
+            roleBadge.className =
+              "text-[9px] font-bold text-amber-800 uppercase tracking-wider";
+          } else if (user.role === "tutor") {
+            roleBadge.innerText = "Tutor Track";
+            roleBadge.parentNode.className =
+              "glass-crystal-badge px-3 py-1 rounded-full flex items-center space-x-1.5 border border-teal-200 bg-teal-50/50";
+            roleBadge.className =
+              "text-[9px] font-bold text-teal-800 uppercase tracking-wider";
+          } else {
+            roleBadge.innerText = "Self-Study Track";
+            roleBadge.parentNode.className =
+              "glass-crystal-badge px-3 py-1 rounded-full flex items-center space-x-1.5 border border-cyan-200 bg-cyan-50/50";
+            roleBadge.className =
+              "text-[9px] font-bold text-cyan-800 uppercase tracking-wider";
+          }
+        }
+
+        const welcomeTitle = document.querySelector("#tab-dashboard h2");
+        if (welcomeTitle) {
+          welcomeTitle.innerText = `¡Hola, ${user.firstName}! Your 24-Week Path to Native Fluency.`;
+        }
+
         document.getElementById("header-brand-title").className =
           "font-extrabold text-sm tracking-tight text-crystal-gradient transition-all duration-300";
 
-        // Hide landing page, show authorized workspace
         document.getElementById("landing-view").classList.add("hidden");
         document.getElementById("workspace-view").classList.remove("hidden");
 
-        // Setup general study dashboard elements
         initSyllabusEngine();
         renderRoadmapCards("roadmap-cards-container");
         initCognateStudio("cognate-rules-selector", "cognate-workbench-list");
         setupFlashcardEngine("flashcard-deck-tabs", "flashcard-trigger");
         switchTab("dashboard");
 
-        // If Tutor track, enable/show floating helper elements
-        if (user.role === "tutor") {
+        if (user.role === "tutor" || user.role === "admin") {
           const tutorFloat = document.getElementById("tutor-floating-btn");
           if (tutorFloat) tutorFloat.classList.remove("scale-0");
-          showToast(
-            "Tutor features successfully enabled! Speak with support channels at any time.",
-            "success",
-          );
+          showToast("Features successfully unlocked!", "success");
         } else {
           const tutorFloat = document.getElementById("tutor-floating-btn");
           if (tutorFloat) tutorFloat.classList.add("scale-0");
@@ -2398,7 +3258,13 @@
           ? "tutor"
           : "self-study";
 
-        const simulatedUser = { email, password: "password", role };
+        const simulatedUser = {
+          email,
+          password: "password",
+          role,
+          firstName: "Premium",
+          lastName: "Student",
+        };
         currentUser = simulatedUser;
         localStorage.setItem(
           "bridge_spanish_current_user",
@@ -2413,10 +3279,8 @@
         );
       }
 
-      // Toggle Tutor Floating UI Portal
       function toggleTutorPortal() {
         const portal = document.getElementById("tutor-feedback-portal");
-
         if (portal.classList.contains("hidden")) {
           portal.classList.remove("hidden");
           setTimeout(() => portal.classList.remove("translate-y-96"), 10);
@@ -2437,7 +3301,6 @@
             "success",
           );
 
-          // Add simulated tutor response after 3s
           setTimeout(() => {
             const chatHistory = document.getElementById("tutor-chat-history");
             const bubble = document.createElement("div");
@@ -2461,14 +3324,13 @@
       }
     </script>
 
-    <!-- -->
+    <!-- Interactive Workspace logic -->
     <script>
       function initSyllabusEngine() {
         const list = document.getElementById("lesson-links-container");
         if (!list) return;
         list.innerHTML = "";
 
-        // Build dynamic syllabus structures
         for (let m = 1; m <= 2; m++) {
           const monthHeader = document.createElement("div");
           monthHeader.className =
@@ -2484,7 +3346,6 @@
           lessonsData
             .filter((l) => l.month === m)
             .forEach((lesson) => {
-              // Finding true index
               const trueIdx = lessonsData.findIndex(
                 (item) =>
                   item.month === lesson.month && item.week === lesson.week,
@@ -2492,7 +3353,7 @@
               const item = document.createElement("button");
               item.id = `sidebar-btn-week-${lesson.week}`;
               item.className =
-                "w-full text-left p-2.5 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-600 hover:bg-slate-50";
+                "w-full text-left p-2.5 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-650 hover:bg-slate-50";
               item.innerHTML = `
                         <div class="w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0 bg-slate-100 text-slate-650">W${lesson.week}</div>
                         <div class="flex-1 min-w-0">
@@ -2521,7 +3382,6 @@
         if (title) title.innerText = lesson.title;
 
         if (content) {
-          // Compile targeted vocal cards
           let vocabHtml = "";
           if (lesson.vocab && lesson.vocab.length > 0) {
             vocabHtml = `
@@ -2585,7 +3445,7 @@
             }
           });
 
-        // Adjust navigation control labels on the classroom footer - ONLY Milestone at Class 6 (end of active syllabus)
+        // Footer labels
         const nextBtn = document.getElementById("btn-next-lesson");
         const prevBtn = document.getElementById("btn-prev-lesson");
 
@@ -2604,7 +3464,7 @@
       }
     </script>
 
-    <!-- -->
+    <!-- Quiz logic -->
     <script>
       function resetQuiz() {
         document.getElementById("quiz-setup").classList.remove("hidden");
@@ -2797,7 +3657,7 @@
           resultsDesc.innerText = `You scored ${finalScaledScore} points. To make sure you lock in correct parameters, complete your custom Weakness Study session containing all failed answers before retaking the test.`;
 
           actionsContainer.innerHTML = `
-                    <button class="glass-capsule-btn px-6 py-3 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-600 text-white" id="btn-quiz-start-review">
+                    <button class="glass-capsule-btn px-6 py-3 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-50 to-amber-600 text-white" id="btn-quiz-start-review">
                         Review Weaknesses (${failedQuestionsList.length}) <i class="fa-solid fa-graduation-cap ml-1"></i>
                     </button>
                 `;
@@ -2843,7 +3703,7 @@
         if (reviewCurrentIndex < totalFails - 1) {
           const nextBtn = document.createElement("button");
           nextBtn.className =
-            "glass-capsule-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-600 text-white";
+            "glass-capsule-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-50 to-amber-600 text-white";
           nextBtn.innerHTML = `Next Weakness <i class="fa-solid fa-chevron-right ml-1"></i>`;
           nextBtn.onclick = () => {
             reviewCurrentIndex++;
@@ -2861,7 +3721,7 @@
       }
     </script>
 
-    <!-- -->
+    <!-- Navigation & Setup triggers -->
     <script>
       function renderRoadmapCards(containerId) {
         const container = document.getElementById(containerId);
@@ -3076,8 +3936,8 @@
                 <div class="glass-crystal-card rounded-3xl p-6 flex flex-col justify-between space-y-6 text-slate-800">
                     <div>
                         <span class="text-[9px] font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded border uppercase tracking-wide">Self-Guided Path</span>
-                        <h3 class="text-xl font-bold text-teal-950 mt-2">Liquid Self-Study</h3>
-                        <p class="text-3xl font-extrabold text-teal-950 mt-2" id="self-study-price">${isAnnual ? "$23" : "$29"}<span class="text-xs font-normal text-slate-400">/mo</span></p>
+                        <h3 class="text-xl font-bold text-teal-955 mt-2">Liquid Self-Study</h3>
+                        <p class="text-3xl font-extrabold text-teal-955 mt-2" id="self-study-price">${isAnnual ? "$23" : "$29"}<span class="text-xs font-normal text-slate-400">/mo</span></p>
                         <p class="text-xs text-slate-500 mt-2">Access all visual tools, flashcard sets, and suffix shifter engines permanently.</p>
                     </div>
                     <button onclick="openCheckoutModal('self-study')" class="glass-capsule-btn w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all">Acquire Self-Study</button>
@@ -3086,8 +3946,8 @@
                     <div class="absolute -top-3 right-4 bg-teal-500 text-white font-bold text-[9px] uppercase px-2.5 py-1 rounded-full border border-teal-300">Most Popular</div>
                     <div>
                         <span class="text-[9px] font-bold text-teal-850 bg-teal-50 px-2.5 py-1 rounded uppercase tracking-wide">Professional Mentorship</span>
-                        <h3 class="text-xl font-bold mt-2 text-teal-950">Fluency Flow with Tutor</h3>
-                        <p class="text-3xl font-extrabold mt-2 text-teal-950" id="tutor-price">${isAnnual ? "$119" : "$149"}<span class="text-xs font-normal text-teal-650">/mo</span></p>
+                        <h3 class="text-xl font-bold mt-2 text-teal-955">Fluency Flow with Tutor</h3>
+                        <p class="text-3xl font-extrabold mt-2 text-teal-955" id="tutor-price">${isAnnual ? "$119" : "$149"}<span class="text-xs font-normal text-teal-650">/mo</span></p>
                         <p class="text-xs text-slate-500 mt-2">Full platform capabilities + direct audio review feedback and 2 video calls monthly.</p>
                     </div>
                     <button onclick="openCheckoutModal('tutor')" class="glass-capsule-btn w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider">Subscribe with Tutor</button>
@@ -3156,7 +4016,6 @@
       }
 
       function setupLocalEvents() {
-        // Billing switcher
         const billingToggle = document.getElementById("billing-toggle");
         if (billingToggle) {
           billingToggle.onclick = () => {
@@ -3177,7 +4036,6 @@
           };
         }
 
-        // Pagination Controls for Cognate Workbench
         const prevCognateBtn = document.getElementById("btn-prev-cognate-page");
         const nextCognateBtn = document.getElementById("btn-next-cognate-page");
 
@@ -3201,7 +4059,6 @@
           };
         }
 
-        // Course view helpers
         const nextLessonBtn = document.getElementById("btn-next-lesson");
         const prevLessonBtn = document.getElementById("btn-prev-lesson");
 
@@ -3224,7 +4081,6 @@
           };
         }
 
-        // Flashcards navigations
         const nextCardBtn = document.getElementById("btn-next-card");
         const prevCardBtn = document.getElementById("btn-prev-card");
 
@@ -3245,14 +4101,12 @@
           };
         }
 
-        // Diagnostic triggers
         const startQuizBtn = document.getElementById("quiz-start-btn");
         const nextQuizBtn = document.getElementById("quiz-next-btn");
 
         if (startQuizBtn) startQuizBtn.onclick = () => initQuizEngine();
         if (nextQuizBtn) nextQuizBtn.onclick = () => advanceQuiz();
 
-        // Brand click action
         const logo = document.getElementById("brand-logo");
         if (logo) {
           logo.onclick = () => {
@@ -3264,7 +4118,6 @@
           };
         }
 
-        // Sidebar navigation routers
         document.querySelectorAll("nav button").forEach((btn) => {
           btn.onclick = () => {
             const tabId = btn.id.replace("nav-", "");
