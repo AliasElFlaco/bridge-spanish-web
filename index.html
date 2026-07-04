@@ -157,7 +157,7 @@
         color: #042f2e !important;
       }
 
-      /* Botón de cápsula con relieve esquelético */
+      /* Botón de cápsula con relieve */
       .glass-capsule-btn {
         background: linear-gradient(
           180deg,
@@ -545,10 +545,34 @@
               <!-- Rule cards filled dynamically -->
             </div>
             <div
-              class="lg:col-span-7 bg-white/60 p-5 rounded-2xl border border-white/80"
-              id="cognate-workbench-list"
+              class="lg:col-span-7 bg-white/60 p-5 rounded-2xl border border-white/80 flex flex-col justify-between"
+              id="cognate-workbench-container"
             >
-              <!-- Dynamically filled workbench rows -->
+              <div id="cognate-workbench-list" class="space-y-2.5">
+                <!-- Dynamically filled workbench rows -->
+              </div>
+              <div
+                class="flex items-center justify-between pt-4 mt-4 border-t border-teal-100/50"
+              >
+                <button
+                  id="btn-prev-cognate-page"
+                  class="glass-capsule-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5"
+                >
+                  <i class="fa-solid fa-chevron-left text-[10px]"></i>
+                  <span>Prev</span>
+                </button>
+                <span
+                  class="text-xs font-bold text-teal-800 uppercase tracking-wide"
+                  >Page <span id="cognate-page-num">1</span> of 5</span
+                >
+                <button
+                  id="btn-next-cognate-page"
+                  class="glass-capsule-btn px-3 py-1.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-1.5"
+                >
+                  <span>Next</span>
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2130,7 +2154,6 @@
         },
       ];
 
-      // --- STREAMING_CHUNK: Instantiating the comprehensive 100-word Cognate Tool database... ---
       // --- 100 UNIQUE COGNATE WORDS DATABASE (25 per Category) ---
       const cognateRules = [
         {
@@ -2376,6 +2399,7 @@
       let activeLessonIndex = 0;
       let isAnnual = false;
       let activeCognateRuleIndex = 0;
+      let cognateCurrentPage = 0; // State variable to control the 5-by-5 pagination
       let activeFlashcardCategory = "pronunciation";
       let currentFlashcardIndex = 0;
       let isFlashcardFlipped = false;
@@ -2926,6 +2950,7 @@
                     </div>`;
           card.onclick = () => {
             activeCognateRuleIndex = idx;
+            cognateCurrentPage = 0; // Reset paginated tracker to the first page on rule swap
             document
               .querySelectorAll(".rule-card")
               .forEach(
@@ -2948,22 +2973,54 @@
         if (!list) return;
         list.innerHTML = "";
 
-        cognateRules[ruleIndex].words.forEach((word) => {
+        // Calculate slicing indexes to pull exactly 5 words based on active subpage
+        const startIdx = cognateCurrentPage * 5;
+        const endIdx = startIdx + 5;
+        const totalWords = cognateRules[ruleIndex].words;
+        const paginatedWordsSlice = totalWords.slice(startIdx, endIdx);
+
+        paginatedWordsSlice.forEach((word) => {
           const row = document.createElement("div");
           row.className =
             "bg-white p-3 rounded-xl border border-teal-100/70 shadow-2xs flex items-center justify-between";
           row.innerHTML = `
                     <div class="flex items-center space-x-5 text-xs sm:text-sm">
-                        <span class="text-slate-700 font-medium">${word.eng}</span>
+                        <div class="w-20 sm:w-24">
+                            <span class="text-[9px] text-slate-400 block font-semibold uppercase">English</span>
+                            <span class="text-slate-700 font-medium">${word.eng}</span>
+                        </div>
                         <i class="fa-solid fa-arrow-right text-teal-400 text-[10px]"></i>
-                        <span class="font-bold text-teal-700">${word.esp}</span>
+                        <div>
+                            <span class="text-[9px] text-teal-600 block font-semibold uppercase">Spanish</span>
+                            <span class="font-bold text-teal-700">${word.esp}</span>
+                        </div>
                     </div>
-                    <button class="text-teal-700 bg-teal-50 p-2.5 rounded-xl speak-btn"><i class="fa-solid fa-volume-high text-xs"></i></button>
+                    <button class="text-teal-700 bg-teal-50 p-2.5 rounded-xl speak-btn hover:bg-teal-100 transition-all"><i class="fa-solid fa-volume-high text-xs"></i></button>
                 `;
           row.querySelector(".speak-btn").onclick = () =>
             playTTS(word.audioText);
           list.appendChild(row);
         });
+
+        // Update Pagination display elements
+        const pageDisplay = document.getElementById("cognate-page-num");
+        if (pageDisplay) {
+          pageDisplay.innerText = cognateCurrentPage + 1;
+        }
+
+        const prevBtn = document.getElementById("btn-prev-cognate-page");
+        const nextBtn = document.getElementById("btn-next-cognate-page");
+
+        if (prevBtn) {
+          prevBtn.disabled = cognateCurrentPage === 0;
+          prevBtn.style.opacity = cognateCurrentPage === 0 ? "0.4" : "1";
+        }
+        if (nextBtn) {
+          const maxPages = Math.ceil(totalWords.length / 5);
+          nextBtn.disabled = cognateCurrentPage === maxPages - 1;
+          nextBtn.style.opacity =
+            cognateCurrentPage === maxPages - 1 ? "0.4" : "1";
+        }
       }
     </script>
 
@@ -3110,6 +3167,7 @@
       }
 
       function setupEvents() {
+        // Billing Toggler
         const billingToggle = document.getElementById("billing-toggle");
         if (billingToggle) {
           billingToggle.onclick = () => {
@@ -3130,6 +3188,31 @@
           };
         }
 
+        // Pagination Controls Event Listeners for the Cognate Shifter
+        const prevCognateBtn = document.getElementById("btn-prev-cognate-page");
+        const nextCognateBtn = document.getElementById("btn-next-cognate-page");
+
+        if (prevCognateBtn) {
+          prevCognateBtn.onclick = () => {
+            if (cognateCurrentPage > 0) {
+              cognateCurrentPage--;
+              renderWorkbench(activeCognateRuleIndex, "cognate-workbench-list");
+            }
+          };
+        }
+
+        if (nextCognateBtn) {
+          nextCognateBtn.onclick = () => {
+            const totalWords = cognateRules[activeCognateRuleIndex].words;
+            const maxPages = Math.ceil(totalWords.length / 5);
+            if (cognateCurrentPage < maxPages - 1) {
+              cognateCurrentPage++;
+              renderWorkbench(activeCognateRuleIndex, "cognate-workbench-list");
+            }
+          };
+        }
+
+        // Active Class navigation listeners
         const nextLessonBtn = document.getElementById("btn-next-lesson");
         const prevLessonBtn = document.getElementById("btn-prev-lesson");
 
@@ -3152,6 +3235,7 @@
           };
         }
 
+        // Flashcard deck controls
         const nextCardBtn = document.getElementById("btn-next-card");
         const prevCardBtn = document.getElementById("btn-prev-card");
 
@@ -3172,12 +3256,14 @@
           };
         }
 
+        // Milestone Quiz action listeners
         const startQuizBtn = document.getElementById("quiz-start-btn");
         const nextQuizBtn = document.getElementById("quiz-next-btn");
 
         if (startQuizBtn) startQuizBtn.onclick = () => initQuizEngine();
         if (nextQuizBtn) nextQuizBtn.onclick = () => advanceQuiz();
 
+        // Modal controller triggers
         const modalClose = document.getElementById("modal-close-btn");
         const modalConfirm = document.getElementById("modal-confirm-btn");
 
