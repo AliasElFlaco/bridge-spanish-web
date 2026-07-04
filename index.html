@@ -47,7 +47,7 @@
         -webkit-tap-highlight-color: transparent;
       }
 
-      /* 🌀 LIQUID CRYSTAL TURQUOISE GRADIENT FOR HEADINGS */
+      /* 🌀 REGLA MAESTRA PARA EL DEGRADADO VERDE TURQUESA */
       .text-crystal-gradient,
       h1.text-crystal-gradient,
       h2.text-crystal-gradient,
@@ -85,7 +85,7 @@
         -webkit-backdrop-filter: blur(12px);
       }
 
-      /* 🟢 LOGO BUTTON */
+      /* 🟢 LOGO BOTÓN: Verde Cristalino */
       .glass-logo-btn {
         background: linear-gradient(
           180deg,
@@ -114,7 +114,7 @@
           inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
       }
 
-      /* Navigation Buttons */
+      /* Botones de Navegación */
       .glass-nav-btn {
         background: linear-gradient(
           180deg,
@@ -157,7 +157,7 @@
         color: #042f2e !important;
       }
 
-      /* Skeuomorphic Glass Capsule Button */
+      /* Botón de cápsula con relieve esquelético */
       .glass-capsule-btn {
         background: linear-gradient(
           180deg,
@@ -190,7 +190,7 @@
           inset 0 8px 16px rgba(255, 255, 255, 1) !important;
       }
 
-      /* Glass Cards */
+      /* Tarjetas de Cristal */
       .glass-crystal-card {
         background: linear-gradient(
           185deg,
@@ -227,7 +227,7 @@
           inset 0 2px 4px rgba(255, 255, 255, 0.95);
       }
 
-      /* 3D Active Recall Flashcards physics */
+      /* Estructura Física 3D de las Flashcards */
       .perspective-1000 {
         perspective: 1000px;
       }
@@ -285,6 +285,7 @@
   <body
     class="text-slate-800 min-h-screen flex flex-col selection:bg-teal-100 selection:text-teal-950"
   >
+    <!-- Header Navigation -->
     <header
       class="bg-white/30 backdrop-blur-md border-b border-white/40 sticky top-0 z-50 transition-all duration-300"
     >
@@ -781,7 +782,7 @@
                 class="fa-solid fa-graduation-cap text-lg mt-0.5 text-amber-600"
               ></i>
               <div>
-                <strong class="font-bold text-amber-950 block mb-1"
+                <strong class="font-bold text-amber-955 block mb-1"
                   >Custom Study Session: Weakness Analysis</strong
                 >
                 Since your score was under 75 points, review your failed
@@ -1818,7 +1819,7 @@
           },
           {
             eng: "Sand",
-            engDetail: "Warning! Do not use for stadium/arena",
+            engDetail: "Warning! Do0 not use for stadium/arena",
             esp: "Arena",
             pron: "[ah-reh-nah]",
             exp: "Arena is the sand on a beach. A sports stadium or event center is called a 'estadio' or 'plaza'.",
@@ -1906,7 +1907,7 @@
             eng: "What is your name?",
             engDetail: "Standard initial icebreaker",
             esp: "¿Cómo te llamas?",
-            pron: "[coh-moh teh yah-mahs]",
+            pron: "[coh-moh teh ';yah-mahs]",
             exp: "Literally means 'How do you call yourself?'. Note the double L soft Y sound.",
           },
           {
@@ -1955,13 +1956,13 @@
             eng: "Good night",
             engDetail: "Greeting or parting in evening",
             esp: "Buenas noches",
-            pron: "[bweh-nahs noh-chehs]",
+            pron: "[bweh-nahs -noches]",
             exp: "Uses the feminine plural 'buenas' to match the feminine noun 'noches'.",
           },
           {
             eng: "Where is the bathroom?",
             engDetail: "Crucial survival question",
-            esp: "¿Dónde está el baño?",
+            esp: "Dónde está el baño?",
             pron: "[dohn-deh ehs-tah el bah-nyoh]",
             exp: "The 'Ñ' sound represents the soft nasal sound in onion. Ensure you stress 'está' with accent.",
           },
@@ -2129,7 +2130,8 @@
         },
       ];
 
-      // --- COGNATES RULES ENGINE ---
+      // --- STREAMING_CHUNK: Instantiating the comprehensive 100-word Cognate Tool database... ---
+      // --- 100 UNIQUE COGNATE WORDS DATABASE (25 per Category) ---
       const cognateRules = [
         {
           ruleName: "The '-tion' to '-ción' Shift",
@@ -2137,19 +2139,95 @@
             { eng: "Action", esp: "La acción", audioText: "La acción" },
             { eng: "Attention", esp: "La atención", audioText: "La atención" },
             {
+              eng: "Celebration",
+              esp: "La celebración",
+              audioText: "La celebración",
+            },
+            {
               eng: "Preparation",
               esp: "La preparación",
               audioText: "La preparación",
+            },
+            { eng: "Position", esp: "La posición", audioText: "La posición" },
+            { eng: "Nation", esp: "La nación", audioText: "La nación" },
+            { eng: "Option", esp: "La opción", audioText: "La opción" },
+            {
+              eng: "Condition",
+              esp: "La condición",
+              audioText: "La condición",
+            },
+            { eng: "Creation", esp: "La creación", audioText: "La creación" },
+            {
+              eng: "Education",
+              esp: "La educación",
+              audioText: "La educación",
+            },
+            {
+              eng: "Generation",
+              esp: "La generación",
+              audioText: "La generación",
+            },
+            {
+              eng: "Information",
+              esp: "La información",
+              audioText: "La información",
+            },
+            {
+              eng: "Organization",
+              esp: "La organización",
+              audioText: "La organización",
+            },
+            { eng: "Section", esp: "La sección", audioText: "La sección" },
+            {
+              eng: "Situation",
+              esp: "La situación",
+              audioText: "La situación",
+            },
+            {
+              eng: "Evolution",
+              esp: "La evolución",
+              audioText: "La evolución",
+            },
+            {
+              eng: "Foundation",
+              esp: "La fundación",
+              audioText: "La fundación",
+            },
+            {
+              eng: "Integration",
+              esp: "La integración",
+              audioText: "La integración",
+            },
+            {
+              eng: "Definition",
+              esp: "La definición",
+              audioText: "La definición",
             },
             {
               eng: "Activation",
               esp: "La activación",
               audioText: "La activación",
             },
+            { eng: "Mutation", esp: "La mutación", audioText: "La mutación" },
             {
-              eng: "Celebration",
-              esp: "La celebración",
-              audioText: "La celebración",
+              eng: "Selection",
+              esp: "La selección",
+              audioText: "La selección",
+            },
+            {
+              eng: "Evaluation",
+              esp: "La evaluación",
+              audioText: "La evaluación",
+            },
+            {
+              eng: "Infiltration",
+              esp: "La infiltración",
+              audioText: "La infiltración",
+            },
+            {
+              eng: "Decoration",
+              esp: "La decoración",
+              audioText: "La decoración",
             },
           ],
         },
@@ -2157,17 +2235,77 @@
           ruleName: "The '-ty' to '-dad' Shift",
           words: [
             { eng: "City", esp: "La ciudad", audioText: "La ciudad" },
+            { eng: "Priority", esp: "La prioridad", audioText: "La prioridad" },
+            { eng: "Velocity", esp: "La velocidad", audioText: "La velocidad" },
             { eng: "Activity", esp: "La actividad", audioText: "La actividad" },
             {
               eng: "Community",
               esp: "La comunidad",
               audioText: "La comunidad",
             },
-            { eng: "Velocity", esp: "La velocidad", audioText: "La velocidad" },
             {
               eng: "Authority",
               esp: "La autoridad",
               audioText: "La autoridad",
+            },
+            { eng: "Reality", esp: "La realidad", audioText: "La realidad" },
+            { eng: "Capacity", esp: "La capacidad", audioText: "La capacidad" },
+            {
+              eng: "Difficulty",
+              esp: "La dificultad",
+              audioText: "La dificultad",
+            },
+            {
+              eng: "Simplicity",
+              esp: "La simplicidad",
+              audioText: "La simplicidad",
+            },
+            { eng: "Security", esp: "La seguridad", audioText: "La seguridad" },
+            { eng: "Identity", esp: "La identidad", audioText: "La identidad" },
+            {
+              eng: "Opportunity",
+              esp: "La oportunidad",
+              audioText: "La oportunidad",
+            },
+            {
+              eng: "Responsibility",
+              esp: "La responsabilidad",
+              audioText: "La responsabilidad",
+            },
+            { eng: "Society", esp: "La sociedad", audioText: "La sociedad" },
+            {
+              eng: "Nationality",
+              esp: "La nacionalidad",
+              audioText: "La nacionalidad",
+            },
+            { eng: "Quality", esp: "La calidad", audioText: "La calidad" },
+            {
+              eng: "Integrity",
+              esp: "La integridad",
+              audioText: "La integridad",
+            },
+            {
+              eng: "University",
+              esp: "La universidad",
+              audioText: "La universidad",
+            },
+            { eng: "Variety", esp: "La variedad", audioText: "La variedad" },
+            {
+              eng: "Electricity",
+              esp: "La electricidad",
+              audioText: "La electricidad",
+            },
+            { eng: "Gravity", esp: "La gravedad", audioText: "La gravedad" },
+            { eng: "Humanity", esp: "La humanidad", audioText: "La humanidad" },
+            {
+              eng: "Productivity",
+              esp: "La productividad",
+              audioText: "La productividad",
+            },
+            {
+              eng: "Elasticity",
+              esp: "La elasticidad",
+              audioText: "La elasticidad",
             },
           ],
         },
@@ -2179,6 +2317,26 @@
             { eng: "Generous", esp: "Generoso", audioText: "Generoso" },
             { eng: "Nervous", esp: "Nervioso", audioText: "Nervioso" },
             { eng: "Delicious", esp: "Delicioso", audioText: "Delicioso" },
+            { eng: "Ambitious", esp: "Ambicioso", audioText: "Ambicioso" },
+            { eng: "Furious", esp: "Furioso", audioText: "Furioso" },
+            { eng: "Glorious", esp: "Glorioso", audioText: "Glorioso" },
+            { eng: "Religious", esp: "Religioso", audioText: "Religioso" },
+            { eng: "Precious", esp: "Precioso", audioText: "Precioso" },
+            { eng: "Mysterious", esp: "Misterioso", audioText: "Misterioso" },
+            { eng: "Infectious", esp: "Infeccioso", audioText: "Infeccioso" },
+            { eng: "Vigorous", esp: "Vigoroso", audioText: "Vigoroso" },
+            { eng: "Studious", esp: "Estudioso", audioText: "Estudioso" },
+            { eng: "Spacious", esp: "Espacioso", audioText: "Espacioso" },
+            { eng: "Numerous", esp: "Numeroso", audioText: "Numeroso" },
+            { eng: "Victorious", esp: "Victorioso", audioText: "Victorioso" },
+            { eng: "Malicious", esp: "Malicioso", audioText: "Malicioso" },
+            { eng: "Monstrous", esp: "Monstruoso", audioText: "Monstruoso" },
+            { eng: "Pompous", esp: "Pomposo", audioText: "Pomposo" },
+            { eng: "Virtuous", esp: "Virtuoso", audioText: "Virtuoso" },
+            { eng: "Joyous", esp: "Gozoso", audioText: "Gozoso" },
+            { eng: "Harmonious", esp: "Armonioso", audioText: "Armonioso" },
+            { eng: "Ingenious", esp: "Ingenioso", audioText: "Ingenioso" },
+            { eng: "Ruinous", esp: "Ruinoso", audioText: "Ruinoso" },
           ],
         },
         {
@@ -2189,6 +2347,26 @@
             { eng: "General", esp: "General", audioText: "General" },
             { eng: "Social", esp: "Social", audioText: "Social" },
             { eng: "Mental", esp: "Mental", audioText: "Mental" },
+            { eng: "Total", esp: "Total", audioText: "Total" },
+            { eng: "Normal", esp: "Normal", audioText: "Normal" },
+            { eng: "Personal", esp: "Personal", audioText: "Personal" },
+            { eng: "Final", esp: "Final", audioText: "Final" },
+            { eng: "Central", esp: "Central", audioText: "Central" },
+            { eng: "Official", esp: "Oficial", audioText: "Oficial" },
+            { eng: "Special", esp: "Especial", audioText: "Especial" },
+            { eng: "Principal", esp: "Principal", audioText: "Principal" },
+            { eng: "Original", esp: "Original", audioText: "Original" },
+            { eng: "Legal", esp: "Legal", audioText: "Legal" },
+            { eng: "Verbal", esp: "Verbal", audioText: "Verbal" },
+            { eng: "Vocal", esp: "Vocal", audioText: "Vocal" },
+            { eng: "Moral", esp: "Moral", audioText: "Moral" },
+            { eng: "Ideal", esp: "Ideal", audioText: "Ideal" },
+            { eng: "Capital", esp: "Capital", audioText: "Capital" },
+            { eng: "Brutal", esp: "Brutal", audioText: "Brutal" },
+            { eng: "Animal", esp: "Animal", audioText: "Animal" },
+            { eng: "Formal", esp: "Formal", audioText: "Formal" },
+            { eng: "Casual", esp: "Casual", audioText: "Casual" },
+            { eng: "Cultural", esp: "Cultural", audioText: "Cultural" },
           ],
         },
       ];
@@ -2275,7 +2453,7 @@
       }
 
       function initAppRouting() {
-        document.querySelectorAll("nav button").forEach((btn) => {
+        document.querySelectorAll("nav border, nav button").forEach((btn) => {
           if (btn.id && btn.id.startsWith("nav-")) {
             btn.addEventListener("click", () => {
               const tabId = btn.id.replace("nav-", "");
@@ -2399,7 +2577,7 @@
         const nextBtn = document.getElementById("btn-next-lesson");
         if (nextBtn) {
           if (idx === 5) {
-            // Only at the very end of all 6 lessons
+            // At the end of the 6 lessons
             nextBtn.innerHTML = `Take Phase 3 Quiz <i class="fa-solid fa-flag-checkered ml-1.5 text-cyan-350 animate-pulse"></i>`;
           } else {
             nextBtn.innerHTML = `Next Lesson <i class="fa-solid fa-chevron-right ml-1.5"></i>`;
@@ -2489,7 +2667,7 @@
               if (bIdx === idx) {
                 if (isCorrect) {
                   b.className =
-                    "w-full text-left p-4 rounded-xl border-2 border-emerald-500 text-xs sm:text-sm flex justify-between items-center bg-emerald-100 text-emerald-950 font-bold shadow-sm transition-all";
+                    "w-full text-left p-4 rounded-xl border-2 border-emerald-500 text-xs sm:text-sm flex justify-between items-center bg-emerald-100 text-emerald-955 font-bold shadow-sm transition-all";
                   b.querySelector(".w-4").className =
                     "w-4 h-4 rounded-full bg-emerald-500 border border-emerald-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
                   b.querySelector(".w-4").innerHTML =
@@ -2741,7 +2919,11 @@
           const card = document.createElement("div");
           card.id = `rule-card-${idx}`;
           card.className = `rule-card p-4 rounded-xl border transition-all cursor-pointer ${idx === 0 ? "border-2 border-teal-600 bg-teal-50/50 shadow-xs" : "border-teal-100 bg-white"}`;
-          card.innerHTML = `<div class="flex justify-between items-center"><span class="font-bold text-slate-900 text-xs sm:text-sm">${rule.ruleName}</span></div>`;
+          card.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-slate-900 text-xs sm:text-sm">${rule.ruleName}</span>
+                        <span class="text-[10px] font-bold text-teal-650 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded">25 Words</span>
+                    </div>`;
           card.onclick = () => {
             activeCognateRuleIndex = idx;
             document
