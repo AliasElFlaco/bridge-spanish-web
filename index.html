@@ -614,7 +614,7 @@
               </div>
               <!-- Back Face -->
               <div
-                class="backface-hidden rotate-y-180 absolute w-full h-full bg-gradient-to-br from-teal-950 via-teal-900 to-[#022c22] border border-teal-950 rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left text-white shadow-md"
+                class="backface-hidden rotate-y-180 absolute w-full h-full bg-gradient-to-br from-teal-950 via-teal-900 to-[#022c22] border border-teal-955 rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left text-white shadow-md"
               >
                 <div class="flex justify-between items-center">
                   <span class="text-[9px] uppercase font-bold text-teal-300"
@@ -710,8 +710,8 @@
             >
               <span id="quiz-count">Question 1 of 40</span>
               <span
-                class="text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded border border-teal-100"
-                >Score: <span id="quiz-score">0</span>/100 pts</span
+                class="text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded border border-teal-100 uppercase tracking-wider"
+                >Milestone Diagnostic</span
               >
             </div>
             <div>
@@ -776,7 +776,7 @@
           <!-- Study Room for Failed Questions -->
           <div class="p-6 sm:p-8 space-y-6 hidden" id="quiz-review">
             <div
-              class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-amber-950 text-xs sm:text-sm flex items-start space-x-3"
+              class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-amber-955 text-xs sm:text-sm flex items-start space-x-3"
             >
               <i
                 class="fa-solid fa-graduation-cap text-lg mt-0.5 text-amber-600"
@@ -815,7 +815,7 @@
               </div>
               <div class="space-y-2.5">
                 <div
-                  class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-950"
+                  class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-955"
                 >
                   <span class="font-bold">Your answer:</span>
                   <span id="review-wrong-answer">Wrong Answer Here</span>
@@ -830,11 +830,11 @@
               <div
                 class="p-4 bg-teal-50/20 border border-teal-100 rounded-xl text-xs"
               >
-                <strong class="font-bold text-teal-950 block mb-1"
+                <strong class="font-bold text-teal-955 block mb-1"
                   >Why this is correct:</strong
                 >
                 <p
-                  class="text-slate-650 leading-relaxed"
+                  class="text-slate-600 leading-relaxed"
                   id="review-explanation"
                 >
                   Explanation content...
@@ -881,7 +881,7 @@
               >Subscription Level</strong
             >
           </div>
-          <strong class="text-teal-950 text-base" id="modal-price-display"
+          <strong class="text-teal-955 text-base" id="modal-price-display"
             >$0/mo</strong
           >
         </div>
@@ -916,7 +916,6 @@
     </footer>
 
     <script>
-      // --- STREAMING_CHUNK: Designing the 40-question comprehensive diagnostic database... ---
       const quizQuestions = [
         {
           category: "Pronunciation Pitfall",
@@ -1864,11 +1863,11 @@
                         <div class="bg-teal-50/10 border border-teal-100 p-4 rounded-xl text-xs text-slate-650 space-y-3">
                             <div>
                                 <p class="font-bold text-teal-955">🕒 Preterite Tense (Completed Past):</p>
-                                <p class="text-slate-500 mt-1">Actions that had a clear start and finish point (e.g. "Ayer compré un auto" / "Yesterday I bought a car").</p>
+                                <p class="text-slate-500 mt-1">Actions that had a clear start and finish point (e.g. \"Ayer compré un auto\" / \"Yesterday I bought a car\").</p>
                             </div>
                             <div class="border-t border-teal-100 pt-2">
                                 <p class="font-bold text-teal-955">⏳ Imperfect Tense (Continuous Past):</p>
-                                <p class="text-slate-500 mt-1">Background descriptions, age, time, routines, or ongoing habits in the past (e.g. "Cuando era niño, jugaba fútbol" / "When I was a kid, I used to play soccer").</p>
+                                <p class="text-slate-500 mt-1">Background descriptions, age, time, routines, or ongoing habits in the past (e.g. \"Cuando era niño, jugaba fútbol\" / \"When I was a kid, I used to play soccer\").</p>
                             </div>
                         </div>
                     </div>`,
@@ -1888,8 +1887,8 @@
                         </div>
 
                         <div class="border border-teal-100 bg-teal-50/10 p-4 rounded-xl space-y-2 text-xs text-slate-650">
-                            <p>🎯 <b>The Formula:</b> You need two different subjects connected by the word "que".</p>
-                            <p>🎯 <b>The Trigger:</b> The first verb must express a wish, emotion, doubt, or impersonal request (e.g., "Yo quiero que tú vengas" / "I want you to come").</p>
+                            <p>🎯 <b>The Formula:</b> You need two different subjects connected by the word \"que\".</p>
+                            <p>🎯 <b>The Trigger:</b> The first verb must express a wish, emotion, doubt, or impersonal request (e.g., \"Yo quiero que tú vengas\" / \"I want you to come\").</p>
                         </div>
                     </div>`,
         },
@@ -1905,12 +1904,12 @@
                         
                         <div class="grid grid-cols-2 gap-2 text-xs text-slate-650">
                             <div class="p-2.5 bg-white border border-slate-150 rounded-lg">
-                                <b class="text-teal-900 block">"Pues..."</b>
-                                Equivalent to "Well..." to gain cognitive thinking time.
+                                <b class="text-teal-900 block">\"Pues...\"</b>
+                                Equivalent to \"Well...\" to gain cognitive thinking time.
                             </div>
                             <div class="p-2.5 bg-white border border-slate-150 rounded-lg">
-                                <b class="text-teal-900 block">"O sea..."</b>
-                                Equivalent to "I mean..." or "In other words...".
+                                <b class="text-teal-900 block">\"O sea...\"</b>
+                                Equivalent to \"I mean...\" or \"In other words...\".
                             </div>
                         </div>
 
@@ -1987,7 +1986,6 @@
     </script>
 
     <script>
-      // --- STREAMING_CHUNK: Implementing SPA enrutamiento and state handlers... ---
       let activeLessonIndex = 0;
       let isAnnual = false;
       let activeCognateRuleIndex = 0;
@@ -1999,9 +1997,9 @@
       let quizCurrentIndex = 0;
       let quizScore = 0;
       let quizSelectedAnswer = null;
-      let quizHistory = []; // Tracks user selections for wrong-answer analysis
-      let failedQuestionsList = []; // Holds questions wrong in current run
-      let reviewCurrentIndex = 0; // Tracks position inside the study session
+      let quizHistory = [];
+      let failedQuestionsList = [];
+      let reviewCurrentIndex = 0;
 
       let userProgress = {
         completedLessons: [],
@@ -2068,16 +2066,14 @@
       }
 
       function initAppRouting() {
-        document
-          .querySelectorAll("nav border-transparent, nav button")
-          .forEach((btn) => {
-            if (btn.id && btn.id.startsWith("nav-")) {
-              btn.addEventListener("click", () => {
-                const tabId = btn.id.replace("nav-", "");
-                switchTab(tabId);
-              });
-            }
-          });
+        document.querySelectorAll("nav button").forEach((btn) => {
+          if (btn.id && btn.id.startsWith("nav-")) {
+            btn.addEventListener("click", () => {
+              const tabId = btn.id.replace("nav-", "");
+              switchTab(tabId);
+            });
+          }
+        });
 
         const heroBtn = document.getElementById("hero-start-lessons");
         if (heroBtn) {
@@ -2204,7 +2200,6 @@
     </script>
 
     <script>
-      // --- STREAMING_CHUNK: Coding the complete 40-question Quiz engine and feedback UI... ---
       function resetQuiz() {
         document.getElementById("quiz-setup").classList.remove("hidden");
         document.getElementById("quiz-game").classList.add("hidden");
@@ -2232,17 +2227,18 @@
         document.getElementById("quiz-setup").classList.add("hidden");
         document.getElementById("quiz-results").classList.add("hidden");
         document.getElementById("quiz-review").classList.add("hidden");
-        document.getElementById("quiz-game").classList.remove("hidden");
+
+        // FIX: Removed the accidental .remove() call that crashed the JS execution in the previous version
+        const quizGameElement = document.getElementById("quiz-game");
+        if (quizGameElement) {
+          quizGameElement.classList.remove("hidden");
+        }
 
         const q = quizQuestions[quizCurrentIndex];
         const total = quizQuestions.length;
 
         document.getElementById("quiz-count").innerText =
           `Question ${quizCurrentIndex + 1} of ${total}`;
-        // Render points dynamically mapped to 100 points maximum
-        const scaledScore = Math.round((quizScore / total) * 100);
-        document.getElementById("quiz-score").innerText = scaledScore;
-
         document.getElementById("quiz-q-category").innerText = q.category;
         document.getElementById("quiz-question").innerText = q.question;
 
@@ -2255,22 +2251,17 @@
             "w-full text-left p-4 rounded-xl border border-teal-150 text-xs sm:text-sm flex justify-between items-center bg-white/80 hover:border-teal-400 hover:bg-teal-50/20 transition-all quiz-opt-btn";
           btn.innerHTML = `
                     <span class="pr-3 text-slate-700 font-medium">${opt.text}</span>
-                    <span class="w-4 h-4 rounded-full border border-teal-200 flex-shrink-0"></span>
+                    <span class="w-4 h-4 rounded-full border border-teal-200 flex-shrink-0 transition-all"></span>
                 `;
 
           btn.onclick = () => {
             if (quizSelectedAnswer !== null) return;
             quizSelectedAnswer = idx;
 
-            document
-              .querySelectorAll(".quiz-opt-btn")
-              .forEach((b) => (b.disabled = true));
-
             const isCorrect = opt.correct;
             if (isCorrect) {
               quizScore++;
             } else {
-              // Keep track of missed questions for personalized study session later
               failedQuestionsList.push({
                 questionIndex: quizCurrentIndex,
                 wrongAnswer: opt.text,
@@ -2278,11 +2269,42 @@
               });
             }
 
-            // Save choice into quiz history run
             quizHistory.push({
               questionIndex: quizCurrentIndex,
               selectedOptionIndex: idx,
               isCorrect: isCorrect,
+            });
+
+            // Highlight selected buttons in high contrast, subdue others
+            const allButtons = optContainer.querySelectorAll("button");
+            allButtons.forEach((b, bIdx) => {
+              b.disabled = true;
+              if (bIdx === idx) {
+                if (isCorrect) {
+                  b.className =
+                    "w-full text-left p-4 rounded-xl border-2 border-emerald-500 text-xs sm:text-sm flex justify-between items-center bg-emerald-100 text-emerald-950 font-bold shadow-sm transition-all";
+                  b.querySelector(".w-4").className =
+                    "w-4 h-4 rounded-full bg-emerald-500 border border-emerald-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
+                  b.querySelector(".w-4").innerHTML =
+                    '<i class="fa-solid fa-check"></i>';
+                } else {
+                  b.className =
+                    "w-full text-left p-4 rounded-xl border-2 border-red-500 text-xs sm:text-sm flex justify-between items-center bg-red-100 text-red-950 font-bold shadow-sm transition-all";
+                  b.querySelector(".w-4").className =
+                    "w-4 h-4 rounded-full bg-red-500 border border-red-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
+                  b.querySelector(".w-4").innerHTML =
+                    '<i class="fa-solid fa-xmark"></i>';
+                }
+              } else {
+                if (q.options[bIdx].correct) {
+                  // Subtly guide the user to the correct option as active learning feedback
+                  b.className =
+                    "w-full text-left p-4 rounded-xl border border-emerald-300 text-xs sm:text-sm flex justify-between items-center bg-emerald-50/20 text-emerald-800 opacity-60 transition-all";
+                } else {
+                  b.className =
+                    "w-full text-left p-4 rounded-xl border border-slate-100 text-xs sm:text-sm flex justify-between items-center bg-slate-50/45 text-slate-400 opacity-40 transition-all";
+                }
+              }
             });
 
             const feedbackBox = document.getElementById("quiz-feedback");
@@ -2293,7 +2315,7 @@
 
             feedbackBox.innerHTML = `
                         <p class="font-bold text-sm flex items-center">
-                            <i class="fa-solid ${isCorrect ? "fa-circle-check text-emerald-600" : "fa-circle-xmark text-red-600"} mr-2"></i>
+                            <i class="fa-solid ${isCorrect ? "fa-circle-check text-emerald-600" : "fa-circle-xmark text-red-650"} mr-2"></i>
                             ${isCorrect ? "Correct!" : "Incorrect"}
                         </p>
                         <p class="text-xs mt-1 leading-relaxed">${q.explanation}</p>
@@ -2302,17 +2324,11 @@
             const nextBtn = document.getElementById("quiz-next-btn");
             nextBtn.classList.remove("hidden");
 
-            // On the absolute last question (Question 40), alter Next button to "See Results"
             if (quizCurrentIndex === total - 1) {
               nextBtn.innerHTML = `See Results <i class="fa-solid fa-square-poll-vertical ml-1.5 text-cyan-300"></i>`;
             } else {
               nextBtn.innerHTML = `Next Question <i class="fa-solid fa-chevron-right ml-1.5"></i>`;
             }
-
-            // Refresh score visualization
-            const updatedScaledScore = Math.round((quizScore / total) * 100);
-            document.getElementById("quiz-score").innerText =
-              updatedScaledScore;
           };
           optContainer.appendChild(btn);
         });
@@ -2329,10 +2345,7 @@
           loadQuestionUI();
         }
       }
-    </script>
 
-    <script>
-      // --- STREAMING_CHUNK: Programming the smart Weakness Study room and Retake mechanics... ---
       function showQuizResults() {
         document.getElementById("quiz-game").classList.add("hidden");
 
@@ -2355,7 +2368,6 @@
 
         actionsContainer.innerHTML = "";
 
-        // Passing Threshold is 75 points out of 100
         if (finalScaledScore >= 75) {
           resultsBadge.innerText = "🏆";
           resultsTitle.innerText = "Congratulations! You Passed!";
@@ -2364,7 +2376,6 @@
           resultsDesc.innerText =
             "You have proven exceptional alignment with pure vowel structures, false friend triggers, and vocabulary expansion conversions!";
 
-          // Saving high score
           if (finalScaledScore > userProgress.quizHighScores.diagnostic) {
             userProgress.quizHighScores.diagnostic = finalScaledScore;
             saveUserProgress();
@@ -2659,7 +2670,7 @@
                     <button id="btn-buy-self" class="glass-capsule-btn w-full py-3 rounded-xl font-bold text-xs">Acquire Self-Study</button>
                 </div>
                 <div class="bg-gradient-to-br from-teal-950 to-teal-900 rounded-2xl p-6 flex flex-col justify-between space-y-6 relative shadow-md border-2 border-teal-400 text-white">
-                    <div class="absolute -top-3 right-4 bg-teal-500 text-teal-950 font-bold text-[9px] uppercase px-2.5 py-1 rounded-full border border-teal-300">Most Popular</div>
+                    <div class="absolute -top-3 right-4 bg-teal-500 text-teal-955 font-bold text-[9px] uppercase px-2.5 py-1 rounded-full border border-teal-300">Most Popular</div>
                     <div>
                         <span class="text-[9px] font-bold text-teal-300 bg-white/10 px-2.5 py-1 rounded uppercase tracking-wide">Professional Mentorship</span>
                         <h3 class="text-xl font-bold mt-2 text-teal-300">Fluency Flow with Tutor</h3>
