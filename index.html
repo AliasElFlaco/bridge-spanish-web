@@ -473,34 +473,39 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
           <!-- Syllabus Sidebar Links -->
           <div
-            class="lg:col-span-4 bg-white/50 backdrop-blur-md rounded-2xl p-4 border border-white/60 h-fit space-y-3"
+            class="lg:col-span-4 bg-white/50 backdrop-blur-md rounded-2xl p-4 border border-white/60 h-[500px] overflow-y-auto space-y-4"
             id="lesson-links-container"
           >
             <!-- Populated dynamically -->
           </div>
           <!-- Interactive Classroom Frame -->
           <div
-            class="lg:col-span-8 bg-white/50 backdrop-blur-md rounded-3xl border border-white/60 overflow-hidden flex flex-col min-h-[450px] shadow-sm"
+            class="lg:col-span-8 bg-white/50 backdrop-blur-md rounded-3xl border border-white/60 overflow-hidden flex flex-col min-h-[500px] shadow-sm"
           >
             <div
-              class="bg-gradient-to-r from-teal-900 to-teal-700 p-5 text-white flex justify-between items-center"
+              class="bg-gradient-to-r from-teal-900 to-teal-700 p-5 text-white flex justify-between items-center flex-shrink-0"
             >
               <div>
                 <span
                   class="text-[9px] font-bold text-teal-300 uppercase tracking-widest"
                   id="lesson-badge"
-                  >Month 1 • Core Target</span
+                  >Month 1 • Week 1</span
                 >
                 <h3 class="text-base sm:text-lg font-bold" id="lesson-title">
                   Active Lesson Title
                 </h3>
               </div>
             </div>
-            <div class="p-6 sm:p-8 flex-grow" id="lesson-content">
-              <!-- Loaded dynamically -->
+            <!-- Main viewport inside Classroom -->
+            <div
+              class="p-6 sm:p-8 flex-grow overflow-y-auto"
+              id="lesson-viewport"
+            >
+              <!-- Loaded dynamically (Lesson Content or Month Quiz) -->
             </div>
             <div
-              class="p-4 bg-slate-50/50 border-t border-slate-150/40 flex justify-between items-center"
+              class="p-4 bg-slate-50/50 border-t border-slate-150/40 flex justify-between items-center flex-shrink-0"
+              id="classroom-footer"
             >
               <button
                 id="btn-prev-lesson"
@@ -508,8 +513,10 @@
               >
                 <i class="fa-solid fa-chevron-left mr-1.5"></i> Back
               </button>
-              <span class="text-xs text-slate-400 font-bold"
-                >Class <span id="current-lesson-num">1</span> of 6</span
+              <span
+                class="text-xs text-slate-400 font-bold"
+                id="lesson-progress-text"
+                >Class 1 of 24</span
               >
               <button
                 id="btn-next-lesson"
@@ -687,7 +694,7 @@
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
             <span class="text-xs font-bold text-slate-500" id="card-progress"
-              >1 / 5</span
+              >1 / 20</span
             >
             <button
               id="btn-next-card"
@@ -699,7 +706,7 @@
         </div>
       </div>
 
-      <!-- TAB 5: ACTIVE RECALL MILESTONE QUIZ -->
+      <!-- TAB 5: ACTIVE RECALL MILESTONE QUIZ (GLOBAL DIAGNOSTIC) -->
       <div id="tab-quiz" class="tab-content hidden space-y-6">
         <div
           class="max-w-xl mx-auto bg-white/50 backdrop-blur-md border border-white/60 rounded-3xl overflow-hidden shadow-sm"
@@ -1569,8 +1576,9 @@
             "'A ver...' (literally 'to see') is highly common to introduce ideas, coordinate tasks, or say 'let's see'.",
         },
       ];
+    </script>
 
-      // --- 60 UNIQUE FLASHCARDS DATA (20 per Category) ---
+    <script>
       const flashcardDecks = {
         pronunciation: [
           {
@@ -1642,76 +1650,6 @@
             esp: "Lección",
             pron: "[lek-syohn]",
             exp: "Stress the final syllable heavily due to the written accent mark.",
-          },
-          {
-            eng: "Natural",
-            engDetail: "Shift accent to last syllable",
-            esp: "Natural",
-            pron: "[nah-too-rahl]",
-            exp: "Stress the last syllable 'ral'. Do not add the English 'ch' sound to 'tu'.",
-          },
-          {
-            eng: "Water",
-            engDetail: "Soft G glide exercise",
-            esp: "Agua",
-            pron: "[ah-gwah]",
-            exp: "The 'G' is a soft friction in the back of the mouth, blending into a quick 'w' sound.",
-          },
-          {
-            eng: "Dog",
-            engDetail: "Vibrate the double RR",
-            esp: "Perro",
-            pron: "[peh-rroh]",
-            exp: "Roll the 'rr' with breath. Contrast this with 'pero' (but), which has a single tap.",
-          },
-          {
-            eng: "But",
-            engDetail: "Single soft R tap",
-            esp: "Pero",
-            pron: "[peh-roh]",
-            exp: "The single R is just one tap of the tongue, like the 'dd' in the English word 'ladder'.",
-          },
-          {
-            eng: "Giraffe",
-            engDetail: "Strong Spanish J guttural",
-            esp: "Jirafa",
-            pron: "[hee-rah-fah]",
-            exp: "The 'J' requires friction from the back of your throat. Keep it dry and clear.",
-          },
-          {
-            eng: "Street",
-            engDetail: "Palatal glide LL",
-            esp: "Calle",
-            pron: "[cah-yeh]",
-            exp: "The 'LL' sounds like a soft 'Y'. In some regions, it sounds like 'sh' or 'j'.",
-          },
-          {
-            eng: "City",
-            engDetail: "Soft C + ending soft D",
-            esp: "Ciudad",
-            pron: "[syoo-thath]",
-            exp: "Combine the 'iu' smoothly and end with a soft breathy 'd' behind your top teeth.",
-          },
-          {
-            eng: "Exam",
-            engDetail: "Stress on the second syllable",
-            esp: "Examen",
-            pron: "[ek-sah-men]",
-            exp: "Emphasis is naturally on the 'sa'. Never write an accent mark on this word.",
-          },
-          {
-            eng: "Guitar",
-            engDetail: "Mute the U after the G",
-            esp: "Guitarra",
-            pron: "[gee-tah-rrah]",
-            exp: "The 'gui' pattern keeps the G hard. The 'U' is completely silent.",
-          },
-          {
-            eng: "Ham",
-            engDetail: "Clear J throat sound + ending stress",
-            esp: "Jamón",
-            pron: "[hah-mohn]",
-            exp: "Accentuate the last syllable with a sharp nasal 'n' and a clear throat J.",
           },
         ],
         false_friends: [
@@ -1785,76 +1723,6 @@
             pron: "[ah-sees-teer]",
             exp: "Asistir is to attend a meeting/class. To assist someone, use the verb 'ayudar'.",
           },
-          {
-            eng: "To Insert",
-            engDetail: "Warning! Do not use for introducing people",
-            esp: "Introducir",
-            pron: "[een-troh-thoo-seer]",
-            exp: "Introducir means to insert an object. To introduce someone to a friend, use 'presentar'.",
-          },
-          {
-            eng: "To Remember",
-            engDetail: "Warning! Do not use for recording voice",
-            esp: "Recordar",
-            pron: "[reh-cohr-dahr]",
-            exp: "Recordar is to remember. To record audio or video, use the verb 'grabar'.",
-          },
-          {
-            eng: "Healthy",
-            engDetail: "Warning! Do not use for sane/mental balance",
-            esp: "Sano",
-            pron: "[sah-noh]",
-            exp: "Sano refers to physical health. Sane or mentally stable is described as 'cuerdo'.",
-          },
-          {
-            eng: "To Send",
-            engDetail: "Warning! Do not use for envying someone",
-            esp: "Enviar",
-            pron: "[en-vyahr]",
-            exp: "Enviar is to send a package or message. To envy someone is 'envidiar'.",
-          },
-          {
-            eng: "To Bother / Annoy",
-            engDetail: "Warning! Strong false friend in English",
-            esp: "Molestar",
-            pron: "[moh-lehs-tahr]",
-            exp: "Molestar simply means to annoy or bug someone. It has no sexual connotation.",
-          },
-          {
-            eng: "Long",
-            engDetail: "Warning! Do not use for big/large",
-            esp: "Largo",
-            pron: "[lahr-goh]",
-            exp: "Largo refers to physical length. If you mean massive or large, use 'grande'.",
-          },
-          {
-            eng: "Private / Individual",
-            engDetail: "Warning! Do not use for picky",
-            esp: "Particular",
-            pron: "[pahr-tee-coo-lahr]",
-            exp: "Particular describes a private matter or specific point. To say someone is picky, use 'exigente'.",
-          },
-          {
-            eng: "Clothing",
-            engDetail: "Warning! Do not use for physical rope",
-            esp: "Ropa",
-            pron: "[roh-pah]",
-            exp: "Ropa is clothing. A physical rope used to tie elements is called 'cuerda'.",
-          },
-          {
-            eng: "Sand",
-            engDetail: "Warning! Do0 not use for stadium/arena",
-            esp: "Arena",
-            pron: "[ah-reh-nah]",
-            exp: "Arena is the sand on a beach. A sports stadium or event center is called a 'estadio' or 'plaza'.",
-          },
-          {
-            eng: "To Argue / Debate",
-            engDetail: "Warning! Has a stronger weight than English",
-            esp: "Discutir",
-            pron: "[dees-coo-teer]",
-            exp: "Discutir implies an argument or verbal dispute, not just a calm, friendly discussion ('conversar').",
-          },
         ],
         useful_basics: [
           {
@@ -1927,234 +1795,11 @@
             pron: "[ahs-tah lweh-goh]",
             exp: "Remember to drop the initial 'H' completely. Say it with zero pause.",
           },
-          {
-            eng: "What is your name?",
-            engDetail: "Standard initial icebreaker",
-            esp: "¿Cómo te llamas?",
-            pron: "[coh-moh teh ';yah-mahs]",
-            exp: "Literally means 'How do you call yourself?'. Note the double L soft Y sound.",
-          },
-          {
-            eng: "Nice to meet you",
-            engDetail: "Warm response after names",
-            esp: "Mucho gusto",
-            pron: "[moo-choh goos-toh]",
-            exp: "Literally means 'Much pleasure'. It stays masculine regardless of who says it.",
-          },
-          {
-            eng: "You're welcome",
-            engDetail: "Polite response after thanks",
-            esp: "De nada",
-            pron: "[deh nah-thah]",
-            exp: "Literally means 'Of nothing'. Keep the 'd' sounds soft and touching your front teeth.",
-          },
-          {
-            eng: "Can you help me?",
-            engDetail: "Urgent or casual request",
-            esp: "¿Puede ayudarme?",
-            pron: "[pweh-theh ah-yoo-thahr-meh]",
-            exp: "A combination of the verb poder and the pronoun 'me'. Soft dental 'P' and 'd'.",
-          },
-          {
-            eng: "I don't speak well",
-            engDetail: "Modesty booster for learners",
-            esp: "No hablo bien",
-            pron: "[noh ah-bloh byen]",
-            exp: "Remember the silent H in 'hablo'. Keep the 'bien' short, with no English glide.",
-          },
-          {
-            eng: "What time is it?",
-            engDetail: "Asking for current time",
-            esp: "¿Qué hora es?",
-            pron: "[keh oh-rah ehs]",
-            exp: "Silent H in 'hora'. Keep the vowels separate and clear: 'oh-rah'.",
-          },
-          {
-            eng: "Good morning",
-            engDetail: "Standard morning greeting",
-            esp: "Buenos días",
-            pron: "[bweh-nohs thee-ahs]",
-            exp: "Ensure you use the masculine plural 'buenos' to match the masculine noun 'días'.",
-          },
-          {
-            eng: "Good night",
-            engDetail: "Greeting or parting in evening",
-            esp: "Buenas noches",
-            pron: "[bweh-nahs -noches]",
-            exp: "Uses the feminine plural 'buenas' to match the feminine noun 'noches'.",
-          },
-          {
-            eng: "Where is the bathroom?",
-            engDetail: "Crucial survival question",
-            esp: "Dónde está el baño?",
-            pron: "[dohn-deh ehs-tah el bah-nyoh]",
-            exp: "The 'Ñ' sound represents the soft nasal sound in onion. Ensure you stress 'está' with accent.",
-          },
-          {
-            eng: "Cheers / Bless you",
-            engDetail: "Versatile health response",
-            esp: "¡Salud!",
-            pron: "[sah-looth]",
-            exp: "Used both to toast drinks and when someone sneezes. End with a soft, breathy 'th' sound.",
-          },
         ],
       };
+    </script>
 
-      // --- 6 ACTIVE CLASS SESSIONS DATABASE ---
-      const lessonsData = [
-        {
-          module: "Month 1 • Week 1-4",
-          title: "Vowel Purity & Dental Overwriting",
-          duration: "Month 1 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: Eliminate the English Drawl</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">The Month 1 Core Mechanical Focus</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English speakers natively stretch out vowels by adding a subtle glide sound (e.g. saying 'no' becomes 'no-oo'). In Month 1, we condition your vocal cords to speak with completely flat, short, and pure Spanish vowels.</p>
-                        
-                        <div class="grid grid-cols-5 gap-2 text-center text-xs font-extrabold text-teal-955 bg-teal-50/55 p-3 rounded-xl border border-teal-100">
-                            <div>A<span class="block text-[10px] font-normal text-teal-700 mt-1">[Ah]</span></div>
-                            <div>E<span class="block text-[10px] font-normal text-teal-700 mt-1">[Eh]</span></div>
-                            <div>I<span class="block text-[10px] font-normal text-teal-700 mt-1">[Ee]</span></div>
-                            <div>O<span class="block text-[10px] font-normal text-teal-700 mt-1">[Oh]</span></div>
-                            <div>U<span class="block text-[10px] font-normal text-teal-700 mt-1">[Oo]</span></div>
-                        </div>
-
-                        <div class="border border-teal-100 bg-teal-50/10 p-4 rounded-xl space-y-3 text-xs text-slate-650">
-                            <p>🔹 <b>The A-E-I-O-U Vowel Protocol:</b> Lock your jaw completely still when pronouncing Spanish vowels. No diphthong extensions allowed. Spanish vowels never slide.</p>
-                            <p>🔹 <b>The Dental Shift:</b> Do not press your tongue to the roof of your mouth for <b>D</b> and <b>T</b>. Instead, move your tongue tip directly to the back of your top front teeth. This turns the hard English 'D' into a soft, beautiful sound resembling the English 'th' in 'then'.</p>
-                            <p>🔹 <b>The Silent H:</b> Completely ignore the letter <b>H</b>. Exhaling a breath on 'Hola' or 'Hotel' immediately ruins your pronunciation profile.</p>
-                        </div>
-                    </div>`,
-        },
-        {
-          module: "Month 2 • Week 5-8",
-          title: "The Double Identity Code: Ser vs Estar",
-          duration: "Month 2 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: Master the Two 'To Be' Verbs</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">The Permanent vs Temporary Linguistic Split</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English loops all identity attributes, physical positions, and emotional states into a single verb: 'To Be'. Spanish fragments this logically. We implement physical memory pillars to ensure you never mix them up.</p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                            <div class="p-4 bg-white rounded-xl border border-slate-150 shadow-2xs space-y-2">
-                                <span class="font-bold text-teal-800">SER (DOCTOR Mnemonic):</span>
-                                <p class="text-[11px] text-slate-500 leading-relaxed">Handles intrinsic characteristics, origin, occupation, dates, and relationships.</p>
-                                <span class="block font-semibold text-teal-655">e.g. "Soy médico de Boston."</span>
-                            </div>
-                            <div class="p-4 bg-white rounded-xl border border-slate-150 shadow-2xs space-y-2">
-                                <span class="font-bold text-teal-800">ESTAR (PLACE Mnemonic):</span>
-                                <p class="text-[11px] text-slate-500 leading-relaxed">Dictates geographic locations, temporary conditions, and active emotions.</p>
-                                <span class="block font-semibold text-teal-655">e.g. "Estoy cansado en la oficina."</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-teal-50/10 border border-teal-100 p-4 rounded-xl text-xs text-slate-650 space-y-1.5">
-                            <p class="font-bold text-teal-955">⚠️ The Adjective Trap:</p>
-                            <p>Some adjectives change meaning entirely! Say <b>"Soy aburrido"</b> and you tell the room *you are a boring person*. Say <b>"Estoy aburrido"</b> and you simply mean *you are currently bored*.</p>
-                        </div>
-                    </div>`,
-        },
-        {
-          module: "Month 3 • Week 9-12",
-          title: "Vocabulary Suffix Shifting Formulas",
-          duration: "Month 3 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: Generate 1,500+ Words Instantly</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">Unlocking The Shared Latin Base</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">You don't need to memorize Spanish terms by rote. We teach you the mathematical conversion formulas that turn English abstract nouns directly into Spanish terms.</p>
-                        
-                        <div class="grid grid-cols-2 gap-3 text-xs bg-white p-3 rounded-xl border border-slate-150 shadow-3xs">
-                            <div class="font-bold">English Suffix</div>
-                            <div class="font-bold text-teal-800">Spanish Suffix</div>
-                            <div class="text-slate-500">"-tion"</div>
-                            <div class="text-teal-700 font-semibold">"-ción" (la acción)</div>
-                            <div class="text-slate-500">"-ty"</div>
-                            <div class="text-teal-700 font-semibold">"-dad" (la ciudad)</div>
-                            <div class="text-slate-500">"-ous"</div>
-                            <div class="text-teal-700 font-semibold">"-oso" (curioso)</div>
-                        </div>
-
-                        <div class="bg-teal-50/10 border border-teal-100 p-4 rounded-xl space-y-2 text-xs text-slate-650">
-                            <p>🏷️ <b>Rule 1:</b> Replace <b>"-tion"</b> with <b>"-ción"</b>. These converted words are always feminine nouns.</p>
-                            <p>🏷️ <b>Rule 2:</b> Replace <b>"-ty"</b> with <b>"-dad"</b>. These are also feminine nouns.</p>
-                            <p>Acoustic Note: Words ending in "-ción" or "-dad" always put the stress on the very last syllable.</p>
-                        </div>
-                    </div>`,
-        },
-        {
-          module: "Month 4 • Week 13-16",
-          title: "The Past & Future Timeline Linkers",
-          duration: "Month 4 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: Unlock Time Conjugations</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">Completed Events vs. Habits and Routine</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">To tell cohesive stories, you must navigate time fluidly. We teach you to identify whether an action has a definitive end point or serves as background context.</p>
-                        
-                        <div class="bg-teal-50/10 border border-teal-100 p-4 rounded-xl text-xs text-slate-650 space-y-3">
-                            <div>
-                                <p class="font-bold text-teal-955">🕒 Preterite Tense (Completed Past):</p>
-                                <p class="text-slate-500 mt-1">Actions that had a clear start and finish point (e.g. \"Ayer compré un auto\" / \"Yesterday I bought a car\").</p>
-                            </div>
-                            <div class="border-t border-teal-100 pt-2">
-                                <p class="font-bold text-teal-955">⏳ Imperfect Tense (Continuous Past):</p>
-                                <p class="text-slate-500 mt-1">Background descriptions, age, time, routines, or ongoing habits in the past (e.g. \"Cuando era niño, jugaba fútbol\" / \"When I was a kid, I used to play soccer\").</p>
-                            </div>
-                        </div>
-                    </div>`,
-        },
-        {
-          module: "Month 5 • Week 17-20",
-          title: "Decoding the Subjunctive Mood",
-          duration: "Month 5 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: Express Subjective Realities</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">Wishes, Emotions, Doubts, and Denials</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English speakers often struggle with the Subjunctive mood because modern English has largely discarded it. We demystify the Subjunctive by focusing entirely on the mechanical trigger formula.</p>
-                        
-                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100 text-xs text-slate-650 font-mono text-center">
-                            Subject 1 + WEIRDO Verb + <span class="text-teal-600 font-bold">QUE</span> + Subject 2 + [Subjunctive Verb]
-                        </div>
-
-                        <div class="border border-teal-100 bg-teal-50/10 p-4 rounded-xl space-y-2 text-xs text-slate-650">
-                            <p>🎯 <b>The Formula:</b> You need two different subjects connected by the word \"que\".</p>
-                            <p>🎯 <b>The Trigger:</b> The first verb must express a wish, emotion, doubt, or impersonal request (e.g., \"Yo quiero que tú vengas\" / \"I want you to come\").</p>
-                        </div>
-                    </div>`,
-        },
-        {
-          module: "Month 6 • Week 21-24",
-          title: "Situational Sprints & Real-World Fluency",
-          duration: "Month 6 Core",
-          content: `
-                    <div class="space-y-4">
-                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Goal: 100% Independent Operation</span>
-                        <h4 class="font-bold text-slate-800 text-base mt-2">Niche-Specific Simulations & Speech Fillers</h4>
-                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">The final month removes the academic scaffold. We run highly focused interactive roleplays tailored to your business, health, or travel objectives, combined with native conversational fillers.</p>
-                        
-                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-650">
-                            <div class="p-2.5 bg-white border border-slate-150 rounded-lg">
-                                <b class="text-teal-900 block">\"Pues...\"</b>
-                                Equivalent to \"Well...\" to gain cognitive thinking time.
-                            </div>
-                            <div class="p-2.5 bg-white border border-slate-150 rounded-lg">
-                                <b class="text-teal-900 block">\"O sea...\"</b>
-                                Equivalent to \"I mean...\" or \"In other words...\".
-                            </div>
-                        </div>
-
-                        <div class="bg-teal-50/20 border border-teal-200 p-4 rounded-xl text-xs text-teal-900 font-medium">
-                            🎯 By the end of this sprint, you will be able to handle contracts, navigate real-world situations, and express complex arguments with complete spontaneity.
-                        </div>
-                    </div>`,
-        },
-      ];
-
-      // --- 100 UNIQUE COGNATE WORDS DATABASE (25 per Category) ---
+    <script>
       const cognateRules = [
         {
           ruleName: "The '-tion' to '-ción' Shift",
@@ -2396,15 +2041,968 @@
     </script>
 
     <script>
-      let activeLessonIndex = 0;
+      const lessonsData = [
+        // MONTH 1 (Weeks 1-4)
+        {
+          month: 1,
+          week: 1,
+          title: "Vowel Purity: Stop the English Glide",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 1 • Phonetics</span>
+                        <h4 class="font-bold text-slate-800 text-base">Perfecting the Pure Vowel Base</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">English native speakers naturally add a diphthong glide when pronouncing vowels (e.g. stretching 'no' into 'no-oo'). In Week 1, we focus on freezing your jaw to keep Spanish vowels completely short, flat, and pure.</p>
+                        <div class="grid grid-cols-5 gap-2 text-center text-[10px] font-bold bg-teal-50/50 p-2 rounded-xl border border-teal-100 text-teal-950">
+                            <div>A [Ah]</div>
+                            <div>E [Eh]</div>
+                            <div>I [Ee]</div>
+                            <div>O [Oh]</div>
+                            <div>U [Oo]</div>
+                        </div>
+                    </div>`,
+        },
+        {
+          month: 1,
+          week: 2,
+          title: "The Dental Shift: Softening D & T",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 2 • Mechanical Focus</span>
+                        <h4 class="font-bold text-slate-800 text-base">Overwriting Rooftop Pronunciation</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Do not strike the roof of your mouth for 'D' or 'T'. Move your tongue tip directly to the back of your top front teeth. This yields the authentic soft 'th' friction used by native Spanish speakers.</p>
+                    </div>`,
+        },
+        {
+          month: 1,
+          week: 3,
+          title: "Muting the H & Mastering G/J Gutturals",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 3 • Phonation</span>
+                        <h4 class="font-bold text-slate-800 text-base">The Invisible H and Warm Exhalations</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">The letter 'H' is 100% silent in Spanish. For 'G' and 'J' before E/I, perform a warm breathy friction from deep within the throat, similar to the German 'ch'.</p>
+                    </div>`,
+        },
+        {
+          month: 1,
+          week: 4,
+          title: "Alveolar Trills: Rolling the Double RR",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 4 • Vocal Gym</span>
+                        <h4 class="font-bold text-slate-800 text-base">Alveolar Ridge Vibrations</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Relax the tongue tip. Let exhaled air flap the tongue tip against the ridge behind your teeth. This is the double 'RR' alveolar trill.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Month 1 Milestone reached!</b> Click below to take your custom Month 1 Comprehension Quiz. You must score 75 points or higher to proceed to Month 2.
+                        </div>
+                    </div>`,
+        },
+        // MONTH 2 (Weeks 5-8)
+        {
+          month: 2,
+          week: 5,
+          title: "Ser: Inherent Qualities & Origin",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 5 • Identity</span>
+                        <h4 class="font-bold text-slate-800 text-base">SER - Mnemonic Origin & Occupation</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Use the verb 'Ser' to describe where you are from, your profession, and your permanent identity values.</p>
+                    </div>`,
+        },
+        {
+          month: 2,
+          week: 6,
+          title: "Ser: Physical Characteristics & Time",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 6 • Identity II</span>
+                        <h4 class="font-bold text-slate-800 text-base">Intrinsic Traits & Calendar Dates</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Physical heights, weights, hair colors, and timestamps are objective values that require 'Ser' (DOCTOR).</p>
+                    </div>`,
+        },
+        {
+          month: 2,
+          week: 7,
+          title: "Estar: Geographic Location & Emotions",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 7 • State</span>
+                        <h4 class="font-bold text-slate-800 text-base">ESTAR - Position & Location</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">No matter how permanent a building is, geographic positioning and physical location always require 'Estar' (PLACE).</p>
+                    </div>`,
+        },
+        {
+          month: 2,
+          week: 8,
+          title: "Ser vs Estar: Dynamic Meaning Shifts",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 8 • Adjective Trap</span>
+                        <h4 class="font-bold text-slate-800 text-base">Meaning-Shifting Adjectives</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Some words change meaning entirely depending on the verb! 'Soy listo' means I am smart. 'Estoy listo' means I am ready.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Month 2 Milestone reached!</b> Click below to take your custom Month 2 Comprehension Quiz. You must score 75 points or higher to proceed to Month 3.
+                        </div>
+                    </div>`,
+        },
+        // MONTH 3 (Weeks 9-12)
+        {
+          month: 3,
+          week: 9,
+          title: "Noun Conversions: -tion to -ción",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 9 • Cognates</span>
+                        <h4 class="font-bold text-slate-800 text-base">The Latinate Base Conversion</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Replace English '-tion' with Spanish '-ción'. These nouns are 100% feminine and put their vocal stress on the final syllable.</p>
+                    </div>`,
+        },
+        {
+          month: 3,
+          week: 10,
+          title: "Noun Conversions: -ty to -dad & -nce to -ncia",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 10 • Cognates II</span>
+                        <h4 class="font-bold text-slate-800 text-base">Feminine Quality Conversion Suffixes</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Map '-ty' to '-dad' and '-nce' to '-ncia' for massive abstract vocabulary generation (e.g. prioridad, diferencia).</p>
+                    </div>`,
+        },
+        {
+          month: 3,
+          week: 11,
+          title: "Adjective Conversions: -ous to -oso",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 11 • Cognates III</span>
+                        <h4 class="font-bold text-slate-800 text-base">Descriptive Adjective Suffixes</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Map adjectives ending in '-ous' to '-oso' (e.g. curioso, generoso). Keep vowels short and pure.</p>
+                    </div>`,
+        },
+        {
+          month: 3,
+          week: 12,
+          title: "Dual Gender Suffixes: -ist to -ista",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 12 • Cognates IV</span>
+                        <h4 class="font-bold text-slate-800 text-base">Dual Gender and Neuter Suffixes</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Nouns ending in '-ista' (from English '-ist') share a single spelling for both masculine and feminine descriptions.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Month 3 Milestone reached!</b> Click below to take your custom Month 3 Comprehension Quiz. You must score 75 points or higher to proceed to Month 4.
+                        </div>
+                    </div>`,
+        },
+        // MONTH 4 (Weeks 13-16)
+        {
+          month: 4,
+          week: 13,
+          title: "The Preterite Tense: Completed Past",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 13 • Timelines</span>
+                        <h4 class="font-bold text-slate-800 text-base">Completed Transactions and Boundaries</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Actions that occurred at a definitive, completed timestamp (ayer, el año pasado) require the Preterite tense.</p>
+                    </div>`,
+        },
+        {
+          month: 4,
+          week: 14,
+          title: "The Imperfect Tense: Continual Past",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 14 • Timelines II</span>
+                        <h4 class="font-bold text-slate-800 text-base">Routines, Age, and Backgrounds</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Continuous descriptions, habits, routines, age, and backgrounds in the past use the Imperfect tense.</p>
+                    </div>`,
+        },
+        {
+          month: 4,
+          week: 15,
+          title: "Interrupted Actions: Combining Tenses",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 15 • Timeline Combinations</span>
+                        <h4 class="font-bold text-slate-800 text-base">Structuring Complex Narrative Timelines</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Combine ongoing context (Imperfect) with sudden interruptions (Preterite): 'Estaba durmiendo cuando el teléfono sonó'.</p>
+                    </div>`,
+        },
+        {
+          month: 4,
+          week: 16,
+          title: "Future Planning: Immediate Futurity",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 16 • Timelines IV</span>
+                        <h4 class="font-bold text-slate-800 text-base">Immediate Future & Planning Conjugations</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Use the simple, robust 'Ir + a + Infinitive' formula to speak fluidly about immediate plans without complex verb mutations.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Month 4 Milestone reached!</b> Click below to take your custom Month 4 Comprehension Quiz. You must score 75 points or higher to proceed to Month 5.
+                        </div>
+                    </div>`,
+        },
+        // MONTH 5 (Weeks 17-20)
+        {
+          month: 5,
+          week: 17,
+          title: "Intro to Subjunctive: The WEIRDO Key",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 17 • Moods</span>
+                        <h4 class="font-bold text-slate-800 text-base">The Subjective vs Objective Split</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">The subjunctive mood is not a tense, but an outlook of wish, emotion, doubt, or subjective evaluating realities.</p>
+                    </div>`,
+        },
+        {
+          month: 5,
+          week: 18,
+          title: "Subjunctive: Wishes & Desires",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 18 • Subjunctive Triggers</span>
+                        <h4 class="font-bold text-slate-800 text-base">Querer, Desear & Esperar Formulations</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Trigger subjunctive verb mutations on secondary subjects when expressing personal wishes or requirements: 'Quiero que vengas'.</p>
+                    </div>`,
+        },
+        {
+          month: 5,
+          week: 19,
+          title: "Subjunctive: Doubt, Denial & Uncertainty",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 19 • Subjunctive Triggers II</span>
+                        <h4 class="font-bold text-slate-800 text-base">Doubt (No creer) vs Certainty (Creo)</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">'Creo que...' indicates certainty, requiring indicative. 'No creo que...' expresses subjective doubt, triggering subjunctive.</p>
+                    </div>`,
+        },
+        {
+          month: 5,
+          week: 20,
+          title: "Subjunctive: Impersonal Evaluations",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 20 • Subjunctive IV</span>
+                        <h4 class="font-bold text-slate-800 text-base">Impersonal Desires and Evaluative Realities</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Impersonal evaluations ('Es necesario que...', 'Es importante que...') require subjunctive conjugation in the target clause.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Month 5 Milestone reached!</b> Click below to take your custom Month 5 Comprehension Quiz. You must score 75 points or higher to proceed to Month 6.
+                        </div>
+                    </div>`,
+        },
+        // MONTH 6 (Weeks 21-24)
+        {
+          month: 6,
+          week: 21,
+          title: "Speech Fillers: Sounds of Fluency",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 21 • Conversational Skills</span>
+                        <h4 class="font-bold text-slate-800 text-base">Gaining Cognitive Processing Time</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Stop using English 'um'. Implement 'Pues...', 'O sea...', and 'A ver...' to buy processing time naturally like a native speaker.</p>
+                    </div>`,
+        },
+        {
+          month: 6,
+          week: 22,
+          title: "Roleplay: Real Estate & Housing",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 22 • Situational Sprint</span>
+                        <h4 class="font-bold text-slate-800 text-base">Navigating Property Contracts & Rentals</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Master high-frequency vocabulary for housing contracts, room lease mechanics, and neighborhood negotiations.</p>
+                    </div>`,
+        },
+        {
+          month: 6,
+          week: 23,
+          title: "Roleplay: Medical & Health Emergencies",
+          duration: "15 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 23 • Situational Sprint II</span>
+                        <h4 class="font-bold text-slate-800 text-base">Expressing Symptoms and Bodily Sensation</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Learn to describe physical pain, communicate medical history, and navigate medical emergencies cleanly.</p>
+                    </div>`,
+        },
+        {
+          month: 6,
+          week: 24,
+          title: "Roleplay: Spontaneous Debates & Nuance",
+          duration: "20 mins",
+          content: `
+                    <div class="space-y-4">
+                        <span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-100 uppercase">Week 24 • Advanced Practice</span>
+                        <h4 class="font-bold text-slate-800 text-base">Expressing Opinions and Nuanced Beliefs</h4>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Our final class prepares you to engage in structured opinions, state complex plans, and defend abstract arguments fluidly.</p>
+                        <div class="p-3 bg-amber-50 rounded-xl border border-amber-100 text-xs text-amber-955 font-medium">
+                            🚨 <b>Final Month 6 Milestone reached!</b> Click below to take your custom Month 6 Comprehension Quiz. You must score 75 points or higher to achieve native transformation.
+                        </div>
+                    </div>`,
+        },
+      ];
+    </script>
+
+    <script>
+      const monthlyQuizzes = {
+        1: [
+          {
+            category: "Month 1 Quiz",
+            question:
+              "Is the vowel 'O' in Spanish pronounced with a slide/glide like in English?",
+            options: [
+              { text: "Yes, always", correct: false },
+              {
+                text: "No, it must remain short, flat, and pure",
+                correct: true,
+              },
+              { text: "Only at the beginning of words", correct: false },
+            ],
+            explanation:
+              "Spanish vowels are completely pure and short. You must stop your lips from sliding forward.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question:
+              "Where should the tongue tip touch when pronouncing a soft Spanish 'D' between vowels?",
+            options: [
+              { text: "The roof of the mouth", correct: false },
+              { text: "The back of the top front teeth", correct: true },
+              { text: "The bottom lip", correct: false },
+            ],
+            explanation:
+              "Soft 'D' requires dental contact, making a sound similar to 'th' in 'the'.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "Which letter is always completely silent in Spanish?",
+            options: [
+              { text: "G", correct: false },
+              { text: "J", correct: false },
+              { text: "H", correct: true },
+            ],
+            explanation: "The letter 'H' is always mute in Spanish.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question:
+              "What does the Spanish 'G' sound like when followed by 'E' or 'I' (as in 'gente')?",
+            options: [
+              { text: "Like a hard 'G' in 'Go'", correct: false },
+              {
+                text: "Like a soft warm 'H' exhaled from deep in the throat",
+                correct: true,
+              },
+              { text: "It is completely silent", correct: false },
+            ],
+            explanation: "G before E or I represents a throat friction sound.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "How do you roll the double 'RR' sound?",
+            options: [
+              { text: "Pull the tongue back into the throat", correct: false },
+              {
+                text: "Let the tongue tip vibrate against the alveolar ridge using exhaled air",
+                correct: true,
+              },
+            ],
+            explanation:
+              "The double 'RR' is an alveolar trill created by relaxed air vibrations.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "How is the vowel 'E' pronounced in Spanish?",
+            options: [
+              { text: "Like 'ee' in sleep", correct: false },
+              { text: "Like 'eh' in pet", correct: true },
+              { text: "Like 'ay' in say", correct: false },
+            ],
+            explanation: "Vowel 'E' is short and clean, like the 'e' in pet.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question:
+              "Where is the vocal stress on the word 'Natural' in Spanish?",
+            options: [
+              { text: "On the first syllable (NA-tu-ral)", correct: false },
+              { text: "On the last syllable (na-tu-RAL)", correct: true },
+            ],
+            explanation:
+              "Words ending in a consonant (except N or S) place vocal emphasis on the final syllable.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "Is the letter 'U' pronounced in 'guerra'?",
+            options: [
+              { text: "Yes, as an 'oo' sound", correct: false },
+              { text: "No, it is silent", correct: true },
+            ],
+            explanation:
+              "In 'gue' / 'gui', the U is completely mute to keep the G hard.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "What does 'LL' sound like in standard Spanish?",
+            options: [
+              { text: "Like English 'L'", correct: false },
+              {
+                text: "Like English palatal glide 'Y' in 'yes'",
+                correct: true,
+              },
+            ],
+            explanation:
+              "'LL' behaves as a palatal glide, making a 'Y' or light 'J' sound.",
+          },
+          {
+            category: "Month 1 Quiz",
+            question: "What is the correct pronunciation of vowel 'A'?",
+            options: [
+              { text: "Like 'a' in apple", correct: false },
+              { text: "Like 'a' in father", correct: true },
+            ],
+            explanation:
+              "Spanish vowel 'A' is always open and pure, like the 'a' in father.",
+          },
+        ],
+        2: [
+          {
+            category: "Month 2 Quiz",
+            question: "Which verb describes your origin or hometown?",
+            options: [
+              { text: "Estar", correct: false },
+              { text: "Ser", correct: true },
+            ],
+            explanation: "Origins and native roots require the verb 'Ser'.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "Which verb describes your profession ('I am a doctor')?",
+            options: [
+              { text: "Ser", correct: true },
+              { text: "Estar", correct: false },
+            ],
+            explanation: "Occupations and professional titles use 'Ser'.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question:
+              "Which verb describes geographic location ('The city is in Spain')?",
+            options: [
+              { text: "Ser", correct: false },
+              { text: "Estar", correct: true },
+            ],
+            explanation: "All physical locations use 'Estar'.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "Which verb describes current emotions ('I am sad')?",
+            options: [
+              { text: "Estar", correct: true },
+              { text: "Ser", correct: false },
+            ],
+            explanation: "Active emotional states use 'Estar'.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "What does 'Soy listo' mean?",
+            options: [
+              { text: "I am ready", correct: false },
+              { text: "I am smart", correct: true },
+            ],
+            explanation: "Listo with Ser means intelligent or smart.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "What does 'Estoy listo' mean?",
+            options: [
+              { text: "I am smart", correct: false },
+              { text: "I am ready", correct: true },
+            ],
+            explanation: "Listo with Estar means prepared or ready.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "Which verb is used for dates and times ('It is 5 PM')?",
+            options: [
+              { text: "Ser", correct: true },
+              { text: "Estar", correct: false },
+            ],
+            explanation:
+              "Time and calendar markers are objective measures using 'Ser'.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "What does 'Soy aburrido' mean?",
+            options: [
+              { text: "I am bored", correct: false },
+              { text: "I am a boring person", correct: true },
+            ],
+            explanation: "Aburrido with Ser means having a boring personality.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question: "What does 'Estoy aburrido' mean?",
+            options: [
+              { text: "I am a boring person", correct: false },
+              { text: "I am currently bored", correct: true },
+            ],
+            explanation:
+              "Aburrido with Estar means experiencing the state of boredom.",
+          },
+          {
+            category: "Month 2 Quiz",
+            question:
+              "Which verb describes temporary food conditions ('The soup is cold')?",
+            options: [
+              { text: "Estar", correct: true },
+              { text: "Ser", correct: false },
+            ],
+            explanation: "Current temperature conditions of foods use 'Estar'.",
+          },
+        ],
+        3: [
+          {
+            category: "Month 3 Quiz",
+            question: "What suffix maps to English '-tion'?",
+            options: [
+              { text: "'-dad'", correct: false },
+              { text: "'-ción'", correct: true },
+            ],
+            explanation: "The suffix '-tion' maps directly to '-ción'.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What is the gender of nouns ending in '-ción'?",
+            options: [
+              { text: "Masculine", correct: false },
+              { text: "Feminine", correct: true },
+            ],
+            explanation: "All nouns ending in '-ción' are feminine.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What suffix maps to English '-ty'?",
+            options: [
+              { text: "'-oso'", correct: false },
+              { text: "'-dad'", correct: true },
+            ],
+            explanation: "The suffix '-ty' maps directly to '-dad'.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What is the gender of nouns ending in '-dad'?",
+            options: [
+              { text: "Feminine", correct: true },
+              { text: "Masculine", correct: false },
+            ],
+            explanation: "Nouns ending in the suffix '-dad' are feminine.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question:
+              "What suffix maps to English adjectives ending in '-ous'?",
+            options: [
+              { text: "'-oso'", correct: true },
+              { text: "'-dad'", correct: false },
+            ],
+            explanation: "Adjectives in '-ous' map directly to '-oso'.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question:
+              "What spelling change occurs for English adjectives ending in '-al'?",
+            options: [
+              { text: "They remain identical", correct: true },
+              { text: "We add a double L", correct: false },
+            ],
+            explanation:
+              "Adjectives ending in '-al' are identical in spelling (e.g. natural, local).",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What suffix maps to English '-nce'?",
+            options: [
+              { text: "'-ncia'", correct: true },
+              { text: "'-ción'", correct: false },
+            ],
+            explanation:
+              "'-nce' translates smoothly to '-ncia' (e.g. diferencia).",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What suffix maps to English nouns ending in '-ist'?",
+            options: [
+              { text: "'-ista'", correct: true },
+              { text: "'-oso'", correct: false },
+            ],
+            explanation: "'-ist' converts neatly to '-ista' (e.g. artista).",
+          },
+          {
+            category: "Month 3 Quiz",
+            question: "What is the gender of nouns ending in '-ista'?",
+            options: [
+              { text: "They are dual-gender (el or la)", correct: true },
+              { text: "They are always masculine", correct: false },
+            ],
+            explanation:
+              "'-ista' nouns can be masculine or feminine depending on who is being described.",
+          },
+          {
+            category: "Month 3 Quiz",
+            question:
+              "What suffix maps to abstract English nouns ending in '-ment'?",
+            options: [
+              { text: "'-mento'", correct: true },
+              { text: "'-mente'", correct: false },
+            ],
+            explanation: "'-ment' nouns convert to '-mento' (e.g. argumento).",
+          },
+        ],
+        4: [
+          {
+            category: "Month 4 Quiz",
+            question:
+              "Which tense describes a completed transaction in the past?",
+            options: [
+              { text: "Imperfect Tense", correct: false },
+              { text: "Preterite Tense", correct: true },
+            ],
+            explanation: "Completed events in past use Preterite.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "Which tense describes continuous habits or routines in the past?",
+            options: [
+              { text: "Preterite Tense", correct: false },
+              { text: "Imperfect Tense", correct: true },
+            ],
+            explanation: "Routines and ongoing habits in past use Imperfect.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "Which tense is used to describe age or telling time in the past?",
+            options: [
+              { text: "Preterite Tense", correct: false },
+              { text: "Imperfect Tense", correct: true },
+            ],
+            explanation:
+              "Background elements like age, time, and weather use Imperfect.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "Which tense is used to describe past weather conditions?",
+            options: [
+              { text: "Imperfect Tense", correct: true },
+              { text: "Preterite Tense", correct: false },
+            ],
+            explanation: "Atmospheric and background conditions use Imperfect.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "In interrupted past actions, what tense is the sudden interrupting action in?",
+            options: [
+              { text: "Preterite Tense", correct: true },
+              { text: "Imperfect Tense", correct: false },
+            ],
+            explanation: "The sudden interrupting event uses Preterite.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question: "Which past tense does the time marker 'ayer' trigger?",
+            options: [
+              { text: "Preterite Tense", correct: true },
+              { text: "Imperfect Tense", correct: false },
+            ],
+            explanation: "Specific bounded times trigger Preterite.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question: "Which past tense does 'cuando era niño' trigger?",
+            options: [
+              { text: "Imperfect Tense", correct: true },
+              { text: "Preterite Tense", correct: false },
+            ],
+            explanation: "Background epochs of life trigger Imperfect.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question: "What does 'Ir + a + Infinitive' represent?",
+            options: [
+              { text: "Immediate Future", correct: true },
+              { text: "Completed Past", correct: false },
+            ],
+            explanation:
+              "This structure represents immediate plans or future actions.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "In 'I was cooking when she arrived', what tense is 'cooking' in?",
+            options: [
+              { text: "Imperfect Tense", correct: true },
+              { text: "Preterite Tense", correct: false },
+            ],
+            explanation: "The ongoing background action uses Imperfect.",
+          },
+          {
+            category: "Month 4 Quiz",
+            question:
+              "In 'I was cooking when she arrived', what tense is 'arrived' in?",
+            options: [
+              { text: "Preterite Tense", correct: true },
+              { text: "Imperfect Tense", correct: false },
+            ],
+            explanation: "The interrupting action uses Preterite.",
+          },
+        ],
+        5: [
+          {
+            category: "Month 5 Quiz",
+            question:
+              "What mood is used to express subjective realities, wishes, or doubt?",
+            options: [
+              { text: "Indicative Mood", correct: false },
+              { text: "Subjunctive Mood", correct: true },
+            ],
+            explanation:
+              "Subjective views, desires, doubts, and emotions trigger the Subjunctive.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question:
+              "What connector word links the main and secondary clauses in subjunctive structures?",
+            options: [
+              { text: "que", correct: true },
+              { text: "como", correct: false },
+            ],
+            explanation:
+              "The relative pronoun 'que' is mandatory to link clauses.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "Does 'I want you to sleep' trigger subjunctive?",
+            options: [
+              {
+                text: "Yes, because it expresses a wish for another person",
+                correct: true,
+              },
+              { text: "No, it uses indicative", correct: false },
+            ],
+            explanation: "Wishes directed at others trigger Subjunctive.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "Does 'Creo que...' trigger subjunctive?",
+            options: [
+              {
+                text: "No, because it expresses certainty/belief",
+                correct: true,
+              },
+              { text: "Yes, always", correct: false },
+            ],
+            explanation: "Expressions of belief require Indicative.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "Does 'No creo que...' trigger subjunctive?",
+            options: [
+              { text: "Yes, because it expresses doubt/denial", correct: true },
+              { text: "No, it requires indicative", correct: false },
+            ],
+            explanation: "Negating a belief triggers Subjunctive.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "Does 'Es necesario que...' trigger subjunctive?",
+            options: [
+              { text: "Yes, always", correct: true },
+              { text: "No, never", correct: false },
+            ],
+            explanation:
+              "Impersonal expressions of necessity require Subjunctive.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "What does the 'W' in the WEIRDO mnemonic represent?",
+            options: [
+              { text: "Wishes / Desires", correct: true },
+              { text: "Weather conditions", correct: false },
+            ],
+            explanation:
+              "WEIRDO: Wishes, Emotions, Impersonal, Recommendations, Doubt, Ojalá.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question:
+              "How do regular '-ar' verbs conjugate in present subjunctive?",
+            options: [
+              { text: "They swap to '-e' endings", correct: true },
+              { text: "They swap to '-a' endings", correct: false },
+            ],
+            explanation: "Subjunctive flips endings: '-ar' verbs use '-e' set.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question:
+              "How do regular '-er'/'-ir' verbs conjugate in present subjunctive?",
+            options: [
+              { text: "They swap to '-a' endings", correct: true },
+              { text: "They swap to '-e' endings", correct: false },
+            ],
+            explanation:
+              "Subjunctive flips endings: '-er'/'-ir' verbs use '-a' set.",
+          },
+          {
+            category: "Month 5 Quiz",
+            question: "Does 'Ojalá que...' trigger subjunctive?",
+            options: [
+              { text: "Yes, always", correct: true },
+              { text: "No, never", correct: false },
+            ],
+            explanation:
+              "Ojalá is an absolute trigger of hope requiring Subjunctive.",
+          },
+        ],
+        6: [
+          {
+            category: "Month 6 Quiz",
+            question:
+              "Which conversational filler represents the English 'Well...'?",
+            options: [
+              { text: "O sea", correct: false },
+              { text: "Pues", correct: true },
+            ],
+            explanation:
+              "'Pues...' is highly common to buy cognitive thinking time.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question:
+              "Which conversational filler represents the English 'I mean / In other words'?",
+            options: [
+              { text: "Pues", correct: false },
+              { text: "O sea", correct: true },
+            ],
+            explanation:
+              "'O sea...' is used to clarify or rephrase statements.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question:
+              "Which conversational filler represents the English 'Let's see...'?",
+            options: [
+              { text: "A ver", correct: true },
+              { text: "Mira", correct: false },
+            ],
+            explanation:
+              "'A ver...' introduces reviews or collaborative checks.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "How do you ask 'How much does it cost'?",
+            options: [
+              { text: "¿Cuánto cuesta?", correct: true },
+              { text: "¿Qué hora es?", correct: false },
+            ],
+            explanation: "Cuesta is derived from the verb costar (to cost).",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "What is the polite way to attract a waiter's attention?",
+            options: [
+              { text: "¡Hola!", correct: false },
+              { text: "Disculpe", correct: true },
+            ],
+            explanation: "Disculpe is standard politeness to catch attention.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question:
+              "Which word do you say to toast drinks or when someone sneezes?",
+            options: [
+              { text: "Salud", correct: true },
+              { text: "Gracias", correct: false },
+            ],
+            explanation: "'Salud' means health, used for toasts and sneezes.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "What does 'Buen provecho' translate to?",
+            options: [
+              { text: "Enjoy your meal", correct: true },
+              { text: "Slower please", correct: false },
+            ],
+            explanation:
+              "Buen provecho is the customary food courtesy greeting.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "How do you ask 'Can you help me'?",
+            options: [
+              { text: "¿Puede ayudarme?", correct: true },
+              { text: "¿Dónde está?", correct: false },
+            ],
+            explanation: "Uses the verb poder (can) and ayudar (to help).",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "How do you say 'slower please'?",
+            options: [
+              { text: "Más despacio, por favor", correct: true },
+              { text: "No entiendo", correct: false },
+            ],
+            explanation: "Despacio means slow; más despacio is slower.",
+          },
+          {
+            category: "Month 6 Quiz",
+            question: "How do you say 'I don't understand'?",
+            options: [
+              { text: "No hablo bien", correct: false },
+              { text: "No entiendo", correct: true },
+            ],
+            explanation:
+              "Entiendo is the first person present of entender (to understand).",
+          },
+        ],
+      };
+    </script>
+
+    <script>
+      let activeLessonIndex = 0; // Index 0 to 23 (Weekly Classes)
       let isAnnual = false;
       let activeCognateRuleIndex = 0;
-      let cognateCurrentPage = 0; // State variable to control the 5-by-5 pagination
+      let cognateCurrentPage = 0;
       let activeFlashcardCategory = "pronunciation";
       let currentFlashcardIndex = 0;
       let isFlashcardFlipped = false;
 
-      // Quiz State variables
+      // Diagnostic (Global 40 questions) Quiz State
       let quizCurrentIndex = 0;
       let quizScore = 0;
       let quizSelectedAnswer = null;
@@ -2412,9 +3010,21 @@
       let failedQuestionsList = [];
       let reviewCurrentIndex = 0;
 
+      // Monthly Classroom Quiz State
+      let isMonthlyQuizActive = false;
+      let activeMonthQuizIndex = 1; // 1 to 6
+      let monthlyQuizCurrentIndex = 0; // 0 to 9
+      let monthlyQuizScore = 0;
+      let monthlyQuizSelectedAnswer = null;
+      let monthlyQuizHistory = [];
+      let monthlyQuizFailedQuestions = [];
+      let isMonthlyReviewActive = false;
+      let monthlyReviewIndex = 0;
+
       let userProgress = {
         completedLessons: [],
         quizHighScores: { phase1: 0, phase2: 0, phase3: 0, diagnostic: 0 },
+        unlockedMonths: [1], // Months currently unlocked by passing previous tests
       };
 
       document.addEventListener("DOMContentLoaded", () => {
@@ -2425,7 +3035,7 @@
         initCognateStudio("cognate-rules-selector", "cognate-workbench-list");
         renderPricingPortal();
         setupEvents();
-        switchTab("dashboard"); // Default Tab
+        switchTab("dashboard");
       });
 
       function loadUserProgress() {
@@ -2436,6 +3046,9 @@
           } catch (e) {
             console.error("Error loading progress", e);
           }
+        }
+        if (!userProgress.unlockedMonths) {
+          userProgress.unlockedMonths = [1];
         }
       }
 
@@ -2531,66 +3144,106 @@
           resetQuiz();
         }
       }
+    </script>
 
+    <script>
       function initSyllabusEngine() {
         const list = document.getElementById("lesson-links-container");
         if (!list) return;
         list.innerHTML = "";
 
-        lessonsData.forEach((lesson, idx) => {
-          const item = document.createElement("button");
-          item.className =
-            "w-full text-left p-3 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-600 hover:bg-slate-50";
-          item.innerHTML = `
-                    <div class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 bg-slate-100 text-slate-600">${idx + 1}</div>
-                    <div class="flex-1 min-w-0">
-                        <span class="block text-[9px] uppercase font-bold text-teal-600">${lesson.module}</span>
-                        <span class="block text-xs font-semibold truncate text-slate-800">${lesson.title}</span>
+        // Group our 24 weekly lessons under 6 Month Headers
+        for (let m = 1; m <= 6; m++) {
+          const monthHeader = document.createElement("div");
+          monthHeader.className = "pt-2 pb-1 border-b border-slate-100 mb-2";
+
+          const isLocked = !userProgress.unlockedMonths.includes(m);
+          monthHeader.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Month ${m} Blueprint</span>
+                        ${isLocked ? '<span class="text-[9px] font-bold text-amber-600 bg-amber-50 border border-amber-100 rounded px-1.5 py-0.5"><i class="fa-solid fa-lock mr-1"></i>Locked</span>' : '<span class="text-[9px] font-bold text-teal-600 bg-teal-50 border border-teal-100 rounded px-1.5 py-0.5">Active</span>'}
                     </div>
                 `;
-          item.onclick = () => loadLesson(idx);
-          list.appendChild(item);
-        });
+          list.appendChild(monthHeader);
+
+          const monthlyLessons = lessonsData.filter((l) => l.month === m);
+          monthlyLessons.forEach((lesson) => {
+            // Absolute index of the lesson in lessonsData
+            const absoluteIdx = lessonsData.findIndex(
+              (l) => l.week === lesson.week,
+            );
+
+            const item = document.createElement("button");
+            item.id = `sidebar-btn-week-${lesson.week}`;
+            item.className =
+              "w-full text-left p-2.5 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-600 hover:bg-slate-50";
+            item.disabled = isLocked;
+            if (isLocked) {
+              item.style.opacity = "0.5";
+            }
+
+            item.innerHTML = `
+                        <div class="w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0 bg-slate-100 text-slate-600">W${lesson.week}</div>
+                        <div class="flex-1 min-w-0">
+                            <span class="block text-[10px] font-semibold truncate text-slate-800">${lesson.title}</span>
+                        </div>
+                    `;
+            item.onclick = () => {
+              isMonthlyQuizActive = false;
+              loadLesson(absoluteIdx);
+            };
+            list.appendChild(item);
+          });
+        }
+
         loadLesson(0);
       }
 
       function loadLesson(idx) {
         activeLessonIndex = idx;
+        isMonthlyQuizActive = false;
         const lesson = lessonsData[idx];
         if (!lesson) return;
 
         if (!userProgress.completedLessons.includes(idx)) {
           userProgress.completedLessons.push(idx);
           saveUserProgress();
-          showToast(`📚 Lesson ${idx + 1} unlocked and complete`, "success");
+          showToast(`📚 Week ${lesson.week} unlocked and complete`, "success");
         }
 
         const badge = document.getElementById("lesson-badge");
         const title = document.getElementById("lesson-title");
-        const content = document.getElementById("lesson-content");
-        const numDisplay = document.getElementById("current-lesson-num");
+        const content = document.getElementById("lesson-viewport");
+        const numDisplay = document.getElementById("lesson-progress-text");
 
-        if (badge) badge.innerText = lesson.module;
+        if (badge)
+          badge.innerText = `Month ${lesson.month} • Week ${lesson.week}`;
         if (title) title.innerText = lesson.title;
-        if (content) content.innerHTML = lesson.content;
-        if (numDisplay) numDisplay.innerText = idx + 1;
+        if (content) {
+          content.innerHTML = lesson.content;
+          content.scrollTop = 0;
+        }
+        if (numDisplay) numDisplay.innerText = `Week ${lesson.week} of 24`;
 
-        const buttons = document.querySelectorAll(
-          "#lesson-links-container button",
-        );
-        buttons.forEach((btn, bIdx) => {
-          if (bIdx === idx) {
-            btn.className =
-              "w-full text-left p-3 rounded-xl transition-all flex items-center space-x-3 border border-teal-200 bg-teal-50/50 text-teal-955 font-bold";
-            btn.querySelector(".w-8").className =
-              "w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 bg-teal-600 text-white";
-          } else {
-            btn.className =
-              "w-full text-left p-3 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-650 hover:bg-slate-50";
-            btn.querySelector(".w-8").className =
-              "w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold flex-shrink-0 bg-slate-100 text-slate-600";
-          }
-        });
+        // Style Sidebar elements
+        document
+          .querySelectorAll("#lesson-links-container button")
+          .forEach((btn) => {
+            const isCurrent = btn.id === `sidebar-btn-week-${lesson.week}`;
+            if (isCurrent) {
+              btn.className =
+                "w-full text-left p-2.5 rounded-xl transition-all flex items-center space-x-3 border border-teal-200 bg-teal-50/50 text-teal-955 font-bold";
+              btn.querySelector(".w-7").className =
+                "w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0 bg-teal-600 text-white";
+            } else {
+              btn.className =
+                "w-full text-left p-2.5 rounded-xl transition-all flex items-center space-x-3 border border-transparent text-slate-650 hover:bg-slate-50";
+              const bubble = btn.querySelector(".w-7");
+              if (bubble)
+                bubble.className =
+                  "w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold flex-shrink-0 bg-slate-100 text-slate-600";
+            }
+          });
 
         const prevBtn = document.getElementById("btn-prev-lesson");
         if (prevBtn) {
@@ -2598,15 +3251,318 @@
           prevBtn.style.opacity = idx === 0 ? "0.4" : "1";
         }
 
+        // Next Button logical states
         const nextBtn = document.getElementById("btn-next-lesson");
         if (nextBtn) {
-          if (idx === 5) {
-            // At the end of the 6 lessons
-            nextBtn.innerHTML = `Take Phase 3 Quiz <i class="fa-solid fa-flag-checkered ml-1.5 text-cyan-350 animate-pulse"></i>`;
+          // If it is the end of any Month's block of lessons (Weeks 4, 8, 12, 16, 20, 24)
+          if (lesson.week % 4 === 0) {
+            nextBtn.innerHTML = `Take Month ${lesson.month} Quiz <i class="fa-solid fa-graduation-cap ml-1.5 text-amber-500 animate-pulse"></i>`;
           } else {
-            nextBtn.innerHTML = `Next Lesson <i class="fa-solid fa-chevron-right ml-1.5"></i>`;
+            nextBtn.innerHTML = `Next Week <i class="fa-solid fa-chevron-right ml-1.5"></i>`;
           }
         }
+      }
+
+      // --- DEDICATED MONTH COMPREHENSION QUIZ LOGIC ---
+      function startMonthlyQuiz(monthNum) {
+        isMonthlyQuizActive = true;
+        activeMonthQuizIndex = monthNum;
+        monthlyQuizCurrentIndex = 0;
+        monthlyQuizScore = 0;
+        monthlyQuizHistory = [];
+        monthlyQuizFailedQuestions = [];
+        isMonthlyReviewActive = false;
+
+        loadMonthlyQuizQuestion();
+      }
+
+      function loadMonthlyQuizQuestion() {
+        monthlyQuizSelectedAnswer = null;
+        const content = document.getElementById("lesson-viewport");
+        const qSet = monthlyQuizzes[activeMonthQuizIndex];
+        const q = qSet[monthlyQuizCurrentIndex];
+
+        // Hide main Classroom footer so student interacts strictly inside quiz template
+        document.getElementById("classroom-footer").classList.add("hidden");
+
+        const badge = document.getElementById("lesson-badge");
+        const title = document.getElementById("lesson-title");
+        if (badge) badge.innerText = `Month ${activeMonthQuizIndex} Assessment`;
+        if (title)
+          title.innerText = `Final Block Exam: Month ${activeMonthQuizIndex}`;
+
+        let progressPct = (monthlyQuizCurrentIndex / qSet.length) * 100;
+
+        let html = `
+                <div class="space-y-6">
+                    <div class="h-1 bg-teal-50 w-full rounded-full overflow-hidden">
+                        <div class="h-full bg-teal-500 transition-all duration-300" style="width: ${progressPct}%"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                        <span>Question ${monthlyQuizCurrentIndex + 1} of ${qSet.length}</span>
+                        <span class="text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded border border-teal-100">Month ${activeMonthQuizIndex} Block Quiz</span>
+                    </div>
+                    <div>
+                        <span class="text-[9px] uppercase font-bold text-teal-600">${q.category}</span>
+                        <h4 class="text-base sm:text-lg font-bold text-slate-800 mt-1">${q.question}</h4>
+                    </div>
+                    <div class="space-y-3" id="month-quiz-options">
+                        ${q.options
+                          .map(
+                            (opt, oIdx) => `
+                            <button onclick="selectMonthlyQuizAnswer(${oIdx}, this)" class="month-quiz-opt w-full text-left p-4 rounded-xl border border-teal-100 text-xs sm:text-sm flex justify-between items-center bg-white hover:border-teal-400 hover:bg-teal-50/20 transition-all quiz-opt-btn">
+                                <span class="pr-3 text-slate-700 font-medium">${opt.text}</span>
+                                <span class="w-4 h-4 rounded-full border border-teal-200 flex-shrink-0 transition-all"></span>
+                            </button>
+                        `,
+                          )
+                          .join("")}
+                    </div>
+                    <div class="p-4 rounded-xl text-xs hidden" id="month-quiz-feedback"></div>
+                    <div class="flex justify-end pt-2">
+                        <button class="glass-capsule-btn px-6 py-2.5 rounded-xl font-bold text-xs hidden" id="month-quiz-next-btn" onclick="advanceMonthlyQuiz()">
+                            ${monthlyQuizCurrentIndex === qSet.length - 1 ? 'See Results <i class="fa-solid fa-square-poll-vertical ml-1.5 text-cyan-300"></i>' : 'Next Question <i class="fa-solid fa-chevron-right ml-1.5"></i>'}
+                        </button>
+                    </div>
+                </div>
+            `;
+        if (content) {
+          content.innerHTML = html;
+          content.scrollTop = 0;
+        }
+      }
+
+      function selectMonthlyQuizAnswer(idx, btnElement) {
+        if (monthlyQuizSelectedAnswer !== null) return;
+        monthlyQuizSelectedAnswer = idx;
+
+        const qSet = monthlyQuizzes[activeMonthQuizIndex];
+        const q = qSet[monthlyQuizCurrentIndex];
+        const isCorrect = q.options[idx].correct;
+
+        if (isCorrect) {
+          monthlyQuizScore++;
+        } else {
+          monthlyQuizFailedQuestions.push({
+            questionIndex: monthlyQuizCurrentIndex,
+            wrongAnswer: q.options[idx].text,
+            correctAnswer: q.options.find((o) => o.correct).text,
+          });
+        }
+
+        // Highlight chosen option and dim alternative options
+        const buttons = document.querySelectorAll(".month-quiz-opt");
+        buttons.forEach((btn, bIdx) => {
+          btn.disabled = true;
+          if (bIdx === idx) {
+            if (isCorrect) {
+              btn.className =
+                "month-quiz-opt w-full text-left p-4 rounded-xl border-2 border-emerald-500 text-xs sm:text-sm flex justify-between items-center bg-emerald-100 text-emerald-955 font-bold shadow-sm transition-all";
+              btn.querySelector(".w-4").className =
+                "w-4 h-4 rounded-full bg-emerald-500 border border-emerald-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
+              btn.querySelector(".w-4").innerHTML =
+                '<i class="fa-solid fa-check"></i>';
+            } else {
+              btn.className =
+                "month-quiz-opt w-full text-left p-4 rounded-xl border-2 border-red-550 text-xs sm:text-sm flex justify-between items-center bg-red-100 text-red-955 font-bold shadow-sm transition-all";
+              btn.querySelector(".w-4").className =
+                "w-4 h-4 rounded-full bg-red-500 border border-red-600 flex-shrink-0 flex items-center justify-center text-[9px] text-white";
+              btn.querySelector(".w-4").innerHTML =
+                '<i class="fa-solid fa-xmark"></i>';
+            }
+          } else {
+            if (q.options[bIdx].correct) {
+              btn.className =
+                "month-quiz-opt w-full text-left p-4 rounded-xl border border-emerald-300 text-xs sm:text-sm flex justify-between items-center bg-emerald-50/20 text-emerald-800 opacity-60 transition-all";
+            } else {
+              btn.className =
+                "month-quiz-opt w-full text-left p-4 rounded-xl border border-slate-100 text-xs sm:text-sm flex justify-between items-center bg-slate-50/45 text-slate-455 opacity-40 transition-all";
+            }
+          }
+        });
+
+        const feedbackBox = document.getElementById("month-quiz-feedback");
+        if (feedbackBox) {
+          feedbackBox.classList.remove("hidden");
+          feedbackBox.className = isCorrect
+            ? "p-4 rounded-xl border bg-emerald-50 border-emerald-200 text-emerald-955 flex flex-col space-y-1 text-xs"
+            : "p-4 rounded-xl border bg-red-50 border-red-200 text-red-955 flex flex-col space-y-1 text-xs";
+
+          feedbackBox.innerHTML = `
+                    <p class="font-bold text-sm flex items-center">
+                        <i class="fa-solid ${isCorrect ? "fa-circle-check text-emerald-600" : "fa-circle-xmark text-red-650"} mr-2"></i>
+                        ${isCorrect ? "Correct!" : "Incorrect"}
+                    </p>
+                    <p class="text-xs mt-1 leading-relaxed">${q.explanation}</p>
+                `;
+        }
+
+        document
+          .getElementById("month-quiz-next-btn")
+          .classList.remove("hidden");
+      }
+
+      function advanceMonthlyQuiz() {
+        const qSet = monthlyQuizzes[activeMonthQuizIndex];
+        monthlyQuizCurrentIndex++;
+        if (monthlyQuizCurrentIndex >= qSet.length) {
+          showMonthlyQuizResults();
+        } else {
+          loadMonthlyQuizQuestion();
+        }
+      }
+
+      function showMonthlyQuizResults() {
+        const content = document.getElementById("lesson-viewport");
+        const qSet = monthlyQuizzes[activeMonthQuizIndex];
+        const finalScaledScore = Math.round(
+          (monthlyQuizScore / qSet.length) * 100,
+        );
+
+        let passed = finalScaledScore >= 75;
+
+        if (passed) {
+          // Unlock Next Month automatically
+          const nextMonth = activeMonthQuizIndex + 1;
+          if (
+            nextMonth <= 6 &&
+            !userProgress.unlockedMonths.includes(nextMonth)
+          ) {
+            userProgress.unlockedMonths.push(nextMonth);
+            saveUserProgress();
+            initSyllabusEngine(); // Redraws sidebar with new unlocked states
+          }
+          showToast(`🎉 Passed Month ${activeMonthQuizIndex} Quiz!`, "success");
+        }
+
+        let html = `
+                <div class="text-center space-y-6 py-6 max-w-md mx-auto">
+                    <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto text-2xl border border-teal-100">
+                        ${passed ? "🏆" : "📚"}
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold ${passed ? "text-teal-600" : "text-amber-600"}">
+                        ${passed ? `Month ${activeMonthQuizIndex} Passed!` : "Review Needed"}
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        ${passed ? `Amazing work! You've verified exceptional grasp on the core competencies taught during Month ${activeMonthQuizIndex}.` : `You scored ${finalScaledScore} points. To make sure you lock in correct mechanical traits, complete a Weakness Analysis of failed items before retaking.`}
+                    </p>
+                    <p class="text-[40px] font-extrabold text-teal-600">${finalScaledScore} / 100</p>
+                    <div class="flex flex-col space-y-3 pt-2">
+                        ${
+                          passed
+                            ? `
+                            <button onclick="proceedToNextMonth()" class="glass-capsule-btn px-6 py-3.5 rounded-xl font-bold text-xs">
+                                ${activeMonthQuizIndex === 6 ? 'Ecosystem Fully Complete! <i class="fa-solid fa-flag-checkered ml-1.5 animate-pulse"></i>' : `Unlock Month ${activeMonthQuizIndex + 1} Classes <i class="fa-solid fa-chevron-right ml-1"></i>`}
+                            </button>
+                        `
+                            : `
+                            <button onclick="startMonthlyWeaknessStudy()" class="glass-capsule-btn px-6 py-3.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-md">
+                                Review Weaknesses (${monthlyQuizFailedQuestions.length}) <i class="fa-solid fa-graduation-cap ml-1"></i>
+                            </button>
+                        `
+                        }
+                    </div>
+                </div>
+            `;
+        if (content) {
+          content.innerHTML = html;
+          content.scrollTop = 0;
+        }
+      }
+
+      function proceedToNextMonth() {
+        if (activeMonthQuizIndex === 6) {
+          showToast(
+            "🏆 You have successfully passed all 6 Months! Full fluency attained!",
+            "success",
+          );
+          switchTab("dashboard");
+          return;
+        }
+        // Transition back to normal week classes (First Week of Next Month)
+        const absoluteIdx = lessonsData.findIndex(
+          (l) =>
+            l.month === activeMonthQuizIndex + 1 &&
+            l.week === activeMonthQuizIndex * 4 + 1,
+        );
+        document.getElementById("classroom-footer").classList.remove("hidden");
+        loadLesson(absoluteIdx);
+      }
+
+      function startMonthlyWeaknessStudy() {
+        isMonthlyReviewActive = true;
+        monthlyReviewIndex = 0;
+        loadMonthlyReviewQuestion();
+      }
+
+      function loadMonthlyReviewQuestion() {
+        const content = document.getElementById("lesson-viewport");
+        const currentFail = monthlyQuizFailedQuestions[monthlyReviewIndex];
+        const qSet = monthlyQuizzes[activeMonthQuizIndex];
+        const originalQuestion = qSet[currentFail.questionIndex];
+        const totalFails = monthlyQuizFailedQuestions.length;
+
+        let html = `
+                <div class="space-y-6">
+                    <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-amber-955 text-xs sm:text-sm flex items-start space-x-3">
+                        <i class="fa-solid fa-graduation-cap text-lg mt-0.5 text-amber-600"></i>
+                        <div>
+                            <strong class="font-bold text-amber-955 block mb-1">Custom Study Session: Weakness Analysis</strong>
+                            Since your score was under 75 points, review your failed questions below before retaking.
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center text-[9px] uppercase font-bold text-slate-400">
+                        <span>Weakness ${monthlyReviewIndex + 1} of ${totalFails}</span>
+                        <span class="text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded border border-amber-150">Study Mode</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-[9px] uppercase font-bold text-teal-600">${originalQuestion.category}</span>
+                            <h4 class="text-base sm:text-lg font-bold text-slate-800 mt-1">${originalQuestion.question}</h4>
+                        </div>
+                        <div class="space-y-2.5">
+                            <div class="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-955">
+                                <span class="font-bold">Your answer:</span> <span>${currentFail.wrongAnswer}</span>
+                            </div>
+                            <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-955">
+                                <span class="font-bold">Correct answer:</span> <span>${currentFail.correctAnswer}</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-teal-50/20 border border-teal-100 rounded-xl text-xs">
+                            <strong class="font-bold text-teal-955 block mb-1">Why this is correct:</strong>
+                            <p class="text-slate-600 leading-relaxed">${originalQuestion.explanation}</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end pt-2">
+                        ${
+                          monthlyReviewIndex < totalFails - 1
+                            ? `
+                            <button onclick="advanceMonthlyReview()" class="glass-capsule-btn px-5 py-2.5 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-600 text-white">
+                                Next Weakness <i class="fa-solid fa-chevron-right ml-1"></i>
+                            </button>
+                        `
+                            : `
+                            <button onclick="restartMonthlyQuizAfterStudy()" class="glass-capsule-btn px-6 py-3.5 rounded-xl font-bold text-xs bg-gradient-to-r from-teal-500 to-emerald-500 text-white animate-pulse">
+                                Done Studying! Retake Test <i class="fa-solid fa-arrow-rotate-left ml-1"></i>
+                            </button>
+                        `
+                        }
+                    </div>
+                </div>
+            `;
+        if (content) {
+          content.innerHTML = html;
+          content.scrollTop = 0;
+        }
+      }
+
+      function advanceMonthlyReview() {
+        monthlyReviewIndex++;
+        loadMonthlyReviewQuestion();
+      }
+
+      function restartMonthlyQuizAfterStudy() {
+        startMonthlyQuiz(activeMonthQuizIndex);
       }
     </script>
 
@@ -2804,7 +3760,7 @@
           resultsTitle.innerText = "Under 75 Points: Review Needed";
           resultsTitle.className =
             "text-xl sm:text-2xl font-extrabold text-amber-600";
-          resultsDesc.innerText = `You scored ${finalScaledScore} points. To make sure you lock in the correct parameters, complete your custom Weakness Study session containing all failed answers before retaking the test.`;
+          resultsDesc.innerText = `You scored ${finalScaledScore} points. To make sure you lock in correct parameters, complete your custom Weakness Study session containing all failed answers before retaking the test.`;
 
           actionsContainer.innerHTML = `
                     <button class="glass-capsule-btn px-6 py-3 rounded-xl font-bold text-xs bg-gradient-to-r from-amber-500 to-amber-600 text-white" id="btn-quiz-start-review">
@@ -2893,20 +3849,18 @@
             tag: "PHASE 2",
             weeks: "W9 - W16",
             color: "text-cyan-700 bg-cyan-50 border-cyan-100",
-            lessonIndex: 2,
+            lessonIndex: 8,
           },
           {
             title: "Situational & Pro Mastery",
             tag: "PHASE 3",
             weeks: "W17 - W24",
             color: "text-emerald-700 bg-emerald-50 border-emerald-100",
-            lessonIndex: 4,
+            lessonIndex: 16,
           },
         ];
 
-        phaseConfig.forEach((phase, i) => {
-          const m1 = lessonsData[i * 2];
-          const m2 = lessonsData[i * 2 + 1];
+        phaseConfig.forEach((phase) => {
           const card = document.createElement("div");
           card.className =
             "glass-crystal-card rounded-3xl p-5 flex flex-col justify-between space-y-4";
@@ -2917,10 +3871,7 @@
                             <span class="text-xs font-bold text-slate-400">${phase.weeks}</span>
                         </div>
                         <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">${phase.title}</h3>
-                        <div class="bg-slate-50/60 backdrop-blur-xs rounded-xl p-3 space-y-1.5 text-xs text-slate-500 border border-slate-100">
-                            <div><i class="fa-solid fa-circle-play text-teal-500 mr-2"></i><b>${m1.module.split("•")[0].trim()}:</b> ${m1.title}</div>
-                            <div><i class="fa-solid fa-circle-play text-teal-500 mr-2"></i><b>${m2.module.split("•")[0].trim()}:</b> ${m2.title}</div>
-                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Leverage core target features, vocabulary shifting tools, and timelines structured across months of instruction.</p>
                     </div>
                     <button class="glass-capsule-btn w-full py-2 rounded-xl font-bold text-[11px] card-action-btn">Enter Classes</button>
                 `;
@@ -2950,7 +3901,7 @@
                     </div>`;
           card.onclick = () => {
             activeCognateRuleIndex = idx;
-            cognateCurrentPage = 0; // Reset paginated tracker to the first page on rule swap
+            cognateCurrentPage = 0;
             document
               .querySelectorAll(".rule-card")
               .forEach(
@@ -2973,7 +3924,6 @@
         if (!list) return;
         list.innerHTML = "";
 
-        // Calculate slicing indexes to pull exactly 5 words based on active subpage
         const startIdx = cognateCurrentPage * 5;
         const endIdx = startIdx + 5;
         const totalWords = cognateRules[ruleIndex].words;
@@ -3002,7 +3952,6 @@
           list.appendChild(row);
         });
 
-        // Update Pagination display elements
         const pageDisplay = document.getElementById("cognate-page-num");
         if (pageDisplay) {
           pageDisplay.innerText = cognateCurrentPage + 1;
@@ -3022,9 +3971,7 @@
             cognateCurrentPage === maxPages - 1 ? "0.4" : "1";
         }
       }
-    </script>
 
-    <script>
       function setupFlashcardEngine(tabsId, triggerId) {
         const tabsContainer = document.getElementById(tabsId);
         const triggerElement = document.getElementById(triggerId);
@@ -3097,9 +4044,7 @@
           };
         }
       }
-    </script>
 
-    <script>
       function renderPricingPortal() {
         const container = document.getElementById("pricing-cards-container");
         if (!container) return;
@@ -3218,10 +4163,17 @@
 
         if (nextLessonBtn) {
           nextLessonBtn.onclick = () => {
-            if (activeLessonIndex === 5) {
-              switchTab("quiz");
-              initQuizEngine();
-              showToast("Entering 40-Question Milestone Quiz!", "success");
+            if (isMonthlyQuizActive) return; // Prevent interference when quiz is running
+
+            const lesson = lessonsData[activeLessonIndex];
+
+            // If it is the end of the month (Week 4, 8, 12, 16, 20, 24)
+            if (lesson.week % 4 === 0) {
+              startMonthlyQuiz(lesson.month);
+              showToast(
+                `Starting Month ${lesson.month} Final Block Quiz!`,
+                "info",
+              );
             } else if (activeLessonIndex < lessonsData.length - 1) {
               loadLesson(activeLessonIndex + 1);
             }
@@ -3229,6 +4181,14 @@
         }
         if (prevLessonBtn) {
           prevLessonBtn.onclick = () => {
+            if (isMonthlyQuizActive) {
+              // Return to the last week of current month
+              document
+                .getElementById("classroom-footer")
+                .classList.remove("hidden");
+              loadLesson(activeLessonIndex);
+              return;
+            }
             if (activeLessonIndex > 0) {
               loadLesson(activeLessonIndex - 1);
             }
