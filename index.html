@@ -19,8 +19,14 @@
       rel="stylesheet"
     />
 
+    <!-- Stripe JS SDK (Necesario para pasarelas de pago reales en producción) -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- Supabase JS Client SDK (Necesario para autenticación y base de datos en producción) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <style>
-      /* STREAMING_CHUNK: Styling core backgrounds and custom crystal elements... */
+      /* STREAMING_CHUNK: Styling layout backdrops and high-end glassmorphic components... */
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
         background: radial-gradient(
@@ -170,7 +176,7 @@
   <body
     class="text-slate-800 flex flex-col selection:bg-teal-100 selection:text-teal-950"
   >
-    <!-- STREAMING_CHUNK: Generating dark matte gray header matching WhatsApp Image 2026-07-14 at 10.16.04 PM_2.jpeg... -->
+    <!-- STREAMING_CHUNK: Rendering the Premium Matte Graphite Header with Connected Ns Logo ... -->
     <!-- HIGH CONTRAST BRAND LOGO BADGE: Adapting to the business card exact layout -->
     <header
       class="bg-[#1e2022] border-b border-slate-800/80 sticky top-0 z-40 shadow-[0_8px_32px_rgba(0,0,0,0.35)]"
@@ -263,7 +269,6 @@
       </div>
     </header>
 
-    <!-- STREAMING_CHUNK: App Main Workspace Container Setup... -->
     <!-- App Main Workspace -->
     <main
       class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col space-y-6"
@@ -379,7 +384,7 @@
           </div>
         </div>
 
-        <!-- STREAMING_CHUNK: Building Pedagogy cards for the main view... -->
+        <!-- STREAMING_CHUNK: Pedagogy section grids... -->
         <!-- Pedagogy Highlights Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="glass-crystal-card p-6 flex space-x-4 items-start">
@@ -387,7 +392,7 @@
               <i class="fa-solid fa-volume-high text-lg"></i>
             </div>
             <div>
-              <h3 class="font-bold text-teal-950 text-sm sm:text-base">
+              <h3 class="font-bold text-teal-955 text-sm sm:text-base">
                 Targeted Accent Training
               </h3>
               <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">
@@ -490,7 +495,7 @@
                 </ul>
               </div>
               <button
-                onclick="handlePricingSignup('student')"
+                onclick="handlePricingSubscription('student')"
                 class="watery-btn w-full text-center py-3 rounded-xl font-bold text-xs sm:text-sm"
               >
                 Subscribe to Self-Study
@@ -552,7 +557,7 @@
                 </ul>
               </div>
               <button
-                onclick="handlePricingSignup('tutor')"
+                onclick="handlePricingSubscription('tutor')"
                 class="watery-btn w-full text-center py-3 rounded-xl font-bold text-xs sm:text-sm"
               >
                 Subscribe to Tutor Pro
@@ -562,7 +567,6 @@
         </section>
       </div>
 
-      <!-- STREAMING_CHUNK: Rendering the Workspace Navigation and interactive Tab views... -->
       <!-- ================= WORKSPACE AREA (Visible when Logged In) ================= -->
       <div id="workspace-area" class="hidden space-y-6">
         <nav
@@ -642,7 +646,6 @@
             </div>
           </div>
 
-          <!-- STREAMING_CHUNK: Constructing Classroom workspace markup and sidebars... -->
           <!-- Interactive Lesson Selector Workspace (Hidden by default, shown when clicking enter classes) -->
           <div
             id="active-classroom-section"
@@ -754,7 +757,6 @@
           </div>
         </section>
 
-        <!-- STREAMING_CHUNK: Setting up Tab 2 for Performance and Cognate Converter sandbox... -->
         <!-- TAB 2: RENDIMIENTO (PERFORMANCE METRICS) -->
         <section id="tab-rendimiento" class="tab-content hidden space-y-6">
           <div class="glass-crystal-card p-6 sm:p-8 space-y-6">
@@ -863,7 +865,6 @@
           </div>
         </section>
 
-        <!-- STREAMING_CHUNK: Generating Tab 3 Logbook and active flashcard mechanics... -->
         <!-- TAB 3: BITÁCORA (LOGBOOK & NOTES ENGINE) -->
         <section id="tab-bitacora" class="tab-content hidden space-y-6">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -1034,7 +1035,6 @@
       </div>
     </main>
 
-    <!-- STREAMING_CHUNK: Designing credentials verification and fast bypass dev buttons modal... -->
     <!-- Authentic Sign-In & Registration Modal with quick-dev credentials bypass -->
     <div
       id="auth-modal"
@@ -1215,8 +1215,39 @@
       </div>
     </footer>
 
-    <!-- STREAMING_CHUNK: Declaring Javascript state engines and curriculum objects... -->
+    <!-- STREAMING_CHUNK: Starting JavaScript state controller and variables definition... -->
     <script>
+      // ==========================================
+      // 🛠️ OBJETO DE CONFIGURACIÓN DE PRODUCCIÓN
+      // ==========================================
+      const CONFIG = {
+        USE_PRODUCTION_BACKEND: true, // Cambiar a true para activar Supabase + Stripe
+
+        // Supabase API Credentials
+        SUPABASE_URL: "https://rohhswfbagrtnchwowzo.supabase.co/rest/v1/",
+        SUPABASE_ANON_KEY:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvaGhzd2ZiYWdydG5jaHdvd3pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwNzY1MTQsImV4cCI6MjA5OTY1MjUxNH0.r5sXXahMxH8n8wouJjlHgXz-l-5w3Vv0bDf5wsyy4Tc",
+
+        // Stripe API Credentials
+        STRIPE_PUBLIC_KEY: "pk_test_TU-STRIPE-PUBLISHABLE-KEY",
+        STRIPE_PRICES: {
+          student: "price_TU-PRODUCTO-STUDENT", // Reemplazar por tus Price IDs de Stripe
+          tutor: "price_TU-PRODUCTO-TUTOR",
+        },
+      };
+
+      // Instanciar Clientes SDK si está en modo producción
+      let supabaseClient = null;
+      let stripeInstance = null;
+
+      if (CONFIG.USE_PRODUCTION_BACKEND) {
+        supabaseClient = supabase.createClient(
+          CONFIG.SUPABASE_URL,
+          CONFIG.SUPABASE_ANON_KEY,
+        );
+        stripeInstance = Stripe(CONFIG.STRIPE_PUBLIC_KEY);
+      }
+
       // --- 1. DYNAMIC ROADMAP/PHASES CURRICULUM DATABASE (3 PHASES COMPLETE & SYMMETRICAL) ---
       const phasesData = [
         {
@@ -1955,7 +1986,6 @@
         ],
       };
 
-      // STREAMING_CHUNK: Setting up core state machine variables for application loop...
       // --- 4. STATE CONTROLLER ---
       let currentCarouselIndex = 0;
       let carouselInterval = null;
@@ -2040,7 +2070,6 @@
           .scrollIntoView({ behavior: "smooth" });
       }
 
-      // STREAMING_CHUNK: Managing Auth view and state transitions...
       // --- 7. AUTHENTICATION & LOGIN GATEWAY ---
       let isSignupMode = false;
 
@@ -2127,15 +2156,70 @@
         loginSuccess();
       }
 
-      function handlePricingSignup(planRole) {
-        openAuthModal("signup");
-        document.getElementById("auth-role").value =
-          planRole === "student" ? "cadete" : planRole;
+      // --- STREAMING_CHUNK: Setting up Stripe checkout and payments redirection pipeline... ---
+      // --- 7B. INTEGRACIÓN REAL DE SUSCRIPCIONES (STRIPE CHECKOUT) ---
+      async function handlePricingSubscription(planRole) {
+        if (!activeUser) {
+          showToast(
+            "Por favor regístrate primero para iniciar tu suscripción.",
+            "info",
+          );
+          openAuthModal("signup");
+          document.getElementById("auth-role").value =
+            planRole === "student" ? "cadete" : planRole;
+          return;
+        }
+
+        if (!CONFIG.USE_PRODUCTION_BACKEND) {
+          // Modo Sandbox simulado (Pruebas sin API)
+          showToast(
+            `¡Modo Prueba! Redirigiendo a pasarela simulada para plan ${planRole}...`,
+            "success",
+          );
+          setTimeout(() => {
+            activeUser.isSubscribed = true;
+            localStorage.setItem(
+              "nearnative_session",
+              JSON.stringify(activeUser),
+            );
+            loginSuccess();
+          }, 1500);
+          return;
+        }
+
+        // MODO DE PRODUCCIÓN REAL CON STRIPE
+        try {
+          showToast("Conectando con Stripe...", "info");
+          const priceId =
+            planRole === "student"
+              ? CONFIG.STRIPE_PRICES.student
+              : CONFIG.STRIPE_PRICES.tutor;
+
+          // Redirigir a pasarela Stripe Checkout segura
+          const { error } = await stripeInstance.redirectToCheckout({
+            lineItems: [{ price: priceId, quantity: 1 }],
+            mode: "subscription",
+            successUrl:
+              window.location.origin + "?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: window.location.origin,
+            customerEmail: activeUser.email,
+          });
+
+          if (error) {
+            showToast(`Error de Stripe: ${error.message}`, "error");
+          }
+        } catch (err) {
+          console.error("Stripe Redirect Error:", err);
+          showToast("Error al conectar con la pasarela de pagos.", "error");
+        }
       }
 
-      function handleAuthSubmit(e) {
+      // --- STREAMING_CHUNK: Integrating user profile creation with Supabase Auth or Local DB... ---
+      // --- 7C. AUTENTICACIÓN AVANZADA (SUPABASE / LOCAL STORAGE BYPASS) ---
+      async function handleAuthSubmit(e) {
         e.preventDefault();
         const email = document.getElementById("auth-email").value;
+        const password = document.getElementById("auth-pw").value;
         const role = document.getElementById("auth-role").value;
 
         let fname = "Usuario";
@@ -2144,15 +2228,71 @@
         if (isSignupMode) {
           fname = document.getElementById("auth-fname").value || "Usuario";
           lname = document.getElementById("auth-lname").value || "";
-        } else {
-          fname = email.split("@")[0];
         }
 
-        activeUser = { fname, lname, email, role };
-        loginSuccess();
+        if (!CONFIG.USE_PRODUCTION_BACKEND) {
+          // MODO LOCAL / PRUEBAS
+          activeUser = { fname, lname, email, role, isSubscribed: false };
+          loginSuccess();
+          return;
+        }
+
+        // MODO PRODUCCIÓN REAL CON SUPABASE
+        try {
+          showToast("Procesando en base de datos...", "info");
+
+          if (isSignupMode) {
+            // 1. Registro nativo en Supabase Auth
+            const { data, error } = await supabaseClient.auth.signUp({
+              email: email,
+              password: password,
+              options: {
+                data: {
+                  first_name: fname,
+                  last_name: lname,
+                  role: role,
+                },
+              },
+            });
+
+            if (error) throw error;
+
+            showToast(
+              "¡Registro exitoso! Por favor verifica tu correo.",
+              "success",
+            );
+            activeUser = { fname, lname, email, role, isSubscribed: false };
+          } else {
+            // 2. Inicio de Sesión nativo
+            const { data, error } =
+              await supabaseClient.auth.signInWithPassword({
+                email: email,
+                password: password,
+              });
+
+            if (error) throw error;
+
+            const userMeta = data.user.user_metadata;
+            activeUser = {
+              fname: userMeta.first_name || "Usuario",
+              lname: userMeta.last_name || "",
+              email: data.user.email,
+              role: userMeta.role || "cadete",
+            };
+          }
+          loginSuccess();
+        } catch (err) {
+          console.error("Auth Error:", err);
+          showToast(`Error de autenticación: ${err.message}`, "error");
+        }
       }
 
-      // STREAMING_CHUNK: Setting user variables inside session scope...
+      function handlePricingSignup(planRole) {
+        openAuthModal("signup");
+        document.getElementById("auth-role").value =
+          planRole === "student" ? "cadete" : planRole;
+      }
+
       function loginSuccess() {
         closeAuthModal();
         localStorage.setItem("nearnative_session", JSON.stringify(activeUser));
@@ -2229,7 +2369,6 @@
         }
       }
 
-      // STREAMING_CHUNK: Loading 3-Phase Roadmap modules to screen dynamically...
       // --- 9. DYNAMIC ROADMAP CARDS GENERATOR (Symmetrical 3 Columns) ---
       function renderRoadmap() {
         const container = document.getElementById("roadmap-cards-container");
@@ -2313,7 +2452,6 @@
         loadLesson(0);
       }
 
-      // STREAMING_CHUNK: Integrating speech synthesis triggers and active lesson loads...
       function loadLesson(index) {
         currentLessonIndex = index;
         const lesson = lessonsData[index];
@@ -2387,7 +2525,6 @@
         }
       }
 
-      // STREAMING_CHUNK: Initializing cognate table structures and interactive controls...
       // --- 11. PAGINATED COGNATES WORKBENCH ENGINE ---
       function selectCognateRule(index) {
         activeCognateRuleIndex = index;
@@ -2410,7 +2547,7 @@
           card.innerHTML = `
                     <div class="flex justify-between items-center">
                         <span class="font-bold text-slate-900">${rule.ruleName}</span>
-                        <span class="text-[8px] font-bold text-cyan-600 bg-white border border-teal-100 px-2 py-0.5 rounded-md">Regla</span>
+                        <span class="text-[8px] font-bold text-cyan-600 bg-white border border-teal-100 px-2.5 py-0.5 rounded-md">Regla</span>
                     </div>
                 `;
           container.appendChild(card);
@@ -2433,7 +2570,7 @@
           item.innerHTML = `
                     <div class="flex items-center space-x-4">
                         <div>
-                            <span class="text-[8px] text-slate-400 block uppercase">Inglés</span>
+                            <span class="text-[8px] text-slate-450 block uppercase">Inglés</span>
                             <span class="font-semibold text-slate-700">${word.eng}</span>
                         </div>
                         <i class="fa-solid fa-arrow-right text-teal-300 text-[10px]"></i>
@@ -2471,7 +2608,6 @@
         }
       }
 
-      // STREAMING_CHUNK: Designing 3D flip-card mechanics and local storage log notes...
       // --- 12. FLASHCARDS SYSTEM ---
       function renderFlashcard() {
         const card = flashcardDecks.pronunciation[currentFlashcardIndex];
